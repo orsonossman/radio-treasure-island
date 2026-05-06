@@ -1,0 +1,117 @@
+nav:
+  - label: Listen
+    href: "#listen"
+  - label: Cast
+    href: "#cast"
+  - label: Production
+    href: "#production"
+  - label: Get Notified
+    href: "#notify"
+
+hero:
+  eyebrow: "Otherworld Children's Media Presents"
+  title_image: "/assets/images/title-art.webp"
+  title_alt: "Treasure Island — A Telling for the New World"
+  tagline_image: "/assets/images/tagline.webp"
+  tagline_alt: "Prepare Yourself! For the most thrilling pirate story ever written..."
+  ship_image: "/assets/images/hero-ship.webp"
+  description: >-
+    An historic radio drama in eight chapters — re-set in the Louisiana Bayou,
+    the Port of New Orleans, and the Caribbean, ten years after the War of
+    1812. With cinematic sound design by Randy Thom of Skywalker Sound.
+  primary_cta:
+    label: Hear the Excerpts
+    href: "#listen"
+  secondary_cta:
+    label: Get Notified
+    href: "#notify"
+
+episodes:
+  - number: 1
+    numeral: I
+    title: "The Old Sea-Dog at the Admiral Benbow"
+    player_title: "Chapter I — The Old Sea-Dog"
+    subtitle: "Opening excerpt · Long John Silver arrives"
+    duration: "3:24"
+    seconds: 204
+  - number: 2
+    numeral: II
+    title: "The Black Spot"
+    player_title: "Chapter II — The Black Spot"
+    subtitle: "A warning is delivered in shadow"
+    duration: "2:58"
+    seconds: 178
+  - number: 3
+    numeral: III
+    title: "The Map"
+    player_title: "Chapter III — The Map"
+    subtitle: "The treasure map is revealed"
+    duration: "3:11"
+    seconds: 191
+
+featured_cast:
+  - actor: Keith David
+    role: Long John Silver
+    image: "/assets/images/keith-david.png"
+  - actor: John Goodman
+    role: Captain Billy Bones
+    image: "/assets/images/john-goodman.png"
+  - actor: Glynn Turman
+    role: the Storyteller
+    image: "/assets/images/glynn-turman.png"
+
+supporting_cast:
+  - actor: Nui Phonphila
+    role: Young Jim Hawkins
+  - actor: Lowell Deo
+    role: Dr. Livesey
+  - actor: Richard Fish
+    role: Squire Trelawney
+  - actor: Aishe Keita
+    role: Mrs. Hawkins
+  - actor: Kaelon Christopher
+    role: Young William
+  - actor: David Ossman
+    role: Captain Smollet
+  - actor: Bradford Farwell
+    role: Mr. Anderson
+  - actor: Vince Brady
+    role: Mr. Hunter
+  - actor: Phil Proctor
+    role: Mr. Hands
+
+production:
+  - label: Sound Design
+    name: Randy Thom
+    description: >-
+      Skywalker Sound — the legendary designer behind Apocalypse Now, Cast
+      Away, and The Right Stuff brings cinematic depth to every scene.
+  - label: Music
+    name: Taj Mahal
+    description: >-
+      Blues legend and Grammy winner Taj Mahal provides an original score rooted
+      in the Creole, Caribbean, and West African traditions of the era.
+  - label: Adaptation
+    name: "Eight Hours · Eight Chapters"
+    description: >-
+      An unabridged re-imagining set in the Louisiana Bayou, Port of New
+      Orleans, and the Caribbean — during the last gasp of piracy in the New
+      World.
+  - label: "Illustrations & Design"
+    name: Max Cole-Takanikos
+    description: >-
+      Graphic design and original illustrations by artist Max Cole-Takanikos,
+      whose work echoes the broadside and handbill tradition of the 19th
+      century.
+
+notify:
+  label: Coming to Public Radio
+  headline: Be the first to know when it airs.
+  description: >-
+    Treasure Island is coming to public radio stations across the country.
+    Leave your email and we'll tell you the moment it's on the air near you.
+  success: "You're on the list. Fair winds to you."
+  footnote: "No barnacles. Unsubscribe any time."
+
+footer:
+  copyright: "2025 Otherworld Children's Media"

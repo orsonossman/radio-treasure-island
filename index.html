@@ -1,0 +1,164 @@
+---
+layout: default
+title: Treasure Island — A Telling for the New World
+description: An historic radio drama in eight chapters from Otherworld Children's Media.
+---
+{% assign page_data = site.data.site %}
+{% assign first_episode = page_data.episodes | first %}
+
+<nav>
+  <a href="{{ '/' | relative_url }}" class="nav-logo">Radio Treasure Island</a>
+  <ul class="nav-links">
+    {% for item in page_data.nav %}
+      <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+    {% endfor %}
+  </ul>
+</nav>
+
+<main>
+  <section class="hero">
+    <img src="{{ page_data.hero.ship_image | relative_url }}" class="hero-ship" alt="">
+
+    <p class="hero-eyebrow">{{ page_data.hero.eyebrow }}</p>
+
+    <div class="hero-title">
+      <img src="{{ page_data.hero.title_image | relative_url }}" alt="{{ page_data.hero.title_alt }}">
+    </div>
+
+    <div class="hero-tagline">
+      <img src="{{ page_data.hero.tagline_image | relative_url }}" alt="{{ page_data.hero.tagline_alt }}">
+    </div>
+
+    <p class="hero-description">{{ page_data.hero.description }}</p>
+
+    <div class="hero-ctas">
+      <a href="{{ page_data.hero.primary_cta.href }}" class="btn-primary">{{ page_data.hero.primary_cta.label }}</a>
+      <a href="{{ page_data.hero.secondary_cta.href }}" class="btn-secondary">{{ page_data.hero.secondary_cta.label }}</a>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <svg viewBox="0 0 16 16" aria-hidden="true"><polyline points="2,5 8,11 14,5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline></svg>
+    </div>
+  </section>
+
+  <div class="section-divider"><div class="divider-diamond"></div></div>
+
+  <section class="audio-section" id="listen">
+    <span class="section-label">Hear It</span>
+    <h1 class="audio-headline">Eight Hours of Cinematic Radio Drama</h1>
+    <p class="audio-sub">
+      Re-set in the Louisiana Bayou, the Port of New Orleans, and the Caribbean —
+      ten years after the War of 1812, during the last gasp of piracy in the New World.
+    </p>
+
+    <div class="audio-player">
+      <div class="player-top">
+        <button class="play-btn" id="playBtn" aria-label="Play or pause excerpt" type="button">
+          <svg class="icon-play" viewBox="0 0 18 18" aria-hidden="true"><polygon points="4,2 16,9 4,16"></polygon></svg>
+          <svg class="icon-pause" viewBox="0 0 18 18" aria-hidden="true"><rect x="3" y="2" width="4" height="14" rx="1"></rect><rect x="11" y="2" width="4" height="14" rx="1"></rect></svg>
+        </button>
+        <div class="player-meta">
+          <div class="player-title" id="playerTitle">{{ first_episode.player_title }}</div>
+          <div class="player-sub" id="playerSub">{{ first_episode.subtitle }}</div>
+        </div>
+        <div class="player-time" id="playerTime">0:00 / {{ first_episode.duration }}</div>
+      </div>
+      <div class="progress-bar" id="progressBar" role="slider" aria-label="Excerpt progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+    </div>
+
+    <div class="episode-list">
+      {% for episode in page_data.episodes %}
+        <button
+          class="episode-item{% if forloop.first %} active{% endif %}"
+          type="button"
+          data-ep="{{ episode.number }}"
+          data-title="{{ episode.player_title }}"
+          data-sub="{{ episode.subtitle }}"
+          data-duration="{{ episode.duration }}"
+          data-seconds="{{ episode.seconds }}"
+        >
+          <span class="ep-num">{{ episode.numeral }}</span>
+          <span class="ep-title">{{ episode.title }}</span>
+          <span class="ep-duration">Excerpt</span>
+        </button>
+      {% endfor %}
+    </div>
+  </section>
+
+  <div class="section-divider"><div class="divider-diamond"></div></div>
+
+  <section class="cast-section" id="cast">
+    <div class="cast-header fade-up">
+      <span class="section-label">Starring</span>
+      <h2 class="cast-headline">Three of America's Most Celebrated Actors</h2>
+    </div>
+
+    <div class="cast-featured fade-up">
+      {% for member in page_data.featured_cast %}
+        <article class="cast-card">
+          <div class="cast-photo-wrap">
+            <img src="{{ member.image | relative_url }}" class="cast-photo" alt="{{ member.actor }}">
+          </div>
+          <div class="cast-info">
+            <div class="cast-actor">{{ member.actor }}</div>
+            <div class="cast-role">as {{ member.role }}</div>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+
+    <div class="supporting-cast fade-up">
+      <span class="supporting-label">Full Cast of Characters</span>
+      <div class="supporting-grid">
+        {% for member in page_data.supporting_cast %}
+          <div class="supporting-item">
+            <span class="supporting-name">{{ member.actor }}</span>
+            <span class="supporting-role">{{ member.role }}</span>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <div class="section-divider"><div class="divider-diamond"></div></div>
+
+  <section class="production-section" id="production">
+    <div class="production-heading fade-up">
+      <span class="section-label">The Production</span>
+      <h2 class="production-title">Built with the craft of cinema.<br>Made for the ear.</h2>
+    </div>
+
+    <div class="production-grid fade-up">
+      {% for credit in page_data.production %}
+        <article class="prod-block">
+          <span class="prod-label">{{ credit.label }}</span>
+          <div class="prod-name">{{ credit.name }}</div>
+          <p class="prod-desc">{{ credit.description }}</p>
+        </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <div class="section-divider"><div class="divider-diamond"></div></div>
+
+  <section class="notify-section" id="notify">
+    <span class="section-label">{{ page_data.notify.label }}</span>
+    <h2 class="notify-headline">{{ page_data.notify.headline }}</h2>
+    <p class="notify-sub">{{ page_data.notify.description }}</p>
+    <form class="email-form" id="notifyForm">
+      <label class="sr-only" for="emailInput">Email address</label>
+      <input type="email" class="email-input" placeholder="Your email address" required id="emailInput">
+      <button type="submit" class="email-submit">Notify Me</button>
+    </form>
+    <div class="email-success" id="emailSuccess" role="status">✦ {{ page_data.notify.success }}</div>
+    <p class="notify-footnote" id="notifyFootnote">{{ page_data.notify.footnote }}</p>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-left">© {{ page_data.footer.copyright }}</div>
+  <div class="footer-credits"></div>
+</footer>

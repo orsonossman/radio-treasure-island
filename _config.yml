@@ -1,0 +1,23 @@
+title: Radio Treasure Island
+description: >-
+  An historic radio drama in eight chapters, re-set in the Louisiana Bayou,
+  the Port of New Orleans, and the Caribbean.
+lang: en
+
+url: ""
+baseurl: ""
+
+permalink: pretty
+
+exclude:
+  - "Radio Treasure Island.html"
+  - "Radio Treasure Island.html:Zone.Identifier"
+  - "EXECPLAN.md"
+  - "Gemfile"
+  - "Gemfile.lock"
+  - "package.json"
+  - "package-lock.json"
+  - "node_modules"
+  - "scripts"
+  - "assets/css/input.css"
+  - "vendor"
