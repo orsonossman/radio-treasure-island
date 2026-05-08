@@ -428,165 +428,205 @@
     outline: none;
   }
 
-  /* ── HERO ── */
+  /* ── LANDING ── */
   .hero {
     position: relative;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    padding: 120px 48px 80px;
+    overflow: visible;
+    padding: 88px 36px 36px;
     background: var(--bg);
   }
 
+  .landing-wrap {
+    width: min(100%, 920px);
+    margin: 0 auto;
+    text-align: center;
+  }
 
+  .landing-poster {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: min(100%, 760px);
+    aspect-ratio: 4 / 3;
+    margin: 0 auto 18px;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    background:
+      linear-gradient(180deg, oklch(92% 0.02 80 / 0.95), oklch(86% 0.025 80 / 0.95)),
+      var(--bg-mid);
+  }
 
-  .hero-ship {
+  .landing-title-art {
+    position: relative;
+    z-index: 2;
+    width: min(86%, 620px);
+    margin-top: clamp(22px, 6vw, 54px);
+    mix-blend-mode: multiply;
+  }
+
+  .landing-ship {
     position: absolute;
-    bottom: -20px;
-    right: -60px;
-    width: 680px;
-    opacity: 0.06;
+    right: -7%;
+    bottom: -11%;
+    width: 80%;
+    opacity: 0.13;
     pointer-events: none;
   }
 
-  /* Horizontal rule ornament */
-  .ornament {
+  .landing-kicker {
+    font-family: 'IM Fell English', Georgia, serif;
+    font-size: clamp(26px, 4vw, 36px);
+    line-height: 1.05;
+    color: var(--parchment);
+    margin-bottom: 14px;
+  }
+
+  .landing-audio-link {
     display: flex;
     align-items: center;
-    gap: 16px;
-    width: 100%;
-    max-width: 600px;
-    margin-bottom: 32px;
-  }
-
-  .ornament::before, .ornament::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--rule);
-  }
-
-  .ornament span {
-    font-family: 'IM Fell English', serif;
-    font-size: 18px;
-    color: var(--crimson);
-    letter-spacing: 0.1em;
-  }
-
-  .hero-eyebrow {
-    font-family: 'Playfair Display SC', serif;
-    font-size: 16px;
-    letter-spacing: 0.3em;
-    color: var(--crimson);
-    text-transform: uppercase;
-    margin-bottom: 28px;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-  }
-
-  .hero-title {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    margin-bottom: 16px;
-  }
-
-  .hero-title img {
-    width: 100%;
-    max-width: 780px;
-    mix-blend-mode: multiply;
-  }
-
-  .hero-tagline {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    margin-bottom: 48px;
-  }
-
-  .hero-tagline img {
-    max-width: 520px;
-    width: 90%;
-    filter: none;
-    mix-blend-mode: multiply;
-  }
-
-  .hero-description {
-    position: relative;
-    z-index: 2;
-    font-family: 'IM Fell English', serif;
-    font-style: italic;
-    font-size: 18px;
-    line-height: 1.7;
-    color: var(--parchment-dim);
-    text-align: center;
-    max-width: 620px;
-    margin-bottom: 52px;
-  }
-
-  .hero-ctas {
-    position: relative;
-    z-index: 2;
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    flex-wrap: wrap;
     justify-content: center;
-  }
-
-  .btn-primary {
-    font-family: 'Playfair Display SC', serif;
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: oklch(96% 0.015 80);
-    background: var(--crimson);
-    border: none;
-    padding: 16px 36px;
-    cursor: pointer;
+    gap: 18px;
+    width: fit-content;
+    margin-right: auto;
+    margin-left: auto;
+    color: var(--ink);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 900;
+    line-height: 0.95;
     text-decoration: none;
-    display: inline-block;
-    transition: background 0.2s, transform 0.15s;
-    position: relative;
+    transition: color 0.2s, transform 0.15s;
   }
 
-  .btn-primary::before {
-    content: '';
-    position: absolute;
-    inset: -3px;
-    border: 1px solid var(--crimson);
-    opacity: 0;
-    transition: opacity 0.2s;
+  .landing-audio-link svg {
+    width: 0.98em;
+    height: 0.98em;
+    fill: oklch(55% 0.01 250);
+    flex: 0 0 auto;
+    transition: fill 0.2s, transform 0.15s;
   }
 
-  .btn-primary:hover {
-    background: oklch(52% 0.20 25);
+  .landing-audio-link:hover,
+  .landing-audio-link:focus-visible {
+    color: var(--crimson);
     transform: translateY(-1px);
   }
-  .btn-primary:hover::before { opacity: 1; }
 
-  .btn-secondary {
-    font-family: 'Playfair Display SC', serif;
-    font-size: 12px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--crimson);
-    background: transparent;
-    border: 2px solid var(--crimson);
-    padding: 14px 36px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-block;
-    transition: border-color 0.2s, color 0.2s, background 0.2s, transform 0.15s;
+  .landing-audio-link:hover svg,
+  .landing-audio-link:focus-visible svg {
+    fill: var(--crimson);
+    transform: translateX(2px);
   }
 
-  .btn-secondary:hover {
-    background: var(--crimson);
-    color: oklch(96% 0.015 80);
+  .landing-audio-link:focus-visible,
+  .landing-broadcast-link:focus-visible {
+    outline: 2px solid var(--crimson);
+    outline-offset: 5px;
+  }
+
+  .landing-audio-link-primary {
+    font-size: clamp(42px, 6.2vw, 58px);
+    margin-bottom: 24px;
+  }
+
+  .landing-description {
+    max-width: 830px;
+    margin: 0 auto 30px;
+    color: var(--parchment);
+    font-family: 'IM Fell English', Georgia, serif;
+    font-size: clamp(15px, 1.8vw, 18px);
+    line-height: 1.28;
+  }
+
+  .landing-description::first-line {
+    font-style: italic;
+  }
+
+  .landing-spotlight {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 26px 32px;
+    width: min(100%, 820px);
+    margin: 0 auto 34px;
+  }
+
+  .landing-person {
+    min-width: 0;
+  }
+
+  .landing-person-name {
+    font-family: 'IM Fell English', Georgia, serif;
+    font-size: clamp(20px, 2.4vw, 24px);
+    line-height: 1;
+    color: var(--parchment);
+    white-space: nowrap;
+    margin-bottom: 10px;
+  }
+
+  .landing-person-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1.18;
+    margin: 0 auto 12px;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+    background: var(--bg-mid);
+  }
+
+  .landing-person-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+
+  .landing-person-photo-empty {
+    background:
+      linear-gradient(180deg, oklch(91% 0.018 80), oklch(78% 0.015 80)),
+      var(--bg-mid);
+  }
+
+  .landing-person-photo-empty span {
+    max-width: 80%;
+    color: var(--crimson);
+    font-family: 'Playfair Display SC', Georgia, serif;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  .landing-person-credit {
+    color: var(--parchment);
+    font-family: 'IM Fell English', Georgia, serif;
+    font-size: clamp(17px, 2vw, 20px);
+    line-height: 1.1;
+  }
+
+  .landing-audio-link-secondary {
+    font-size: clamp(42px, 6vw, 56px);
+    margin-bottom: 20px;
+  }
+
+  .landing-broadcast-link {
+    display: inline-block;
+    color: var(--ink);
+    font-family: 'Playfair Display SC', Georgia, serif;
+    font-size: clamp(22px, 3.4vw, 34px);
+    font-weight: 900;
+    line-height: 1.05;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color 0.2s, transform 0.15s;
+  }
+
+  .landing-broadcast-link:hover,
+  .landing-broadcast-link:focus-visible {
+    color: var(--crimson);
     transform: translateY(-1px);
   }
 
@@ -1138,12 +1178,14 @@
   .fade-up:nth-child(3) { transition-delay: 0.2s; }
   .fade-up:nth-child(4) { transition-delay: 0.3s; }
 
-  /* hero entrance */
-  .hero-eyebrow { animation: heroIn 0.8s 0.2s ease both; }
-  .hero-title { animation: heroIn 0.9s 0.35s ease both; }
-  .hero-tagline { animation: heroIn 0.8s 0.55s ease both; }
-  .hero-description { animation: heroIn 0.8s 0.7s ease both; }
-  .hero-ctas { animation: heroIn 0.8s 0.85s ease both; }
+  /* landing entrance */
+  .landing-poster { animation: heroIn 0.8s 0.1s ease both; }
+  .landing-kicker { animation: heroIn 0.7s 0.22s ease both; }
+  .landing-audio-link-primary { animation: heroIn 0.7s 0.3s ease both; }
+  .landing-description { animation: heroIn 0.7s 0.38s ease both; }
+  .landing-spotlight { animation: heroIn 0.75s 0.46s ease both; }
+  .landing-audio-link-secondary { animation: heroIn 0.7s 0.54s ease both; }
+  .landing-broadcast-link { animation: heroIn 0.7s 0.62s ease both; }
 
   @keyframes heroIn {
     from { opacity: 0; transform: translateY(20px); }
@@ -1184,7 +1226,49 @@
 
     .hero {
       min-height: 100svh;
-      padding: 140px 24px 60px;
+      padding: 132px 20px 42px;
+    }
+
+    .landing-poster {
+      aspect-ratio: 1 / 1;
+    }
+
+    .landing-title-art {
+      width: 88%;
+      margin-top: 28px;
+    }
+
+    .landing-ship {
+      right: -24%;
+      width: 115%;
+    }
+
+    .landing-audio-link {
+      gap: 12px;
+    }
+
+    .landing-audio-link-primary,
+    .landing-audio-link-secondary {
+      font-size: clamp(34px, 11vw, 48px);
+    }
+
+    .landing-description {
+      margin-bottom: 14px;
+    }
+
+    .landing-spotlight {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px 16px;
+      max-width: 420px;
+      margin-bottom: 18px;
+    }
+
+    .landing-person-name {
+      font-size: 20px;
+    }
+
+    .landing-person-credit {
+      font-size: 17px;
     }
 
     .audio-section, .cast-section, .production-section, .notify-section {

@@ -20,15 +20,37 @@ hero:
   tagline_alt: "Prepare Yourself! For the most thrilling pirate story ever written..."
   ship_image: "/assets/images/hero-ship.webp"
   description: >-
-    An historic radio drama in eight chapters — re-set in the Louisiana Bayou,
-    the Port of New Orleans, and the Caribbean, ten years after the War of
-    1812. With cinematic sound design by Randy Thom of Skywalker Sound.
+    Treasure Island: A Telling for the New World is a series of 8 hour-long
+    audio episodes. This unabridged adaptation of the classic novel by R.L.
+    Stevenson resets the story in the Bayous, the Port of New Orleans, and the
+    Caribbean at the end of the Golden Age of Piracy in 1828.
   primary_cta:
     label: Hear the Excerpts
     href: "#listen-now"
   secondary_cta:
     label: Get Notified
     href: "#contact"
+  trailer_cta:
+    label: Listen to the trailer
+    href: "#listen-now"
+  theme_cta:
+    label: Listen to the Theme
+    href: "#listen-now"
+  broadcast_cta:
+    label: To broadcast this series click here
+    href: "#broadcast-info"
+  cast_spotlight:
+    - name: Keith David
+      credit: As Long John Silver
+      image: "/assets/images/keith-david.png"
+    - name: John Goodman
+      credit: As Billy Bones
+      image: "/assets/images/john-goodman.png"
+    - name: Glynn Turman
+      credit: As the Storyteller
+      image: "/assets/images/glynn-turman.png"
+    - name: Taj Mahal
+      credit: Original Score
 
 broadcast_info:
   label: Broadcast Info

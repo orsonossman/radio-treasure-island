@@ -5,8 +5,6 @@ description: An historic radio drama in eight chapters from Otherworld Children'
 ---
 {% assign page_data = site.data.site %}
 {% assign first_episode = page_data.episodes | first %}
-{% assign primary_cta_target = page_data.hero.primary_cta.href | remove_first: '#' %}
-{% assign secondary_cta_target = page_data.hero.secondary_cta.href | remove_first: '#' %}
 
 <nav aria-label="Site sections">
   <a id="tab-landing-page" href="#landing-page" class="nav-logo active" data-tab-target="landing-page">Radio Treasure Island</a>
@@ -22,23 +20,48 @@ description: An historic radio drama in eight chapters from Otherworld Children'
 
 <main>
   <section class="hero tab-panel active" id="landing-page" data-tab-panel role="tabpanel" aria-labelledby="tab-landing-page" tabindex="-1">
-    <img src="{{ page_data.hero.ship_image | relative_url }}" class="hero-ship" alt="">
+    <div class="landing-wrap">
+      <div class="landing-poster">
+        <img src="{{ page_data.hero.title_image | relative_url }}" class="landing-title-art" alt="{{ page_data.hero.title_alt }}">
+        <img src="{{ page_data.hero.ship_image | relative_url }}" class="landing-ship" alt="">
+      </div>
 
-    <p class="hero-eyebrow">{{ page_data.hero.eyebrow }}</p>
+      <p class="landing-kicker">A Major Motion Picture for the Mind</p>
 
-    <div class="hero-title">
-      <img src="{{ page_data.hero.title_image | relative_url }}" alt="{{ page_data.hero.title_alt }}">
-    </div>
+      {% assign trailer_target = page_data.hero.trailer_cta.href | remove_first: '#' %}
+      <a href="{{ page_data.hero.trailer_cta.href }}" class="landing-audio-link landing-audio-link-primary" data-tab-target="{{ trailer_target }}">
+        <span>{{ page_data.hero.trailer_cta.label }}</span>
+        <svg viewBox="0 0 18 18" aria-hidden="true"><polygon points="4,2 16,9 4,16"></polygon></svg>
+      </a>
 
-    <div class="hero-tagline">
-      <img src="{{ page_data.hero.tagline_image | relative_url }}" alt="{{ page_data.hero.tagline_alt }}">
-    </div>
+      <p class="landing-description">{{ page_data.hero.description }}</p>
 
-    <p class="hero-description">{{ page_data.hero.description }}</p>
+      <div class="landing-spotlight" aria-label="Featured cast and music">
+        {% for person in page_data.hero.cast_spotlight %}
+          <article class="landing-person">
+            <div class="landing-person-name">{{ person.name }}</div>
+            <div class="landing-person-photo{% unless person.image %} landing-person-photo-empty{% endunless %}">
+              {% if person.image %}
+                <img src="{{ person.image | relative_url }}" alt="{{ person.name }}">
+              {% else %}
+                <span>{{ person.name }}</span>
+              {% endif %}
+            </div>
+            <div class="landing-person-credit">{{ person.credit }}</div>
+          </article>
+        {% endfor %}
+      </div>
 
-    <div class="hero-ctas">
-      <a href="{{ page_data.hero.primary_cta.href }}" class="btn-primary" data-tab-target="{{ primary_cta_target }}">{{ page_data.hero.primary_cta.label }}</a>
-      <a href="{{ page_data.hero.secondary_cta.href }}" class="btn-secondary" data-tab-target="{{ secondary_cta_target }}">{{ page_data.hero.secondary_cta.label }}</a>
+      {% assign theme_target = page_data.hero.theme_cta.href | remove_first: '#' %}
+      <a href="{{ page_data.hero.theme_cta.href }}" class="landing-audio-link landing-audio-link-secondary" data-tab-target="{{ theme_target }}">
+        <span>{{ page_data.hero.theme_cta.label }}</span>
+        <svg viewBox="0 0 18 18" aria-hidden="true"><polygon points="4,2 16,9 4,16"></polygon></svg>
+      </a>
+
+      {% assign broadcast_target = page_data.hero.broadcast_cta.href | remove_first: '#' %}
+      <a href="{{ page_data.hero.broadcast_cta.href }}" class="landing-broadcast-link" data-tab-target="{{ broadcast_target }}">
+        {{ page_data.hero.broadcast_cta.label }}
+      </a>
     </div>
   </section>
 
