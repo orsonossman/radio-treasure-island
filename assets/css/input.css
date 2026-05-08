@@ -630,6 +630,135 @@
     transform: translateY(-1px);
   }
 
+  /* ── BROADCAST INFO ── */
+  .broadcast-section {
+    min-height: 100vh;
+    padding: 88px 36px 36px;
+    background: var(--bg);
+  }
+
+  .broadcast-wrap {
+    width: min(100%, 920px);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .broadcast-hero {
+    display: grid;
+    grid-template-columns: minmax(150px, 270px) 1fr minmax(150px, 270px);
+    align-items: center;
+    gap: 36px;
+    margin-bottom: 54px;
+  }
+
+  .broadcast-art {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background:
+      linear-gradient(180deg, oklch(84% 0.015 80), oklch(72% 0.012 80)),
+      var(--bg-mid);
+    color: var(--ink);
+    font-family: 'IM Fell English', Georgia, serif;
+    font-size: clamp(22px, 3vw, 36px);
+    line-height: 1;
+  }
+
+  .broadcast-title {
+    color: var(--ink);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(58px, 8.5vw, 86px);
+    font-weight: 900;
+    line-height: 1.08;
+  }
+
+  .broadcast-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 34px;
+  }
+
+  .broadcast-links a {
+    color: var(--ink);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(30px, 4.6vw, 44px);
+    font-weight: 900;
+    line-height: 1.04;
+    text-decoration: none;
+    transition: color 0.2s, transform 0.15s;
+  }
+
+  .broadcast-links a:hover,
+  .broadcast-links a:focus-visible,
+  .broadcast-contact-link:hover,
+  .broadcast-contact-link:focus-visible {
+    color: var(--crimson);
+    transform: translateY(-1px);
+  }
+
+  .broadcast-links a:focus-visible,
+  .broadcast-contact-link:focus-visible {
+    outline: 2px solid var(--crimson);
+    outline-offset: 5px;
+  }
+
+  .series-summary {
+    width: min(100%, 640px);
+    margin: 0 auto 34px;
+  }
+
+  .series-summary h2 {
+    color: var(--ink);
+    font-family: 'Playfair Display SC', Georgia, serif;
+    font-size: clamp(16px, 2vw, 20px);
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+
+  .series-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    list-style: none;
+  }
+
+  .series-list li {
+    color: var(--ink);
+    font-family: 'Playfair Display SC', Georgia, serif;
+    font-size: clamp(15px, 2vw, 20px);
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    line-height: 1.45;
+  }
+
+  .series-list span {
+    display: block;
+  }
+
+  .broadcast-contact-link {
+    display: inline-block;
+    border-top: 4px solid var(--ink);
+    padding: 6px 52px 0;
+    color: var(--ink);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(34px, 5vw, 46px);
+    font-weight: 900;
+    line-height: 1;
+    text-decoration: none;
+    transition: color 0.2s, border-color 0.2s, transform 0.15s;
+  }
+
+  .broadcast-contact-link:hover,
+  .broadcast-contact-link:focus-visible {
+    border-color: var(--crimson);
+  }
+
   /* ── AUDIO SECTION ── */
   .audio-section {
     padding: 80px 48px;
@@ -1186,6 +1315,10 @@
   .landing-spotlight { animation: heroIn 0.75s 0.46s ease both; }
   .landing-audio-link-secondary { animation: heroIn 0.7s 0.54s ease both; }
   .landing-broadcast-link { animation: heroIn 0.7s 0.62s ease both; }
+  .broadcast-hero { animation: heroIn 0.8s 0.1s ease both; }
+  .broadcast-links { animation: heroIn 0.7s 0.22s ease both; }
+  .series-summary { animation: heroIn 0.7s 0.34s ease both; }
+  .broadcast-contact-link { animation: heroIn 0.7s 0.46s ease both; }
 
   @keyframes heroIn {
     from { opacity: 0; transform: translateY(20px); }
@@ -1269,6 +1402,54 @@
 
     .landing-person-credit {
       font-size: 17px;
+    }
+
+    .broadcast-section {
+      padding: 132px 20px 42px;
+    }
+
+    .broadcast-hero {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-bottom: 38px;
+    }
+
+    .broadcast-title {
+      grid-column: 1 / -1;
+      order: -1;
+      font-size: clamp(48px, 15vw, 72px);
+    }
+
+    .broadcast-art {
+      width: min(100%, 180px);
+      margin: 0 auto;
+      font-size: 24px;
+    }
+
+    .broadcast-links {
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .broadcast-links a {
+      font-size: clamp(26px, 8vw, 40px);
+    }
+
+    .series-summary {
+      margin-bottom: 36px;
+    }
+
+    .series-list {
+      gap: 22px;
+    }
+
+    .series-list li {
+      font-size: 16px;
+    }
+
+    .broadcast-contact-link {
+      padding-right: 38px;
+      padding-left: 38px;
     }
 
     .audio-section, .cast-section, .production-section, .notify-section {

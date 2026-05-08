@@ -65,10 +65,43 @@ description: An historic radio drama in eight chapters from Otherworld Children'
     </div>
   </section>
 
-  <section class="notify-section tab-panel" id="broadcast-info" data-tab-panel role="tabpanel" aria-labelledby="tab-broadcast-info" tabindex="-1">
-    <span class="section-label">{{ page_data.broadcast_info.label }}</span>
-    <h2 class="notify-headline">{{ page_data.broadcast_info.headline }}</h2>
-    <p class="notify-sub">{{ page_data.broadcast_info.description }}</p>
+  <section class="broadcast-section tab-panel" id="broadcast-info" data-tab-panel role="tabpanel" aria-labelledby="tab-broadcast-info" tabindex="-1">
+    <div class="broadcast-wrap">
+      <header class="broadcast-hero">
+        <div class="broadcast-art broadcast-art-left" aria-hidden="true">{{ page_data.broadcast_info.left_art_label }}</div>
+        <h1 class="broadcast-title">{{ page_data.broadcast_info.headline }}</h1>
+        <div class="broadcast-art broadcast-art-right" aria-hidden="true">{{ page_data.broadcast_info.right_art_label }}</div>
+      </header>
+
+      <div class="broadcast-links">
+        {% assign broadcast_info_target = page_data.broadcast_info.broadcast_cta.href | remove_first: '#' %}
+        <a href="{{ page_data.broadcast_info.broadcast_cta.href }}" data-tab-target="{{ broadcast_info_target }}">
+          {{ page_data.broadcast_info.broadcast_cta.label }}
+        </a>
+
+        {% assign license_target = page_data.broadcast_info.license_cta.href | remove_first: '#' %}
+        <a href="{{ page_data.broadcast_info.license_cta.href }}" data-tab-target="{{ license_target }}">
+          {{ page_data.broadcast_info.license_cta.label }}
+        </a>
+      </div>
+
+      <section class="series-summary" aria-labelledby="series-summary-heading">
+        <h2 id="series-summary-heading">{{ page_data.broadcast_info.summary_label }}</h2>
+        <ol class="series-list">
+          {% for chapter in page_data.broadcast_info.chapters %}
+            <li>
+              <span>{{ chapter.title }}</span>
+              <span>({{ chapter.duration }})</span>
+            </li>
+          {% endfor %}
+        </ol>
+      </section>
+
+      {% assign contact_target = page_data.broadcast_info.contact_cta.href | remove_first: '#' %}
+      <a href="{{ page_data.broadcast_info.contact_cta.href }}" class="broadcast-contact-link" data-tab-target="{{ contact_target }}">
+        {{ page_data.broadcast_info.contact_cta.label }}
+      </a>
+    </div>
   </section>
 
   <section class="audio-section tab-panel" id="listen-now" data-tab-panel role="tabpanel" aria-labelledby="tab-listen-now" tabindex="-1">

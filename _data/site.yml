@@ -53,12 +53,36 @@ hero:
       credit: Original Score
 
 broadcast_info:
-  label: Broadcast Info
-  headline: Coming to Public Radio
-  description: >-
-    Treasure Island is coming to public radio stations across the country.
-    Air dates, carriage details, and listening information will be posted here
-    as stations announce their schedules.
+  headline: Radio Stations
+  left_art_label: Chp6 art
+  right_art_label: Chp1 art
+  broadcast_cta:
+    label: To Broadcast this show click here
+    href: "#contact"
+  license_cta:
+    label: License agreement etc click here
+    href: "#contact"
+  summary_label: Series Summary
+  contact_cta:
+    label: Contact
+    href: "#contact"
+  chapters:
+    - title: "Chapter 1: Jim Hawkins befriends an old Pirate and discovers his secret."
+      duration: "56:00"
+    - title: "Chapter 2: Jim travels to New Orleans and sets sail for the Caribbean."
+      duration: "55:40"
+    - title: "Chapter 3: Upon arrival to Skeleton Island, Jim uncovers mutiny amongst the crew."
+      duration: "59:00"
+    - title: "Chapter 4: Dr. Livesey shares his side of the story, while Jim explores the Island."
+      duration: "52:19"
+    - title: "Chapter 5: The pirates attack and Jim escapes into the jungle."
+      duration: "52:00"
+    - title: "Chapter 6: Jim commandeers the ship and learns to sail."
+      duration: "50:26"
+    - title: "Chapter 7: Long John Silver and his crew capture Jim by surprise."
+      duration: "58:35"
+    - title: "Chapter 8: The hunt for buried treasure and the voyage home."
+      duration: "56:17"
 
 about:
   label: About
