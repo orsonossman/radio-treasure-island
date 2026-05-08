@@ -5,18 +5,23 @@ description: An historic radio drama in eight chapters from Otherworld Children'
 ---
 {% assign page_data = site.data.site %}
 {% assign first_episode = page_data.episodes | first %}
+{% assign primary_cta_target = page_data.hero.primary_cta.href | remove_first: '#' %}
+{% assign secondary_cta_target = page_data.hero.secondary_cta.href | remove_first: '#' %}
 
-<nav>
-  <a href="{{ '/' | relative_url }}" class="nav-logo">Radio Treasure Island</a>
-  <ul class="nav-links">
+<nav aria-label="Site sections">
+  <a id="tab-landing-page" href="#landing-page" class="nav-logo active" data-tab-target="landing-page">Radio Treasure Island</a>
+  <ul class="nav-links" role="tablist" aria-label="Site tabs">
     {% for item in page_data.nav %}
-      <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+      {% assign target_id = item.href | remove_first: '#' %}
+      <li role="presentation">
+        <a id="tab-{{ target_id }}" href="{{ item.href }}" role="tab" aria-controls="{{ target_id }}" aria-selected="false" data-tab-target="{{ target_id }}">{{ item.label }}</a>
+      </li>
     {% endfor %}
   </ul>
 </nav>
 
 <main>
-  <section class="hero">
+  <section class="hero tab-panel active" id="landing-page" data-tab-panel role="tabpanel" aria-labelledby="tab-landing-page" tabindex="-1">
     <img src="{{ page_data.hero.ship_image | relative_url }}" class="hero-ship" alt="">
 
     <p class="hero-eyebrow">{{ page_data.hero.eyebrow }}</p>
@@ -32,19 +37,18 @@ description: An historic radio drama in eight chapters from Otherworld Children'
     <p class="hero-description">{{ page_data.hero.description }}</p>
 
     <div class="hero-ctas">
-      <a href="{{ page_data.hero.primary_cta.href }}" class="btn-primary">{{ page_data.hero.primary_cta.label }}</a>
-      <a href="{{ page_data.hero.secondary_cta.href }}" class="btn-secondary">{{ page_data.hero.secondary_cta.label }}</a>
-    </div>
-
-    <div class="scroll-indicator">
-      <span>Scroll</span>
-      <svg viewBox="0 0 16 16" aria-hidden="true"><polyline points="2,5 8,11 14,5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></polyline></svg>
+      <a href="{{ page_data.hero.primary_cta.href }}" class="btn-primary" data-tab-target="{{ primary_cta_target }}">{{ page_data.hero.primary_cta.label }}</a>
+      <a href="{{ page_data.hero.secondary_cta.href }}" class="btn-secondary" data-tab-target="{{ secondary_cta_target }}">{{ page_data.hero.secondary_cta.label }}</a>
     </div>
   </section>
 
-  <div class="section-divider"><div class="divider-diamond"></div></div>
+  <section class="notify-section tab-panel" id="broadcast-info" data-tab-panel role="tabpanel" aria-labelledby="tab-broadcast-info" tabindex="-1">
+    <span class="section-label">{{ page_data.broadcast_info.label }}</span>
+    <h2 class="notify-headline">{{ page_data.broadcast_info.headline }}</h2>
+    <p class="notify-sub">{{ page_data.broadcast_info.description }}</p>
+  </section>
 
-  <section class="audio-section" id="listen">
+  <section class="audio-section tab-panel" id="listen-now" data-tab-panel role="tabpanel" aria-labelledby="tab-listen-now" tabindex="-1">
     <span class="section-label">Hear It</span>
     <h1 class="audio-headline">Eight Hours of Cinematic Radio Drama</h1>
     <p class="audio-sub">
@@ -88,9 +92,26 @@ description: An historic radio drama in eight chapters from Otherworld Children'
     </div>
   </section>
 
-  <div class="section-divider"><div class="divider-diamond"></div></div>
+  <section class="notify-section tab-panel" id="about" data-tab-panel role="tabpanel" aria-labelledby="tab-about" tabindex="-1">
+    <span class="section-label">{{ page_data.about.label }}</span>
+    <h2 class="notify-headline">{{ page_data.about.headline }}</h2>
+    <p class="notify-sub">{{ page_data.about.description }}</p>
+  </section>
 
-  <section class="cast-section" id="cast">
+  <section class="notify-section tab-panel" id="contact" data-tab-panel role="tabpanel" aria-labelledby="tab-contact" tabindex="-1">
+    <span class="section-label">Contact</span>
+    <h2 class="notify-headline">{{ page_data.notify.headline }}</h2>
+    <p class="notify-sub">{{ page_data.notify.description }}</p>
+    <form class="email-form" id="notifyForm">
+      <label class="sr-only" for="emailInput">Email address</label>
+      <input type="email" class="email-input" placeholder="Your email address" required id="emailInput">
+      <button type="submit" class="email-submit">Notify Me</button>
+    </form>
+    <div class="email-success" id="emailSuccess" role="status">✦ {{ page_data.notify.success }}</div>
+    <p class="notify-footnote" id="notifyFootnote">{{ page_data.notify.footnote }}</p>
+  </section>
+
+  <section class="cast-section tab-panel" id="cast" data-tab-panel role="tabpanel" aria-labelledby="tab-cast" tabindex="-1">
     <div class="cast-header fade-up">
       <span class="section-label">Starring</span>
       <h2 class="cast-headline">Three of America's Most Celebrated Actors</h2>
@@ -123,11 +144,9 @@ description: An historic radio drama in eight chapters from Otherworld Children'
     </div>
   </section>
 
-  <div class="section-divider"><div class="divider-diamond"></div></div>
-
-  <section class="production-section" id="production">
+  <section class="production-section tab-panel" id="crew" data-tab-panel role="tabpanel" aria-labelledby="tab-crew" tabindex="-1">
     <div class="production-heading fade-up">
-      <span class="section-label">The Production</span>
+      <span class="section-label">Crew</span>
       <h2 class="production-title">Built with the craft of cinema.<br>Made for the ear.</h2>
     </div>
 
@@ -142,20 +161,6 @@ description: An historic radio drama in eight chapters from Otherworld Children'
     </div>
   </section>
 
-  <div class="section-divider"><div class="divider-diamond"></div></div>
-
-  <section class="notify-section" id="notify">
-    <span class="section-label">{{ page_data.notify.label }}</span>
-    <h2 class="notify-headline">{{ page_data.notify.headline }}</h2>
-    <p class="notify-sub">{{ page_data.notify.description }}</p>
-    <form class="email-form" id="notifyForm">
-      <label class="sr-only" for="emailInput">Email address</label>
-      <input type="email" class="email-input" placeholder="Your email address" required id="emailInput">
-      <button type="submit" class="email-submit">Notify Me</button>
-    </form>
-    <div class="email-success" id="emailSuccess" role="status">✦ {{ page_data.notify.success }}</div>
-    <p class="notify-footnote" id="notifyFootnote">{{ page_data.notify.footnote }}</p>
-  </section>
 </main>
 
 <footer>

@@ -1,12 +1,16 @@
 nav:
-  - label: Listen
-    href: "#listen"
+  - label: Broadcast Info
+    href: "#broadcast-info"
+  - label: Listen Now
+    href: "#listen-now"
+  - label: About
+    href: "#about"
+  - label: Contact
+    href: "#contact"
   - label: Cast
     href: "#cast"
-  - label: Production
-    href: "#production"
-  - label: Get Notified
-    href: "#notify"
+  - label: Crew
+    href: "#crew"
 
 hero:
   eyebrow: "Otherworld Children's Media Presents"
@@ -21,10 +25,26 @@ hero:
     1812. With cinematic sound design by Randy Thom of Skywalker Sound.
   primary_cta:
     label: Hear the Excerpts
-    href: "#listen"
+    href: "#listen-now"
   secondary_cta:
     label: Get Notified
-    href: "#notify"
+    href: "#contact"
+
+broadcast_info:
+  label: Broadcast Info
+  headline: Coming to Public Radio
+  description: >-
+    Treasure Island is coming to public radio stations across the country.
+    Air dates, carriage details, and listening information will be posted here
+    as stations announce their schedules.
+
+about:
+  label: About
+  headline: A Telling for the New World
+  description: >-
+    This historic radio drama reimagines Treasure Island in the Louisiana
+    Bayou, the Port of New Orleans, and the Caribbean, ten years after the War
+    of 1812 during the last gasp of piracy in the New World.
 
 episodes:
   - number: 1

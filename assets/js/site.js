@@ -147,6 +147,138 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  const tabPanels = Array.from(document.querySelectorAll("[data-tab-panel]"));
+  const tabTriggers = Array.from(document.querySelectorAll("[data-tab-target]"));
+  const navTriggers = Array.from(document.querySelectorAll("nav [data-tab-target]"));
+  const tabLinks = Array.from(document.querySelectorAll('[role="tab"][data-tab-target]'));
+  const defaultTabId = tabPanels[0]?.id || "";
+
+  function tabExists(tabId) {
+    return tabPanels.some((panel) => panel.id === tabId);
+  }
+
+  function getHashTab() {
+    const hash = window.location.hash.replace("#", "");
+    return tabExists(hash) ? hash : "";
+  }
+
+  function getTriggerTab(trigger) {
+    if (trigger.dataset.tabTarget) {
+      return trigger.dataset.tabTarget;
+    }
+
+    return trigger.hash ? trigger.hash.replace("#", "") : "";
+  }
+
+  function updateHash(tabId, shouldReplace) {
+    const nextHash = `#${tabId}`;
+
+    if (window.location.hash === nextHash) {
+      return;
+    }
+
+    if (shouldReplace) {
+      window.history.replaceState(null, "", nextHash);
+      return;
+    }
+
+    window.history.pushState(null, "", nextHash);
+  }
+
+  function activateTab(tabId, options = {}) {
+    if (!tabExists(tabId)) {
+      return;
+    }
+
+    const shouldUpdateHash = options.updateHash !== false;
+    const shouldReplace = options.replace === true;
+
+    document.body.classList.add("tabs-ready");
+
+    tabPanels.forEach((panel) => {
+      const isActive = panel.id === tabId;
+      panel.hidden = !isActive;
+      panel.classList.toggle("active", isActive);
+      panel.setAttribute("aria-hidden", String(!isActive));
+    });
+
+    navTriggers.forEach((trigger) => {
+      trigger.classList.toggle("active", getTriggerTab(trigger) === tabId);
+    });
+
+    tabLinks.forEach((link) => {
+      const isActive = getTriggerTab(link) === tabId;
+      link.setAttribute("aria-selected", String(isActive));
+      link.setAttribute("tabindex", isActive ? "0" : "-1");
+    });
+
+    if (tabId !== "listen-now") {
+      setPlaying(false);
+    }
+
+    if (shouldUpdateHash) {
+      updateHash(tabId, shouldReplace);
+    }
+
+    if (options.scroll !== false) {
+      window.scrollTo({ top: 0, behavior: options.smooth ? "smooth" : "auto" });
+    }
+
+    if (options.focusPanel) {
+      const activePanel = tabPanels.find((panel) => panel.id === tabId);
+      activePanel?.focus({ preventScroll: true });
+    }
+  }
+
+  tabTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", (event) => {
+      const tabId = getTriggerTab(trigger);
+
+      if (!tabExists(tabId)) {
+        return;
+      }
+
+      event.preventDefault();
+      activateTab(tabId, {
+        focusPanel: trigger.getAttribute("role") !== "tab" && !trigger.classList.contains("nav-logo"),
+        smooth: true,
+      });
+    });
+  });
+
+  tabLinks.forEach((link, index) => {
+    link.addEventListener("keydown", (event) => {
+      const keyMap = {
+        ArrowDown: index + 1,
+        ArrowRight: index + 1,
+        ArrowLeft: index - 1,
+        ArrowUp: index - 1,
+        End: tabLinks.length - 1,
+        Home: 0,
+      };
+
+      if (!(event.key in keyMap)) {
+        return;
+      }
+
+      event.preventDefault();
+      const nextIndex = (keyMap[event.key] + tabLinks.length) % tabLinks.length;
+      const nextLink = tabLinks[nextIndex];
+      nextLink.focus();
+      activateTab(getTriggerTab(nextLink));
+    });
+  });
+
+  window.addEventListener("hashchange", () => {
+    activateTab(getHashTab() || defaultTabId, { updateHash: false });
+  });
+
+  window.addEventListener("popstate", () => {
+    activateTab(getHashTab() || defaultTabId, { updateHash: false });
+  });
+
+  activateTab(getHashTab() || defaultTabId, { updateHash: false });
+
   const notifyForm = document.getElementById("notifyForm");
   const emailSuccess = document.getElementById("emailSuccess");
   const notifyFootnote = document.getElementById("notifyFootnote");
