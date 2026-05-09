@@ -253,8 +253,6 @@ document.addEventListener("DOMContentLoaded", () => {
         ArrowRight: index + 1,
         ArrowLeft: index - 1,
         ArrowUp: index - 1,
-        End: tabLinks.length - 1,
-        Home: 0,
       };
 
       if (!(event.key in keyMap)) {
@@ -278,34 +276,4 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   activateTab(getHashTab() || defaultTabId, { updateHash: false });
-
-  const notifyForm = document.getElementById("notifyForm");
-  const emailSuccess = document.getElementById("emailSuccess");
-  const notifyFootnote = document.getElementById("notifyFootnote");
-
-  if (notifyFootnote) {
-    const messages = [
-      "No barnacles. Unsubscribe any time.",
-      "No bilge water. Unsubscribe any time.",
-      "No scurvy spam. Unsubscribe any time.",
-      "No sea-dogs at the door. Unsubscribe any time.",
-      "No krakens in your inbox. Unsubscribe any time.",
-      "No plundering. Unsubscribe any time.",
-      "No walking the plank. Unsubscribe any time.",
-      "No hornswoggling. Unsubscribe any time.",
-      "No mutiny on our part. Unsubscribe any time.",
-      "No doubloons required. Unsubscribe any time.",
-      "No keelhauling. Unsubscribe any time.",
-    ];
-
-    notifyFootnote.textContent = messages[Math.floor(Math.random() * messages.length)];
-  }
-
-  if (notifyForm && emailSuccess) {
-    notifyForm.addEventListener("submit", (event) => {
-      event.preventDefault();
-      notifyForm.style.display = "none";
-      emailSuccess.style.display = "block";
-    });
-  }
 });

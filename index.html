@@ -4,7 +4,6 @@ title: Treasure Island — A Telling for the New World
 description: An historic radio drama in eight chapters from Otherworld Children's Media.
 ---
 {% assign page_data = site.data.site %}
-{% assign first_episode = page_data.episodes | first %}
 
 <nav aria-label="Site sections">
   <a id="tab-landing-page" href="#landing-page" class="nav-logo active" data-tab-target="landing-page">Radio Treasure Island</a>
@@ -68,9 +67,13 @@ description: An historic radio drama in eight chapters from Otherworld Children'
   <section class="broadcast-section tab-panel" id="broadcast-info" data-tab-panel role="tabpanel" aria-labelledby="tab-broadcast-info" tabindex="-1">
     <div class="broadcast-wrap">
       <header class="broadcast-hero">
-        <div class="broadcast-art broadcast-art-left" aria-hidden="true">{{ page_data.broadcast_info.left_art_label }}</div>
+        <div class="broadcast-art broadcast-art-left">
+          <img src="{{ page_data.broadcast_info.left_art_image | relative_url }}" alt="{{ page_data.broadcast_info.left_art_alt }}" width="1080" height="1080" loading="lazy" decoding="async">
+        </div>
         <h1 class="broadcast-title">{{ page_data.broadcast_info.headline }}</h1>
-        <div class="broadcast-art broadcast-art-right" aria-hidden="true">{{ page_data.broadcast_info.right_art_label }}</div>
+        <div class="broadcast-art broadcast-art-right">
+          <img src="{{ page_data.broadcast_info.right_art_image | relative_url }}" alt="{{ page_data.broadcast_info.right_art_alt }}" width="1080" height="1080" loading="lazy" decoding="async">
+        </div>
       </header>
 
       <div class="broadcast-links">
@@ -104,116 +107,152 @@ description: An historic radio drama in eight chapters from Otherworld Children'
     </div>
   </section>
 
-  <section class="audio-section tab-panel" id="listen-now" data-tab-panel role="tabpanel" aria-labelledby="tab-listen-now" tabindex="-1">
-    <span class="section-label">Hear It</span>
-    <h1 class="audio-headline">Eight Hours of Cinematic Radio Drama</h1>
-    <p class="audio-sub">
-      Re-set in the Louisiana Bayou, the Port of New Orleans, and the Caribbean —
-      ten years after the War of 1812, during the last gasp of piracy in the New World.
-    </p>
+  <section class="listen-section tab-panel" id="listen-now" data-tab-panel role="tabpanel" aria-labelledby="tab-listen-now" tabindex="-1">
+    <div class="listen-wrap">
+      <h1 class="listen-title">{{ page_data.listen_now.headline }}</h1>
+      <p class="listen-download-note">{{ page_data.listen_now.download_note }}</p>
+      <div class="listen-poster">
+        <img src="{{ page_data.listen_now.poster_image | relative_url }}" alt="{{ page_data.listen_now.poster_alt }}" width="1400" height="1936" loading="lazy" decoding="async">
+      </div>
+      <div class="listen-stations-label">{{ page_data.listen_now.stations_label }}</div>
+    </div>
+  </section>
 
-    <div class="audio-player">
-      <div class="player-top">
-        <button class="play-btn" id="playBtn" aria-label="Play or pause excerpt" type="button">
-          <svg class="icon-play" viewBox="0 0 18 18" aria-hidden="true"><polygon points="4,2 16,9 4,16"></polygon></svg>
-          <svg class="icon-pause" viewBox="0 0 18 18" aria-hidden="true"><rect x="3" y="2" width="4" height="14" rx="1"></rect><rect x="11" y="2" width="4" height="14" rx="1"></rect></svg>
-        </button>
-        <div class="player-meta">
-          <div class="player-title" id="playerTitle">{{ first_episode.player_title }}</div>
-          <div class="player-sub" id="playerSub">{{ first_episode.subtitle }}</div>
+  <section class="about-section tab-panel" id="about" data-tab-panel role="tabpanel" aria-labelledby="tab-about" tabindex="-1">
+    <div class="about-wrap">
+      <header class="about-hero">
+        <div class="about-art about-art-left">
+          <img src="{{ page_data.about.left_art_image | relative_url }}" alt="{{ page_data.about.left_art_alt }}" width="1080" height="1080" loading="lazy" decoding="async">
         </div>
-        <div class="player-time" id="playerTime">0:00 / {{ first_episode.duration }}</div>
-      </div>
-      <div class="progress-bar" id="progressBar" role="slider" aria-label="Excerpt progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0">
-        <div class="progress-fill" id="progressFill"></div>
-      </div>
-    </div>
+        <h1 class="about-title">{{ page_data.about.headline }}</h1>
+        <div class="about-art about-art-right">
+          <img src="{{ page_data.about.right_art_image | relative_url }}" alt="{{ page_data.about.right_art_alt }}" width="1080" height="1080" loading="lazy" decoding="async">
+        </div>
+      </header>
 
-    <div class="episode-list">
-      {% for episode in page_data.episodes %}
-        <button
-          class="episode-item{% if forloop.first %} active{% endif %}"
-          type="button"
-          data-ep="{{ episode.number }}"
-          data-title="{{ episode.player_title }}"
-          data-sub="{{ episode.subtitle }}"
-          data-duration="{{ episode.duration }}"
-          data-seconds="{{ episode.seconds }}"
-        >
-          <span class="ep-num">{{ episode.numeral }}</span>
-          <span class="ep-title">{{ episode.title }}</span>
-          <span class="ep-duration">Excerpt</span>
-        </button>
-      {% endfor %}
-    </div>
-  </section>
-
-  <section class="notify-section tab-panel" id="about" data-tab-panel role="tabpanel" aria-labelledby="tab-about" tabindex="-1">
-    <span class="section-label">{{ page_data.about.label }}</span>
-    <h2 class="notify-headline">{{ page_data.about.headline }}</h2>
-    <p class="notify-sub">{{ page_data.about.description }}</p>
-  </section>
-
-  <section class="notify-section tab-panel" id="contact" data-tab-panel role="tabpanel" aria-labelledby="tab-contact" tabindex="-1">
-    <span class="section-label">Contact</span>
-    <h2 class="notify-headline">{{ page_data.notify.headline }}</h2>
-    <p class="notify-sub">{{ page_data.notify.description }}</p>
-    <form class="email-form" id="notifyForm">
-      <label class="sr-only" for="emailInput">Email address</label>
-      <input type="email" class="email-input" placeholder="Your email address" required id="emailInput">
-      <button type="submit" class="email-submit">Notify Me</button>
-    </form>
-    <div class="email-success" id="emailSuccess" role="status">✦ {{ page_data.notify.success }}</div>
-    <p class="notify-footnote" id="notifyFootnote">{{ page_data.notify.footnote }}</p>
-  </section>
-
-  <section class="cast-section tab-panel" id="cast" data-tab-panel role="tabpanel" aria-labelledby="tab-cast" tabindex="-1">
-    <div class="cast-header fade-up">
-      <span class="section-label">Starring</span>
-      <h2 class="cast-headline">Three of America's Most Celebrated Actors</h2>
-    </div>
-
-    <div class="cast-featured fade-up">
-      {% for member in page_data.featured_cast %}
-        <article class="cast-card">
-          <div class="cast-photo-wrap">
-            <img src="{{ member.image | relative_url }}" class="cast-photo" alt="{{ member.actor }}">
-          </div>
-          <div class="cast-info">
-            <div class="cast-actor">{{ member.actor }}</div>
-            <div class="cast-role">as {{ member.role }}</div>
-          </div>
-        </article>
-      {% endfor %}
-    </div>
-
-    <div class="supporting-cast fade-up">
-      <span class="supporting-label">Full Cast of Characters</span>
-      <div class="supporting-grid">
-        {% for member in page_data.supporting_cast %}
-          <div class="supporting-item">
-            <span class="supporting-name">{{ member.actor }}</span>
-            <span class="supporting-role">{{ member.role }}</span>
-          </div>
+      <div class="about-copy">
+        {% for paragraph in page_data.about.paragraphs %}
+          <p>{{ paragraph }}</p>
         {% endfor %}
       </div>
+
+      <a href="{{ page_data.about.website_href }}" class="about-site-link" target="_blank" rel="noopener">
+        {{ page_data.about.website }}
+      </a>
+
+      <div class="about-gallery" aria-label="Behind the scenes photo gallery placeholders">
+        {% for item in (1..page_data.about.gallery_count) %}
+          <div class="about-gallery-tile" aria-hidden="true"></div>
+        {% endfor %}
+      </div>
+
+      {% assign about_contact_target = page_data.about.contact_cta.href | remove_first: '#' %}
+      <a href="{{ page_data.about.contact_cta.href }}" class="about-contact-link" data-tab-target="{{ about_contact_target }}">
+        {{ page_data.about.contact_cta.label }}
+      </a>
     </div>
   </section>
 
-  <section class="production-section tab-panel" id="crew" data-tab-panel role="tabpanel" aria-labelledby="tab-crew" tabindex="-1">
-    <div class="production-heading fade-up">
-      <span class="section-label">Crew</span>
-      <h2 class="production-title">Built with the craft of cinema.<br>Made for the ear.</h2>
-    </div>
+  <section class="contact-section tab-panel" id="contact" data-tab-panel role="tabpanel" aria-labelledby="tab-contact" tabindex="-1">
+    <div class="contact-wrap">
+      <h1 class="contact-title">{{ page_data.contact_page.headline }}</h1>
+      <p class="contact-broadcast-label">{{ page_data.contact_page.broadcast_label }}</p>
+      <p class="contact-email-line">
+        <span aria-hidden="true">&ldquo;</span>
+        {{ page_data.contact_page.broadcast_email }}
+        <span aria-hidden="true">&rdquo;</span>
+      </p>
 
-    <div class="production-grid fade-up">
-      {% for credit in page_data.production %}
-        <article class="prod-block">
-          <span class="prod-label">{{ credit.label }}</span>
-          <div class="prod-name">{{ credit.name }}</div>
-          <p class="prod-desc">{{ credit.description }}</p>
-        </article>
-      {% endfor %}
+      <div class="contact-message-group">
+        <p class="contact-questions-label">{{ page_data.contact_page.questions_label }}</p>
+        <div class="contact-message-box" aria-hidden="true">
+          <span>{{ page_data.contact_page.message_label }}</span>
+        </div>
+      </div>
+
+      {% assign contact_listen_target = page_data.contact_page.listen_cta.href | remove_first: '#' %}
+      <a href="{{ page_data.contact_page.listen_cta.href }}" class="contact-listen-link" data-tab-target="{{ contact_listen_target }}">
+        {{ page_data.contact_page.listen_cta.label }}
+      </a>
+    </div>
+  </section>
+
+  <section class="cast-page-section tab-panel" id="cast" data-tab-panel role="tabpanel" aria-labelledby="tab-cast" tabindex="-1">
+    <div class="cast-page-wrap">
+      <header class="cast-page-hero">
+        <div class="cast-page-art cast-page-art-left">
+          <img src="{{ page_data.cast_page.left_art_image | relative_url }}" alt="{{ page_data.cast_page.left_art_alt }}" width="1080" height="1080" loading="lazy" decoding="async">
+        </div>
+        <h1 class="cast-page-title">{{ page_data.cast_page.headline }}</h1>
+        <div class="cast-page-art cast-page-art-right">
+          <img src="{{ page_data.cast_page.right_art_image | relative_url }}" alt="{{ page_data.cast_page.right_art_alt }}" width="1080" height="1080" loading="lazy" decoding="async">
+        </div>
+      </header>
+
+      <div class="cast-roster" aria-label="Full cast">
+        {% for member in page_data.featured_cast %}
+          <article class="cast-roster-card">
+            <div class="cast-roster-photo">
+              <img src="{{ member.image | relative_url }}" alt="{{ member.actor }}">
+            </div>
+            <div class="cast-roster-bio">
+              <h2>{{ member.actor }}</h2>
+              <p>As {{ member.role }}</p>
+            </div>
+          </article>
+        {% endfor %}
+
+        {% for member in page_data.supporting_cast %}
+          <article class="cast-roster-card">
+            <div class="cast-roster-photo cast-roster-photo-empty" aria-hidden="true">
+              <span>{{ member.actor | truncate: 2, "" }}</span>
+            </div>
+            <div class="cast-roster-bio">
+              <h2>{{ member.actor }}</h2>
+              <p>As {{ member.role }}</p>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+
+      {% assign cast_contact_target = page_data.cast_page.contact_cta.href | remove_first: '#' %}
+      <a href="{{ page_data.cast_page.contact_cta.href }}" class="cast-contact-link" data-tab-target="{{ cast_contact_target }}">
+        {{ page_data.cast_page.contact_cta.label }}
+      </a>
+    </div>
+  </section>
+
+  <section class="cast-page-section crew-page-section tab-panel" id="crew" data-tab-panel role="tabpanel" aria-labelledby="tab-crew" tabindex="-1">
+    <div class="cast-page-wrap">
+      <header class="cast-page-hero">
+        <div class="cast-page-art cast-page-art-left">
+          <img src="{{ page_data.crew_page.left_art_image | relative_url }}" alt="{{ page_data.crew_page.left_art_alt }}" width="1080" height="1080" loading="lazy" decoding="async">
+        </div>
+        <h1 class="cast-page-title">{{ page_data.crew_page.headline }}</h1>
+        <div class="cast-page-art cast-page-art-right">
+          <img src="{{ page_data.crew_page.right_art_image | relative_url }}" alt="{{ page_data.crew_page.right_art_alt }}" width="1080" height="1080" loading="lazy" decoding="async">
+        </div>
+      </header>
+
+      <div class="cast-roster crew-roster" aria-label="Full crew">
+        {% for credit in page_data.production %}
+          <article class="cast-roster-card">
+            <div class="cast-roster-photo cast-roster-photo-empty" aria-hidden="true">
+              <span>{{ credit.name | truncate: 2, "" }}</span>
+            </div>
+            <div class="cast-roster-bio crew-roster-bio">
+              <h2>{{ credit.name }}</h2>
+              <p>{{ credit.label }}</p>
+              <p class="crew-roster-description">{{ credit.description }}</p>
+            </div>
+          </article>
+        {% endfor %}
+      </div>
+
+      {% assign crew_contact_target = page_data.crew_page.contact_cta.href | remove_first: '#' %}
+      <a href="{{ page_data.crew_page.contact_cta.href }}" class="cast-contact-link" data-tab-target="{{ crew_contact_target }}">
+        {{ page_data.crew_page.contact_cta.label }}
+      </a>
     </div>
   </section>
 

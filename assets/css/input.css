@@ -759,12 +759,131 @@
     border-color: var(--crimson);
   }
 
-  /* ── AUDIO SECTION ── */
-  .audio-section {
-    padding: 80px 48px;
-    max-width: 900px;
+  /* ── ABOUT ── */
+  .about-section {
+    min-height: 100vh;
+    padding: 88px 36px 36px;
+    background: var(--bg);
+  }
+
+  .about-wrap {
+    width: min(100%, 920px);
     margin: 0 auto;
     text-align: center;
+  }
+
+  .about-hero {
+    display: grid;
+    grid-template-columns: minmax(150px, 270px) 1fr minmax(150px, 270px);
+    align-items: center;
+    gap: 36px;
+    margin-bottom: 24px;
+  }
+
+  .about-art {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background:
+      linear-gradient(180deg, oklch(84% 0.015 80), oklch(72% 0.012 80)),
+      var(--bg-mid);
+    color: var(--ink);
+    font-family: 'IM Fell English', Georgia, serif;
+    font-size: clamp(22px, 3vw, 36px);
+    line-height: 1;
+  }
+
+  .about-title {
+    color: var(--ink);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(58px, 8.5vw, 86px);
+    font-weight: 900;
+    letter-spacing: 0;
+    line-height: 1;
+  }
+
+  .about-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: min(100%, 820px);
+    margin: 0 auto 26px;
+  }
+
+  .about-copy p {
+    color: var(--ink);
+    font-family: 'IM Fell English', Georgia, serif;
+    font-size: clamp(18px, 2.05vw, 22px);
+    line-height: 1.22;
+  }
+
+  .about-site-link {
+    display: inline-block;
+    margin-bottom: 42px;
+    color: var(--ink);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(34px, 5vw, 46px);
+    font-weight: 900;
+    line-height: 1;
+    overflow-wrap: anywhere;
+    text-decoration: none;
+    transition: color 0.2s, transform 0.15s;
+  }
+
+  .about-site-link:hover,
+  .about-site-link:focus-visible {
+    color: var(--crimson);
+    transform: translateY(-1px);
+  }
+
+  .about-site-link:focus-visible {
+    outline: 2px solid var(--crimson);
+    outline-offset: 5px;
+  }
+
+  .about-gallery {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    gap: clamp(36px, 9vw, 116px);
+    width: min(100%, 810px);
+    margin: 0 auto 34px;
+  }
+
+  .about-gallery-tile {
+    aspect-ratio: 1 / 1.02;
+    border: 1px solid var(--rule);
+    background:
+      linear-gradient(180deg, oklch(84% 0.015 80), oklch(72% 0.012 80)),
+      var(--bg-mid);
+  }
+
+  .about-contact-link {
+    display: inline-block;
+    border-top: 4px solid var(--ink);
+    padding: 6px 52px 0;
+    color: var(--ink);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(34px, 5vw, 46px);
+    font-weight: 900;
+    line-height: 1;
+    text-decoration: none;
+    transition: color 0.2s, border-color 0.2s, transform 0.15s;
+  }
+
+  .about-contact-link:hover,
+  .about-contact-link:focus-visible {
+    border-color: var(--crimson);
+    color: var(--crimson);
+    transform: translateY(-1px);
+  }
+
+  .about-contact-link:focus-visible {
+    outline: 2px solid var(--crimson);
+    outline-offset: 5px;
   }
 
   .section-label {
@@ -777,192 +896,67 @@
     display: block;
   }
 
-  .audio-headline {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(28px, 4vw, 44px);
-    font-weight: 700;
-    line-height: 1.15;
-    color: var(--parchment);
+  /* ── LISTEN NOW ── */
+  .listen-section {
+    min-height: 100vh;
+    padding: 88px 36px 36px;
+    background: var(--bg);
+  }
+
+  .listen-wrap {
+    width: min(100%, 920px);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .listen-title {
+    color: var(--ink);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(58px, 9vw, 92px);
+    font-weight: 900;
+    letter-spacing: 0;
+    line-height: 1;
     margin-bottom: 12px;
-    font-style: italic;
   }
 
-  .audio-sub {
-    font-family: 'IM Fell English', serif;
-    font-size: 16px;
-    color: var(--parchment-dim);
-    margin-bottom: 48px;
-    line-height: 1.6;
+  .listen-download-note {
+    color: var(--ink);
+    font-family: 'IM Fell English', Georgia, serif;
+    font-size: clamp(28px, 3.9vw, 38px);
+    line-height: 1.1;
+    margin-bottom: 8px;
   }
 
-  /* Audio player */
-  .audio-player {
-    background: var(--bg-mid);
-    border: 1px solid var(--rule);
-    padding: 28px 36px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .audio-player::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: var(--crimson);
-  }
-
-  .player-top {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-
-  .play-btn {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background: var(--crimson);
-    border: none;
-    cursor: pointer;
+  .listen-poster {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    transition: background 0.2s, transform 0.15s;
+    width: min(100%, 682px);
+    min-height: 0;
+    aspect-ratio: 1400 / 1936;
+    margin: 0 auto 34px;
+    border-radius: 34px;
+    overflow: hidden;
+    background:
+      linear-gradient(180deg, oklch(84% 0.015 80), oklch(70% 0.012 80)),
+      var(--bg-mid);
+    color: var(--ink);
   }
 
-  .play-btn:hover {
-    background: oklch(52% 0.20 25);
-    transform: scale(1.05);
-  }
-
-  .play-btn svg {
-    width: 18px;
-    height: 18px;
-    fill: oklch(96% 0.015 80);
-    margin-left: 3px;
-  }
-
-  .play-btn.playing svg.icon-play { display: none; }
-  .play-btn:not(.playing) svg.icon-pause { display: none; }
-
-  .player-meta {
-    flex: 1;
-    text-align: left;
-  }
-
-  .player-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: var(--parchment);
-    margin-bottom: 4px;
-  }
-
-  .player-sub {
-    font-family: 'IM Fell English', serif;
-    font-size: 13px;
-    font-style: italic;
-    color: var(--parchment-dim);
-  }
-
-  .player-time {
-    font-family: 'Playfair Display SC', serif;
-    font-size: 12px;
-    color: var(--parchment-dim);
-    letter-spacing: 0.05em;
-  }
-
-  .progress-bar {
+  .listen-poster img {
     width: 100%;
-    height: 3px;
-    background: var(--rule);
-    cursor: pointer;
-    position: relative;
-    border-radius: 2px;
-  }
-
-  .progress-fill {
     height: 100%;
-    background: var(--crimson);
-    border-radius: 2px;
-    width: 0%;
-    transition: width 0.1s linear;
-    position: relative;
+    display: block;
+    object-fit: cover;
+    object-position: center;
   }
 
-  .progress-fill::after {
-    content: '';
-    position: absolute;
-    right: -4px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: var(--parchment);
-  }
-
-  .episode-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-    margin-top: 24px;
-    border: 1px solid var(--rule);
-  }
-
-  .episode-item {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    width: 100%;
-    padding: 14px 20px;
-    border: 0;
-    border-bottom: 1px solid var(--rule);
-    background: transparent;
-    color: inherit;
-    cursor: pointer;
-    font: inherit;
-    text-align: left;
-    transition: background 0.15s;
-  }
-
-  .episode-item:focus-visible {
-    outline: 2px solid var(--crimson);
-    outline-offset: -2px;
-  }
-
-  .episode-item:last-child { border-bottom: none; }
-
-  .episode-item:hover { background: var(--bg-mid); }
-  .episode-item.active { background: oklch(88% 0.02 80); }
-
-  .ep-num {
-    font-family: 'Playfair Display SC', serif;
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    color: var(--crimson);
-    width: 28px;
-    flex-shrink: 0;
-  }
-
-  .ep-title {
-    flex: 1;
-    font-family: 'IM Fell English', serif;
-    font-size: 14px;
-    color: var(--parchment);
-  }
-
-  .ep-duration {
-    font-family: 'Playfair Display SC', serif;
-    font-size: 11px;
-    color: var(--parchment-dim);
+  .listen-stations-label {
+    color: var(--ink);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(38px, 5.5vw, 52px);
+    font-weight: 900;
+    line-height: 1.05;
   }
 
   /* ── CAST SECTION ── */
@@ -1106,6 +1100,182 @@
     text-overflow: ellipsis;
   }
 
+  /* ── CAST PAGE ── */
+  .cast-page-section {
+    min-height: 100vh;
+    padding: 88px 36px 36px;
+    background: var(--bg);
+  }
+
+  .cast-page-wrap {
+    width: min(100%, 920px);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .cast-page-hero {
+    display: grid;
+    grid-template-columns: minmax(150px, 270px) 1fr minmax(150px, 270px);
+    align-items: center;
+    gap: 36px;
+    margin-bottom: 46px;
+  }
+
+  .cast-page-art {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background:
+      linear-gradient(180deg, oklch(84% 0.015 80), oklch(72% 0.012 80)),
+      var(--bg-mid);
+    color: var(--ink);
+    font-family: 'IM Fell English', Georgia, serif;
+    font-size: clamp(22px, 3vw, 36px);
+    line-height: 1;
+  }
+
+  .broadcast-art,
+  .about-art,
+  .cast-page-art {
+    overflow: hidden;
+    border: 1px solid var(--rule);
+  }
+
+  .broadcast-art img,
+  .about-art img,
+  .cast-page-art img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .cast-page-title {
+    color: var(--ink);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(58px, 8.5vw, 86px);
+    font-weight: 900;
+    letter-spacing: 0;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .cast-roster {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+    width: min(100%, 720px);
+    margin: 0 auto 48px;
+  }
+
+  .cast-roster-card {
+    display: grid;
+    grid-template-columns: minmax(180px, 240px) 1fr;
+    align-items: center;
+    gap: 86px;
+    text-align: left;
+  }
+
+  .cast-roster-card:nth-child(even) {
+    grid-template-columns: 1fr minmax(180px, 240px);
+  }
+
+  .cast-roster-card:nth-child(even) .cast-roster-photo {
+    order: 2;
+  }
+
+  .cast-roster-card:nth-child(even) .cast-roster-bio {
+    text-align: right;
+  }
+
+  .cast-roster-photo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1.18;
+    overflow: hidden;
+    border: 1px solid var(--rule);
+    background: var(--bg-mid);
+  }
+
+  .cast-roster-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+
+  .cast-roster-photo-empty {
+    background:
+      linear-gradient(180deg, oklch(91% 0.018 80), oklch(78% 0.015 80)),
+      var(--bg-mid);
+  }
+
+  .cast-roster-photo-empty span {
+    color: var(--crimson);
+    font-family: 'Playfair Display SC', Georgia, serif;
+    font-size: clamp(32px, 5vw, 54px);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .cast-roster-bio h2 {
+    color: var(--ink);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(38px, 5vw, 64px);
+    font-weight: 900;
+    line-height: 0.95;
+    margin-bottom: 12px;
+  }
+
+  .cast-roster-bio p {
+    color: var(--parchment);
+    font-family: 'IM Fell English', Georgia, serif;
+    font-size: clamp(22px, 3vw, 32px);
+    line-height: 1.15;
+  }
+
+  .crew-roster-bio p {
+    color: var(--crimson);
+  }
+
+  .crew-roster-bio .crew-roster-description {
+    color: var(--parchment-dim);
+    font-size: clamp(16px, 2vw, 20px);
+    font-style: italic;
+    line-height: 1.45;
+    margin-top: 14px;
+  }
+
+  .cast-contact-link {
+    display: inline-block;
+    border-top: 4px solid var(--ink);
+    padding: 6px 52px 0;
+    color: var(--ink);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(34px, 5vw, 46px);
+    font-weight: 900;
+    line-height: 1;
+    text-decoration: none;
+    transition: color 0.2s, border-color 0.2s, transform 0.15s;
+  }
+
+  .cast-contact-link:hover,
+  .cast-contact-link:focus-visible {
+    border-color: var(--crimson);
+    color: var(--crimson);
+    transform: translateY(-1px);
+  }
+
+  .cast-contact-link:focus-visible {
+    outline: 2px solid var(--crimson);
+    outline-offset: 5px;
+  }
+
   /* ── PRODUCTION SECTION ── */
   .production-section {
     padding: 80px 48px;
@@ -1170,89 +1340,101 @@
     line-height: 1.65;
   }
 
-  /* ── NOTIFY SECTION ── */
-  .notify-section {
-    padding: 100px 48px;
-    text-align: center;
-    max-width: 680px;
+  /* ── CONTACT ── */
+  .contact-section {
+    min-height: 100vh;
+    padding: 88px 36px 36px;
+    background: var(--bg);
+  }
+
+  .contact-wrap {
+    width: min(100%, 900px);
     margin: 0 auto;
-    position: relative;
+    text-align: center;
   }
 
-  .notify-headline {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(32px, 5vw, 56px);
+  .contact-title {
+    color: var(--ink);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(72px, 10vw, 102px);
     font-weight: 900;
-    font-style: italic;
-    color: var(--parchment);
-    line-height: 1.05;
-    margin-bottom: 20px;
+    letter-spacing: 0;
+    line-height: 1;
+    margin-bottom: 18px;
   }
 
-  .notify-sub {
-    font-family: 'IM Fell English', serif;
-    font-size: 16px;
-    font-style: italic;
-    color: var(--parchment-dim);
-    line-height: 1.7;
-    margin-bottom: 44px;
+  .contact-broadcast-label,
+  .contact-questions-label {
+    color: var(--ink);
+    font-family: 'IM Fell English', Georgia, serif;
+    font-size: clamp(30px, 4vw, 40px);
+    line-height: 1.15;
   }
 
-  .email-form {
+  .contact-broadcast-label {
+    margin-bottom: 58px;
+  }
+
+  .contact-email-line {
+    color: var(--ink);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(38px, 6vw, 58px);
+    font-weight: 900;
+    line-height: 1.08;
+    margin-bottom: clamp(92px, 12vw, 148px);
+  }
+
+  .contact-message-group {
+    margin-bottom: clamp(150px, 20vw, 190px);
+  }
+
+  .contact-questions-label {
+    margin-bottom: 38px;
+  }
+
+  .contact-message-box {
     display: flex;
-    gap: 0;
-    max-width: 500px;
-    margin: 0 auto 16px;
+    align-items: center;
+    justify-content: center;
+    width: min(100%, 656px);
+    min-height: 210px;
+    margin: 0 auto;
+    border-radius: 40px;
+    background:
+      linear-gradient(180deg, oklch(84% 0.015 80), oklch(72% 0.012 80)),
+      var(--bg-mid);
+    color: var(--ink);
   }
 
-  .email-input {
-    flex: 1;
-    background: var(--bg-mid);
-    border: 1px solid var(--rule);
-    border-right: none;
-    color: var(--parchment);
-    font-family: 'IM Fell English', serif;
-    font-size: 15px;
-    font-style: italic;
-    padding: 15px 20px;
-    outline: none;
-    transition: border-color 0.2s;
+  .contact-message-box span {
+    font-family: 'IM Fell English', Georgia, serif;
+    font-size: clamp(32px, 4.2vw, 40px);
+    line-height: 1;
   }
 
-  .email-input::placeholder { color: oklch(40% 0.01 250); }
-  .email-input:focus { border-color: var(--crimson); }
-
-  .email-submit {
-    font-family: 'Playfair Display SC', serif;
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    background: var(--crimson);
-    color: oklch(96% 0.015 80);
-    border: 1px solid var(--crimson);
-    padding: 15px 28px;
-    cursor: pointer;
-    transition: background 0.2s;
-    white-space: nowrap;
+  .contact-listen-link {
+    display: inline-block;
+    border-top: 4px solid var(--ink);
+    padding: 8px 52px 0;
+    color: var(--ink);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(42px, 6vw, 58px);
+    font-weight: 900;
+    line-height: 1;
+    text-decoration: none;
+    transition: color 0.2s, border-color 0.2s, transform 0.15s;
   }
 
-  .email-submit:hover { background: oklch(52% 0.20 25); }
-
-  .notify-footnote {
-    font-family: 'Playfair Display SC', serif;
-    font-size: 10px;
-    letter-spacing: 0.15em;
-    color: oklch(35% 0.01 250);
+  .contact-listen-link:hover,
+  .contact-listen-link:focus-visible {
+    border-color: var(--crimson);
+    color: var(--crimson);
+    transform: translateY(-1px);
   }
 
-  /* Success state */
-  .email-success {
-    display: none;
-    font-family: 'IM Fell English', serif;
-    font-style: italic;
-    font-size: 16px;
-    color: var(--gold);
-    margin-top: 8px;
+  .contact-listen-link:focus-visible {
+    outline: 2px solid var(--crimson);
+    outline-offset: 5px;
   }
 
   /* ── FOOTER ── */
@@ -1319,6 +1501,23 @@
   .broadcast-links { animation: heroIn 0.7s 0.22s ease both; }
   .series-summary { animation: heroIn 0.7s 0.34s ease both; }
   .broadcast-contact-link { animation: heroIn 0.7s 0.46s ease both; }
+  .listen-title { animation: heroIn 0.75s 0.1s ease both; }
+  .listen-download-note { animation: heroIn 0.7s 0.2s ease both; }
+  .listen-poster { animation: heroIn 0.8s 0.3s ease both; }
+  .listen-stations-label { animation: heroIn 0.7s 0.4s ease both; }
+  .contact-title { animation: heroIn 0.75s 0.1s ease both; }
+  .contact-broadcast-label { animation: heroIn 0.7s 0.2s ease both; }
+  .contact-email-line { animation: heroIn 0.7s 0.3s ease both; }
+  .contact-message-group { animation: heroIn 0.7s 0.4s ease both; }
+  .contact-listen-link { animation: heroIn 0.7s 0.5s ease both; }
+  .about-hero { animation: heroIn 0.8s 0.1s ease both; }
+  .about-copy { animation: heroIn 0.7s 0.22s ease both; }
+  .about-site-link { animation: heroIn 0.7s 0.34s ease both; }
+  .about-gallery { animation: heroIn 0.7s 0.46s ease both; }
+  .about-contact-link { animation: heroIn 0.7s 0.58s ease both; }
+  .cast-page-hero { animation: heroIn 0.8s 0.1s ease both; }
+  .cast-roster { animation: heroIn 0.7s 0.22s ease both; }
+  .cast-contact-link { animation: heroIn 0.7s 0.34s ease both; }
 
   @keyframes heroIn {
     from { opacity: 0; transform: translateY(20px); }
@@ -1452,7 +1651,186 @@
       padding-left: 38px;
     }
 
-    .audio-section, .cast-section, .production-section, .notify-section {
+    .listen-section {
+      padding: 132px 20px 42px;
+    }
+
+    .listen-title {
+      font-size: clamp(54px, 16vw, 76px);
+      margin-bottom: 16px;
+    }
+
+    .listen-download-note {
+      font-size: clamp(26px, 8vw, 34px);
+      margin-bottom: 18px;
+    }
+
+    .listen-poster {
+      width: min(100%, 430px);
+      margin-bottom: 34px;
+      border-radius: 28px;
+    }
+
+    .listen-stations-label {
+      font-size: clamp(34px, 10vw, 48px);
+    }
+
+    .contact-section {
+      padding: 132px 20px 42px;
+    }
+
+    .contact-title {
+      font-size: clamp(58px, 16vw, 84px);
+      margin-bottom: 18px;
+    }
+
+    .contact-broadcast-label,
+    .contact-questions-label {
+      font-size: clamp(27px, 8vw, 36px);
+    }
+
+    .contact-broadcast-label {
+      margin-bottom: 46px;
+    }
+
+    .contact-email-line {
+      font-size: clamp(34px, 10vw, 48px);
+      margin-bottom: 82px;
+    }
+
+    .contact-message-group {
+      margin-bottom: 120px;
+    }
+
+    .contact-questions-label {
+      margin-bottom: 30px;
+    }
+
+    .contact-message-box {
+      min-height: 178px;
+      border-radius: 32px;
+    }
+
+    .contact-message-box span {
+      font-size: clamp(28px, 8vw, 36px);
+    }
+
+    .contact-listen-link {
+      padding-right: 38px;
+      padding-left: 38px;
+      font-size: clamp(38px, 11vw, 52px);
+    }
+
+    .about-section {
+      padding: 132px 20px 42px;
+    }
+
+    .about-hero {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-bottom: 30px;
+    }
+
+    .about-title {
+      grid-column: 1 / -1;
+      order: -1;
+      font-size: clamp(48px, 15vw, 72px);
+    }
+
+    .about-art {
+      width: min(100%, 180px);
+      margin: 0 auto;
+      font-size: 24px;
+    }
+
+    .about-copy {
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .about-copy p {
+      font-size: 18px;
+      line-height: 1.32;
+    }
+
+    .about-site-link {
+      margin-bottom: 34px;
+      font-size: clamp(30px, 10vw, 42px);
+    }
+
+    .about-gallery {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      width: min(100%, 260px);
+      margin-bottom: 34px;
+    }
+
+    .about-contact-link {
+      padding-right: 38px;
+      padding-left: 38px;
+    }
+
+    .cast-page-section {
+      padding: 132px 20px 42px;
+    }
+
+    .cast-page-hero {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-bottom: 38px;
+    }
+
+    .cast-page-title {
+      grid-column: 1 / -1;
+      order: -1;
+      font-size: clamp(48px, 15vw, 72px);
+    }
+
+    .cast-page-art {
+      width: min(100%, 180px);
+      margin: 0 auto;
+      font-size: 24px;
+    }
+
+    .cast-roster {
+      gap: 34px;
+      margin-bottom: 42px;
+    }
+
+    .cast-roster-card,
+    .cast-roster-card:nth-child(even) {
+      grid-template-columns: 1fr;
+      gap: 18px;
+      text-align: center;
+    }
+
+    .cast-roster-card:nth-child(even) .cast-roster-photo {
+      order: 0;
+    }
+
+    .cast-roster-card:nth-child(even) .cast-roster-bio {
+      text-align: center;
+    }
+
+    .cast-roster-photo {
+      width: min(100%, 240px);
+      margin: 0 auto;
+    }
+
+    .cast-roster-bio h2 {
+      font-size: clamp(34px, 10vw, 52px);
+    }
+
+    .cast-roster-bio p {
+      font-size: 22px;
+    }
+
+    .cast-contact-link {
+      padding-right: 38px;
+      padding-left: 38px;
+    }
+
+    .cast-section, .production-section {
       padding: 120px 24px 60px;
     }
 
@@ -1463,9 +1841,6 @@
     .prod-block { border-right: none; }
     .prod-block:nth-last-child(-n+2) { border-bottom: 1px solid var(--rule); }
     .prod-block:last-child { border-bottom: none; }
-
-    .email-form { flex-direction: column; }
-    .email-input { border-right: 1px solid var(--rule); border-bottom: none; }
 
     footer { flex-direction: column; text-align: center; }
   }

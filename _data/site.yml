@@ -54,8 +54,10 @@ hero:
 
 broadcast_info:
   headline: Radio Stations
-  left_art_label: Chp6 art
-  right_art_label: Chp1 art
+  left_art_image: "/assets/images/chapter-6-the-coracle.png"
+  left_art_alt: "Chapter 6: The Coracle"
+  right_art_image: "/assets/images/chapter-1-the-pirate.png"
+  right_art_alt: "Chapter 1: The Pirate"
   broadcast_cta:
     label: To Broadcast this show click here
     href: "#contact"
@@ -84,13 +86,84 @@ broadcast_info:
     - title: "Chapter 8: The hunt for buried treasure and the voyage home."
       duration: "56:17"
 
+listen_now:
+  headline: Listen to the Series
+  download_note: "[future download link buttons will go here]"
+  poster_image: "/assets/images/treasure-island-poster.webp"
+  poster_alt: "Treasure Island: A Telling for the New World poster art"
+  stations_label: Updatable List of Carrying stations
+
+contact_page:
+  headline: Contact
+  broadcast_label: "To broadcast Treasure island:"
+  broadcast_email: our contact Email address TBD
+  questions_label: "For Other Questions and inquiries:"
+  message_label: Message box
+  listen_cta:
+    label: Listen now
+    href: "#listen-now"
+
 about:
-  label: About
-  headline: A Telling for the New World
-  description: >-
-    This historic radio drama reimagines Treasure Island in the Louisiana
-    Bayou, the Port of New Orleans, and the Caribbean, ten years after the War
-    of 1812 during the last gasp of piracy in the New World.
+  headline: About.
+  left_art_image: "/assets/images/chapter-5-the-stockade.png"
+  left_art_alt: "Chapter 5: The Stockade"
+  right_art_image: "/assets/images/chapter-7-captain-silver.png"
+  right_art_alt: "Chapter 7: Captain Silver"
+  website: Otherworldchildrensmedia.org
+  website_href: "https://otherworldchildrensmedia.org"
+  gallery_count: 3
+  contact_cta:
+    label: Contact
+    href: "#contact"
+  paragraphs:
+    - >-
+      Treasure Island: A Telling for the New World is a series of 8 hour-long
+      audio episodes for distribution on Public Radio Stations nationwide. The
+      production is based on the original novel by R.L. Stevenson, resetting
+      the story in the Bayous, the Port of New Orleans, and the Caribbean at
+      the end of the Golden Age of Piracy.
+    - >-
+      This approach to Treasure Island takes a traditional literary classic and
+      re-envisions it through context, casting, and music. By broadening
+      audience appeal and cultural inclusivity, we enliven an old tale for a
+      modern audience and encourage deeper listening and understanding.
+    - >-
+      The production stars the voices of Keith David as Long John Silver, John
+      Goodman as Billy Bones, and Glynn Turman as James Hawkins/storyteller,
+      along with members of the Grammy-Nominated Firesign Theatre and a large
+      supporting cast of actors from stage, screen, and television.
+    - >-
+      Music Director is multiple Grammy-winner Blues legend Taj Mahal and Sound
+      Design is supervised by Oscar-winner Randy Thom of Skywalker Sound.
+    - >-
+      The producing entity, Otherworld Media aka Otherworld Children's Media,
+      has been producing award-winning, Grammy-nominated productions for over
+      forty years. Titles from the catalogue include The War of the Worlds 50th
+      Anniversary Production, Empire of the Air: The Men who Made Radio, The
+      Wonderful Wizard of Oz Centennial Production, Agatha Christie's BBC
+      Murders, Raymond Chandler's Goldfish, Which Way's Witch: A June Foray
+      Halloween Spell, and The International Mystery Writer's Festival:
+      Discovering New Mysteries.
+
+cast_page:
+  headline: Cast
+  left_art_image: "/assets/images/chapter-3-apple-barrel.png"
+  left_art_alt: "Chapter 3: Apple Barrel"
+  right_art_image: "/assets/images/chapter-4-the-man-of-the-island.png"
+  right_art_alt: "Chapter 4: The Man of the Island"
+  contact_cta:
+    label: Contact
+    href: "#contact"
+
+crew_page:
+  headline: Crew
+  left_art_image: "/assets/images/chapter-8-the-treasure-hunt.png"
+  left_art_alt: "Chapter 8: The Treasure Hunt"
+  right_art_image: "/assets/images/chapter-2-the-sea-cook.png"
+  right_art_alt: "Chapter 2: The Sea Cook"
+  contact_cta:
+    label: Contact
+    href: "#contact"
 
 episodes:
   - number: 1
@@ -157,27 +230,6 @@ production:
     description: >-
       Blues legend and Grammy winner Taj Mahal provides an original score rooted
       in the Creole, Caribbean, and West African traditions of the era.
-  - label: Adaptation
-    name: "Eight Hours · Eight Chapters"
-    description: >-
-      An unabridged re-imagining set in the Louisiana Bayou, Port of New
-      Orleans, and the Caribbean — during the last gasp of piracy in the New
-      World.
-  - label: "Illustrations & Design"
-    name: Max Cole-Takanikos
-    description: >-
-      Graphic design and original illustrations by artist Max Cole-Takanikos,
-      whose work echoes the broadside and handbill tradition of the 19th
-      century.
-
-notify:
-  label: Coming to Public Radio
-  headline: Be the first to know when it airs.
-  description: >-
-    Treasure Island is coming to public radio stations across the country.
-    Leave your email and we'll tell you the moment it's on the air near you.
-  success: "You're on the list. Fair winds to you."
-  footnote: "No barnacles. Unsubscribe any time."
 
 footer:
   copyright: "2025 Otherworld Children's Media"
