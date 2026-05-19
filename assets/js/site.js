@@ -151,11 +151,146 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  const trailerPlayer = document.querySelector("[data-trailer-player]");
+  const trailerAudio = trailerPlayer?.querySelector("[data-trailer-audio]");
+  const trailerPlayButton = trailerPlayer?.querySelector("[data-trailer-play]");
+  const trailerSeek = trailerPlayer?.querySelector("[data-trailer-seek]");
+  const trailerTime = trailerPlayer?.querySelector("[data-trailer-time]");
+  const trailerMuteButton = trailerPlayer?.querySelector("[data-trailer-mute]");
+  const trailerVolume = trailerPlayer?.querySelector("[data-trailer-volume]");
+
+  function formatAudioTime(seconds) {
+    const safeSeconds = Number.isFinite(seconds) ? Math.max(0, seconds) : 0;
+    const minutes = Math.floor(safeSeconds / 60);
+    const remainingSeconds = Math.floor(safeSeconds % 60);
+    return `${minutes}:${remainingSeconds.toString().padStart(2, "0")}`;
+  }
+
+  function setTrailerRangeProgress(range, percent) {
+    if (!range) {
+      return;
+    }
+
+    const safePercent = Math.max(0, Math.min(100, percent));
+    range.style.setProperty("--range-progress", `${safePercent}%`);
+  }
+
+  function renderTrailerPlayState() {
+    if (!trailerAudio || !trailerPlayer || !trailerPlayButton) {
+      return;
+    }
+
+    const isTrailerPlaying = !trailerAudio.paused && !trailerAudio.ended;
+    trailerPlayer.classList.toggle("is-playing", isTrailerPlaying);
+    trailerPlayButton.setAttribute("aria-label", isTrailerPlaying ? "Pause trailer" : "Play trailer");
+  }
+
+  function renderTrailerProgress() {
+    if (!trailerAudio || !trailerSeek) {
+      return;
+    }
+
+    const duration = Number.isFinite(trailerAudio.duration) ? trailerAudio.duration : 0;
+    const percent = duration > 0 ? (trailerAudio.currentTime / duration) * 100 : 0;
+
+    trailerSeek.value = String(Math.round(percent * 10));
+    setTrailerRangeProgress(trailerSeek, percent);
+
+    if (trailerTime && duration > 0) {
+      trailerTime.textContent = `${formatAudioTime(trailerAudio.currentTime)} / ${formatAudioTime(duration)}`;
+    }
+  }
+
+  function renderTrailerVolume() {
+    if (!trailerAudio || !trailerVolume || !trailerPlayer) {
+      return;
+    }
+
+    const volume = trailerAudio.muted ? 0 : trailerAudio.volume;
+    const isMuted = trailerAudio.muted || trailerAudio.volume === 0;
+
+    trailerVolume.value = String(volume);
+    setTrailerRangeProgress(trailerVolume, volume * 100);
+    trailerPlayer.classList.toggle("is-muted", isMuted);
+
+    if (trailerMuteButton) {
+      trailerMuteButton.setAttribute("aria-label", isMuted ? "Unmute trailer" : "Mute trailer");
+    }
+  }
+
+  if (trailerAudio && trailerPlayButton && trailerSeek) {
+    renderTrailerProgress();
+    renderTrailerVolume();
+
+    trailerPlayButton.addEventListener("click", () => {
+      if (trailerAudio.paused || trailerAudio.ended) {
+        trailerAudio.play().catch(renderTrailerPlayState);
+        return;
+      }
+
+      trailerAudio.pause();
+    });
+
+    trailerSeek.addEventListener("input", () => {
+      const duration = Number.isFinite(trailerAudio.duration) ? trailerAudio.duration : 0;
+      const percent = Number(trailerSeek.value) / 10;
+
+      setTrailerRangeProgress(trailerSeek, percent);
+
+      if (duration > 0) {
+        trailerAudio.currentTime = (percent / 100) * duration;
+        renderTrailerProgress();
+      }
+    });
+
+    trailerMuteButton?.addEventListener("click", () => {
+      if (trailerAudio.muted || trailerAudio.volume === 0) {
+        trailerAudio.volume = Number(trailerAudio.dataset.previousVolume || 1);
+        trailerAudio.muted = false;
+      } else {
+        trailerAudio.dataset.previousVolume = String(trailerAudio.volume);
+        trailerAudio.muted = true;
+      }
+
+      renderTrailerVolume();
+    });
+
+    trailerVolume?.addEventListener("input", () => {
+      const nextVolume = Number(trailerVolume.value);
+
+      trailerAudio.volume = Math.max(0, Math.min(1, nextVolume));
+      trailerAudio.muted = nextVolume === 0;
+      if (nextVolume > 0) {
+        trailerAudio.dataset.previousVolume = String(nextVolume);
+      }
+      renderTrailerVolume();
+    });
+
+    trailerAudio.addEventListener("loadedmetadata", renderTrailerProgress);
+    trailerAudio.addEventListener("durationchange", renderTrailerProgress);
+    trailerAudio.addEventListener("timeupdate", renderTrailerProgress);
+    trailerAudio.addEventListener("play", renderTrailerPlayState);
+    trailerAudio.addEventListener("pause", renderTrailerPlayState);
+    trailerAudio.addEventListener("ended", renderTrailerPlayState);
+    trailerAudio.addEventListener("volumechange", renderTrailerVolume);
+  }
+
   const tabPanels = Array.from(document.querySelectorAll("[data-tab-panel]"));
   const tabTriggers = Array.from(document.querySelectorAll("[data-tab-target]"));
   const navTriggers = Array.from(document.querySelectorAll("nav [data-tab-target]"));
   const tabLinks = Array.from(document.querySelectorAll('[role="tab"][data-tab-target]'));
   const defaultTabId = tabPanels[0]?.id || "";
+  const navMenuButton = document.querySelector("[data-nav-menu-button]");
+  const navLinks = document.getElementById("site-nav-links");
+
+  function setNavMenuOpen(isOpen) {
+    if (!navMenuButton) {
+      return;
+    }
+
+    navMenuButton.setAttribute("aria-expanded", String(isOpen));
+    navMenuButton.setAttribute("aria-label", isOpen ? "Close site menu" : "Open site menu");
+  }
 
   function tabExists(tabId) {
     return tabPanels.some((panel) => panel.id === tabId);
@@ -253,6 +388,10 @@ document.addEventListener("DOMContentLoaded", () => {
       setPlaying(false);
     }
 
+    if (tabId !== "landing-page") {
+      trailerAudio?.pause();
+    }
+
     if (shouldUpdateHash) {
       updateHash(tabId, shouldReplace);
     }
@@ -279,7 +418,29 @@ document.addEventListener("DOMContentLoaded", () => {
       activateTab(tabId, {
         focusPanel: trigger.getAttribute("role") !== "tab" && !trigger.classList.contains("nav-logo"),
       });
+      setNavMenuOpen(false);
     });
+  });
+
+  navMenuButton?.addEventListener("click", () => {
+    setNavMenuOpen(navMenuButton.getAttribute("aria-expanded") !== "true");
+  });
+
+  document.addEventListener("click", (event) => {
+    if (
+      navMenuButton?.getAttribute("aria-expanded") === "true" &&
+      !navMenuButton.contains(event.target) &&
+      !navLinks?.contains(event.target)
+    ) {
+      setNavMenuOpen(false);
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && navMenuButton?.getAttribute("aria-expanded") === "true") {
+      setNavMenuOpen(false);
+      navMenuButton.focus();
+    }
   });
 
   tabLinks.forEach((link, index) => {

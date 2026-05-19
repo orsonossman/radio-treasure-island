@@ -32,7 +32,8 @@ hero:
     href: "#contact"
   trailer_cta:
     label: Listen to the trailer
-    href: "#listen-now"
+    subtitle: "Treasure Island: A Telling for the New World"
+    audio_src: "/assets/audio/20260415 Treasure Island Sizzle Reel Version 6.mp3"
   theme_cta:
     label: Listen to the Theme
     href: "#listen-now"

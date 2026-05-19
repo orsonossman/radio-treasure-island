@@ -7,7 +7,12 @@ description: An historic radio drama in eight chapters from Otherworld Children'
 
 <nav aria-label="Site sections">
   <a id="tab-landing-page" href="#landing-page" class="nav-logo active" data-tab-target="landing-page">Radio Treasure Island</a>
-  <ul class="nav-links" role="tablist" aria-label="Site tabs">
+  <button class="nav-menu-button" type="button" aria-label="Open site menu" aria-controls="site-nav-links" aria-expanded="false" data-nav-menu-button>
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <ul id="site-nav-links" class="nav-links" role="tablist" aria-label="Site tabs">
     {% for item in page_data.nav %}
       {% assign target_id = item.href | remove_first: '#' %}
       <li role="presentation">
@@ -27,11 +32,39 @@ description: An historic radio drama in eight chapters from Otherworld Children'
 
       <p class="landing-kicker">A Major Motion Picture for the Mind</p>
 
-      {% assign trailer_target = page_data.hero.trailer_cta.href | remove_first: '#' %}
-      <a href="{{ page_data.hero.trailer_cta.href }}" class="landing-audio-link landing-audio-link-primary" data-tab-target="{{ trailer_target }}">
-        <span>{{ page_data.hero.trailer_cta.label }}</span>
-        <svg viewBox="0 0 18 18" aria-hidden="true"><polygon points="4,2 16,9 4,16"></polygon></svg>
-      </a>
+      {% assign trailer_audio = page_data.hero.trailer_cta.audio_src | relative_url %}
+      <div class="landing-trailer-player" data-trailer-player>
+        <audio class="landing-trailer-audio" preload="metadata" aria-labelledby="landing-trailer-title" data-trailer-audio>
+          <source src="{{ trailer_audio }}" type="audio/mpeg">
+          <a href="{{ trailer_audio }}">Download the trailer audio.</a>
+        </audio>
+        <div class="landing-trailer-controls" aria-labelledby="landing-trailer-title">
+          <button class="trailer-control-button trailer-play-button" type="button" aria-label="Play trailer" data-trailer-play>
+            <svg class="trailer-play-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <polygon points="8,5 19,12 8,19"></polygon>
+            </svg>
+            <svg class="trailer-pause-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="7" y="5" width="4" height="14"></rect>
+              <rect x="14" y="5" width="4" height="14"></rect>
+            </svg>
+          </button>
+          <div class="trailer-copy">
+            <span id="landing-trailer-title" class="landing-trailer-title">{{ page_data.hero.trailer_cta.label }}</span>
+            <span class="landing-trailer-subtitle">{{ page_data.hero.trailer_cta.subtitle }}</span>
+          </div>
+          <span class="trailer-time" aria-live="off" data-trailer-time>0:00 / 3:32</span>
+          <input id="trailer-progress" class="trailer-range trailer-seek" type="range" min="0" max="1000" value="0" step="1" aria-label="Trailer progress" data-trailer-seek>
+          <div class="trailer-volume-control">
+            <button class="trailer-volume-button" type="button" aria-label="Mute trailer" data-trailer-mute>
+              <svg class="trailer-volume-glyph" viewBox="0 0 24 24" aria-hidden="true">
+                <polygon points="4,9 8,9 14,4 14,20 8,15 4,15"></polygon>
+                <path d="M17 8.5C18.2 9.4 19 10.7 19 12s-.8 2.6-2 3.5"></path>
+              </svg>
+            </button>
+            <input id="trailer-volume" class="trailer-range trailer-volume-slider" type="range" min="0" max="1" value="1" step="0.01" aria-label="Trailer volume" data-trailer-volume>
+          </div>
+        </div>
+      </div>
 
       <p class="landing-description">{{ page_data.hero.description }}</p>
 
