@@ -91,7 +91,7 @@ listen_now:
   download_note: "[future download link buttons will go here]"
   poster_image: "/assets/images/treasure-island-poster.webp"
   poster_alt: "Treasure Island: A Telling for the New World poster art"
-  stations_label: Updatable List of Carrying stations
+  stations_label: Listen to it on the radio
 
 contact_page:
   headline: Contact
@@ -104,7 +104,7 @@ contact_page:
     href: "#listen-now"
 
 about:
-  headline: About.
+  headline: About
   left_art_image: "/assets/images/chapter-5-the-stockade.png"
   left_art_alt: "Chapter 5: The Stockade"
   right_art_image: "/assets/images/chapter-7-captain-silver.png"
