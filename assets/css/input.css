@@ -300,6 +300,7 @@
     background: var(--bg);
     color: var(--parchment);
     font-family: 'IM Fell English', Georgia, serif;
+    overflow-anchor: none;
     overflow-x: hidden;
   }
 

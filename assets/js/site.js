@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
+  if ("scrollRestoration" in window.history) {
+    window.history.scrollRestoration = "manual";
+  }
+
   const revealItems = document.querySelectorAll(".fade-up");
 
   if ("IntersectionObserver" in window) {
@@ -185,6 +189,38 @@ document.addEventListener("DOMContentLoaded", () => {
     window.history.pushState(null, "", nextHash);
   }
 
+  function resetScrollTop() {
+    const scroller = document.scrollingElement || document.documentElement;
+
+    scroller.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    window.scrollTo(0, 0);
+  }
+
+  function forceScrollTop() {
+    const root = document.documentElement;
+    const body = document.body;
+    const previousRootScrollBehavior = root.style.scrollBehavior;
+    const previousBodyScrollBehavior = body.style.scrollBehavior;
+
+    root.style.scrollBehavior = "auto";
+    body.style.scrollBehavior = "auto";
+
+    resetScrollTop();
+
+    window.setTimeout(resetScrollTop, 0);
+    requestAnimationFrame(() => {
+      resetScrollTop();
+
+      requestAnimationFrame(() => {
+        resetScrollTop();
+        root.style.scrollBehavior = previousRootScrollBehavior;
+        body.style.scrollBehavior = previousBodyScrollBehavior;
+      });
+    });
+  }
+
   function activateTab(tabId, options = {}) {
     if (!tabExists(tabId)) {
       return;
@@ -192,6 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const shouldUpdateHash = options.updateHash !== false;
     const shouldReplace = options.replace === true;
+    const shouldScroll = options.scroll !== false;
 
     document.body.classList.add("tabs-ready");
 
@@ -220,8 +257,8 @@ document.addEventListener("DOMContentLoaded", () => {
       updateHash(tabId, shouldReplace);
     }
 
-    if (options.scroll !== false) {
-      window.scrollTo({ top: 0, behavior: options.smooth ? "smooth" : "auto" });
+    if (shouldScroll) {
+      requestAnimationFrame(forceScrollTop);
     }
 
     if (options.focusPanel) {
@@ -241,7 +278,6 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
       activateTab(tabId, {
         focusPanel: trigger.getAttribute("role") !== "tab" && !trigger.classList.contains("nav-logo"),
-        smooth: true,
       });
     });
   });
