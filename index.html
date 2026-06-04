@@ -230,28 +230,36 @@ description: An historic radio drama in eight chapters from Otherworld Children'
             </div>
             <div class="cast-roster-bio">
               <h2>{{ member.actor }}</h2>
-              <p>As {{ member.role }}</p>
+              <p class="cast-roster-role">As {{ member.role }}</p>
+              {% for paragraph in member.bio %}
+                <p class="cast-roster-description">{{ paragraph }}</p>
+              {% endfor %}
             </div>
           </article>
         {% endfor %}
 
         {% for member in page_data.supporting_cast %}
           <article class="cast-roster-card">
-            <div class="cast-roster-photo cast-roster-photo-empty" aria-hidden="true">
-              <span>{{ member.actor | truncate: 2, "" }}</span>
-            </div>
+            {% if member.image %}
+              <div class="cast-roster-photo">
+                <img src="{{ member.image | relative_url }}" alt="{{ member.actor }}" loading="lazy" decoding="async">
+              </div>
+            {% else %}
+              <div class="cast-roster-photo cast-roster-photo-empty" aria-hidden="true">
+                <span>{{ member.actor | truncate: 2, "" }}</span>
+              </div>
+            {% endif %}
             <div class="cast-roster-bio">
               <h2>{{ member.actor }}</h2>
-              <p>As {{ member.role }}</p>
+              <p class="cast-roster-role">As {{ member.role }}</p>
+              {% for paragraph in member.bio %}
+                <p class="cast-roster-description">{{ paragraph }}</p>
+              {% endfor %}
             </div>
           </article>
         {% endfor %}
       </div>
 
-      {% assign cast_contact_target = page_data.cast_page.contact_cta.href | remove_first: '#' %}
-      <a href="{{ page_data.cast_page.contact_cta.href }}" class="cast-contact-link" data-tab-target="{{ cast_contact_target }}">
-        {{ page_data.cast_page.contact_cta.label }}
-      </a>
     </div>
   </section>
 
@@ -270,22 +278,26 @@ description: An historic radio drama in eight chapters from Otherworld Children'
       <div class="cast-roster crew-roster" aria-label="Full crew">
         {% for credit in page_data.production %}
           <article class="cast-roster-card">
-            <div class="cast-roster-photo cast-roster-photo-empty" aria-hidden="true">
-              <span>{{ credit.name | truncate: 2, "" }}</span>
-            </div>
+            {% if credit.image %}
+              <div class="cast-roster-photo">
+                <img src="{{ credit.image | relative_url }}" alt="{{ credit.name }}" loading="lazy" decoding="async">
+              </div>
+            {% else %}
+              <div class="cast-roster-photo cast-roster-photo-empty" aria-hidden="true">
+                <span>{{ credit.name | truncate: 2, "" }}</span>
+              </div>
+            {% endif %}
             <div class="cast-roster-bio crew-roster-bio">
               <h2>{{ credit.name }}</h2>
-              <p>{{ credit.label }}</p>
-              <p class="crew-roster-description">{{ credit.description }}</p>
+              <p class="cast-roster-role">{{ credit.label }}</p>
+              {% for paragraph in credit.bio %}
+                <p class="cast-roster-description">{{ paragraph }}</p>
+              {% endfor %}
             </div>
           </article>
         {% endfor %}
       </div>
 
-      {% assign crew_contact_target = page_data.crew_page.contact_cta.href | remove_first: '#' %}
-      <a href="{{ page_data.crew_page.contact_cta.href }}" class="cast-contact-link" data-tab-target="{{ crew_contact_target }}">
-        {{ page_data.crew_page.contact_cta.label }}
-      </a>
     </div>
   </section>
 

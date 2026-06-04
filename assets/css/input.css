@@ -1471,21 +1471,21 @@
   .cast-roster {
     display: flex;
     flex-direction: column;
-    gap: 42px;
-    width: min(100%, 720px);
+    gap: 46px;
+    width: min(100%, 860px);
     margin: 0 auto 48px;
   }
 
   .cast-roster-card {
     display: grid;
-    grid-template-columns: minmax(180px, 240px) 1fr;
-    align-items: center;
-    gap: 86px;
+    grid-template-columns: minmax(170px, 220px) minmax(0, 1fr);
+    align-items: start;
+    gap: 56px;
     text-align: left;
   }
 
   .cast-roster-card:nth-child(even) {
-    grid-template-columns: 1fr minmax(180px, 240px);
+    grid-template-columns: minmax(0, 1fr) minmax(170px, 220px);
   }
 
   .cast-roster-card:nth-child(even) .cast-roster-photo {
@@ -1493,7 +1493,7 @@
   }
 
   .cast-roster-card:nth-child(even) .cast-roster-bio {
-    text-align: right;
+    text-align: left;
   }
 
   .cast-roster-photo {
@@ -1531,29 +1531,35 @@
   .cast-roster-bio h2 {
     color: var(--ink);
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: clamp(38px, 5vw, 64px);
+    font-size: clamp(34px, 4.4vw, 54px);
     font-weight: 900;
-    line-height: 0.95;
+    line-height: 1;
     margin-bottom: 12px;
+    overflow-wrap: anywhere;
   }
 
-  .cast-roster-bio p {
-    color: var(--parchment);
-    font-family: 'IM Fell English', Georgia, serif;
-    font-size: clamp(22px, 3vw, 32px);
-    line-height: 1.15;
-  }
-
-  .crew-roster-bio p {
+  .cast-roster-role {
     color: var(--crimson);
+    font-family: 'IM Fell English', Georgia, serif;
+    font-size: clamp(20px, 2.4vw, 28px);
+    font-style: italic;
+    line-height: 1.15;
+    margin-bottom: 16px;
   }
 
-  .crew-roster-bio .crew-roster-description {
+  .cast-roster-description {
     color: var(--parchment-dim);
-    font-size: clamp(16px, 2vw, 20px);
-    font-style: italic;
-    line-height: 1.45;
-    margin-top: 14px;
+    font-family: 'IM Fell English', Georgia, serif;
+    font-size: clamp(16px, 1.8vw, 19px);
+    line-height: 1.52;
+  }
+
+  .cast-roster-description + .cast-roster-description {
+    margin-top: 12px;
+  }
+
+  .crew-roster-bio .cast-roster-role {
+    color: var(--crimson);
   }
 
   .cast-contact-link {
@@ -2213,8 +2219,13 @@
       font-size: clamp(34px, 10vw, 52px);
     }
 
-    .cast-roster-bio p {
+    .cast-roster-role {
       font-size: 22px;
+    }
+
+    .cast-roster-description {
+      font-size: 17px;
+      line-height: 1.52;
     }
 
     .cast-contact-link {

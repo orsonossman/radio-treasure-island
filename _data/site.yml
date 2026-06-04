@@ -190,47 +190,708 @@ episodes:
     seconds: 191
 
 featured_cast:
-  - actor: Keith David
-    role: Long John Silver
+  - actor: "Keith David"
+    role: "Long John Silver"
     image: "/assets/images/keith-david.png"
-  - actor: John Goodman
-    role: Captain Billy Bones
+    bio:
+      - >-
+        Keith David is an Emmy award winning actor and singer, known for his
+        bass voice and over 400 roles across film, television, stage, and
+        video games. Classically trained at Juilliard, notable credits include
+        John Carpenter's The Thing, Dr. Facilier in Disney's The Princess and
+        The Frog, and narrating the Ken Burns documentaries The War, and
+        Jackie Robinson. He recently has released a solo jazz album titled
+        Between Takes. In 2026 he will receive a star on the Hollywood Walk of
+        Fame.
+  - actor: "John Goodman"
+    role: "Billy Bones"
     image: "/assets/images/john-goodman.png"
-  - actor: Glynn Turman
-    role: the Storyteller
+    bio:
+      - >-
+        John Goodman is an Emmy, Golden Globe, and SAG award winning actor who
+        first gained recognition starring as Dan Conner in the popular sitcom
+        Roseanne. Collaborating frequently with the Coen brothers, he has
+        appeared in many of their films, including Raising Arizona, The Big
+        Lebowski, and O Brother, Where Art Thou? Most recently he has starred
+        as the patriarch in the HBO series The Righteous Gemstones. Vanity
+        Fair has called him "among our very finest actors".
+  - actor: "Glynn Turman"
+    role: "The Storyteller"
     image: "/assets/images/glynn-turman.png"
+    bio:
+      - >-
+        Glynn Turman is an Emmy Award and multiple Image Award winning actor,
+        director, producer and cowboy. Star of stage and screen, Turman first
+        gained recognition at the age of 12 in the original 1959 Broadway
+        production of A Raisin in the Sun, opposite Sidney Poitier. Turman is
+        best known for his roles in Cooley High, Ma Rainey's Black Bottom,
+        Rustin, Straw, A Different World, House of Lies, Queen Sugar, The Wire
+        and is currently co-starring in the Disney's hit series Percy Jackson
+        and the Olympians. In 2025 Turman received his well-deserved Star on
+        the Hollywood Walk of Fame. In addition to a successful show business
+        career, Turman is the co-founder of Camp Gid D Up, a free Western
+        style summer camp that teaches horse skills and values to urban youth
+        in Southern California. He is also the co-grand marshal of the Bill
+        Pickett Invitational Rodeo, celebrating black cowboys for nearly 40
+        years.
 
 supporting_cast:
-  - actor: Nui Phonphila
-    role: Young Jim Hawkins
-  - actor: Lowell Deo
-    role: Dr. Livesey
-  - actor: Richard Fish
-    role: Squire Trelawney
-  - actor: Aishe Keita
-    role: Mrs. Hawkins
-  - actor: Kaelon Christopher
-    role: Young William
-  - actor: David Ossman
-    role: Captain Smollet
-  - actor: Bradford Farwell
-    role: Mr. Anderson
-  - actor: Vince Brady
-    role: Mr. Hunter
-  - actor: Phil Proctor
-    role: Mr. Hands
+  - actor: "Nui Phonphila"
+    role: "Jim Hawkins"
+    image: "/assets/images/cast-crew/nui-phonphila.webp"
+    bio:
+      - >-
+        Nui Phonphila is an actor born in Bossier City, Louisiana. He attended
+        Houde School of Acting and Take 2 Performers Studio where he trained
+        in the Meisner Technique, scene study, and on-camera workshops. He's
+        played leading roles in projects such as My Special Boy, The Devil's
+        Children, and The Martyrdom of Saint Ethel. His stage credits include
+        The Thanksgiving Play and Puffs. This is his first Radio production.
+  - actor: "Lowell Deo"
+    role: "Dr. Livesey"
+    image: "/assets/images/cast-crew/lowell-deo.webp"
+    bio:
+      - >-
+        One of the most beloved stories from Lowell Deo's childhood was
+        "Treasure Island"; so playing Dr. Livesey in this production is a
+        veritable dream come true.
+      - >-
+        In fact, some of Lowell's most rewarding acting experiences have been
+        in stories relying solely on voice. He graced the Seattle Town Hall
+        stage numerous times as a storyteller for the venue's "Short Stories
+        Live" events before narrating the role of "Art Restorer" in BAT
+        Theatre's stage reading of the Jason Odell William's play Destroying
+        David.
+      - >-
+        Lowell's on-camera work includes The Kaptivating Konark in the feature
+        film Anu and the radio host in the Casey Affleck-lead film Dreamin'
+        Wild; both of which debuted at the 2023 Seattle International Film
+        Festival.
+      - >-
+        Voice acting, camera work and stage projects all fill the well of
+        Lowell's soul, but for now...inhabiting the skin of Dr. Livesey is the
+        high water mark...and Lowell is grateful.
+  - actor: "David Ossman"
+    role: "Blind Pew, Captain Smollet"
+    image: "/assets/images/cast-crew/david-ossman.webp"
+    bio:
+      - >-
+        David Ossman likes to remember when he ran for US Vice President 50
+        years ago on the Nat'l Surrealist Party Ticket - Not Insane! Sixty
+        years ago he joined Phil, Phil and Pete to create The Firesign
+        Theatre. Years later he voiced Cornelius in A Bug's Life and The Lorax
+        for a new Toniebox. He has partnered Judith Walcutt, in radio and
+        stage writing and production, for almost 40 years. He is finishing an
+        Autobiographical Collage - "What's All This Brouhaha" in time for his
+        90th birthday.
+  - actor: "Phil Proctor"
+    role: "Black Dog/ Mr. Hands"
+    image: "/assets/images/cast-crew/phil-proctor.webp"
+    bio:
+      - >-
+        Phil Proctor is a multi award winning actor, whose talents have
+        carried him from Broadway to the Soviet Union with the Yale Russian
+        Chorus. He has appeared in theater, films, TV, commercials, video
+        games, cartoons, and major animated features for Disney and Pixar over
+        his 70-year career. He's probably best known as the voice of Howard on
+        the Emmy award winning animated series Rugrats. As a founding member
+        of the FIRESIGN THEATRE, he is proud to have shared three Grammy
+        nominations, and to see their archives inducted into the Library of
+        Congress. His autobiography "Where's my Fortune Cookie?" is available
+        at amazon.com, and he is honored to be a part of this epic production.
+  - actor: "Richard Fish"
+    role: "Squire Trelawney"
+    image: "/assets/images/cast-crew/richard-fish.webp"
+    bio:
+      - >-
+        Richard Fish is an actor, writer, musician, producer, director and
+        engineer, working in audio theatre since 1970. He was a founding Board
+        member of both the National Audio Theatre Festivals and WFHB Community
+        Radio in his hometown of Bloomington, Indiana. As an independent
+        businessman, he ran a recording studio, record label, commercial
+        production house and international audio theatre catalog. As a radio
+        personality, he has hosted The Firehouse Theatre every week since 1993
+        on WFHB, presenting audio theatre old and new, and for 18 years has
+        produced Better Beware for the news department, a weekly consumer-news
+        feature. As a voice actor, Richard has performed live and recorded
+        audio theatre from coast to coast, and has had the luck to work with
+        many leading figures in the art, including The Firesign Theatre
+        members and the American grand master of radio drama, Norman Corwin.
+  - actor: "Aishé Keita"
+    role: "Mrs. Hawkins"
+    image: "/assets/images/cast-crew/aishe-keita.webp"
+    bio:
+      - >-
+        Aishé Keita is an actor, holistic storyteller, and intuitive educator.
+        She is the Assistant Creative Director of Asé Theatre and co-founder
+        of Niles Edge Collective in Seattle. Aishé creates art that is rooted
+        in her ancestral ways, intentionally connecting healing and
+        storytelling. Her credits include Familiar (Guthrie Theater), School
+        Girls; Or, The African Mean Girls Play (Arkansas Rep, Jungle Theater),
+        The Boy Who Kissed the Sky (Seattle Children's Theatre, Alliance
+        Theatre), Fat Ham (Seattle Rep).
+  - actor: "Orson Ossman"
+    role: "Ben Gunn"
+    image: "/assets/images/cast-crew/orson-ossman.webp"
+    bio:
+      - >-
+        Orson Ossman is a filmmaker raised in radio theatre. After acting his
+        way through school on Whidbey Island, Washington, he attended the
+        London Film Academy where he learned to make movies on super 16mm film
+        and later obtained a BFA in film production from Chapman University's
+        Dodge College, where he emphasized in directing. Orson has produced,
+        written, directed, and acted in many independent productions. This is
+        his directorial debut in the radio medium.
+  - actor: "John Patrick Lowrie"
+    role: "Tom Morgan"
+    image: "/assets/images/cast-crew/john-patrick-lowrie.webp"
+    bio:
+      - >-
+        John Patrick Lowrie was most recently seen as Mr. Sears in the Academy
+        Award nominated film, Train Dreams, starring Joel Edgerton and
+        Felicity Jones. He has voiced dozens of characters in video games
+        including The Sniper in Team Fortress 2 and Pudge, Earthshaker, Doom,
+        Storm Spirit and others in DotA 2. His novel, Dancing With Eternity,
+        received the Forward Firsts award for best debut fiction.
+  - actor: "Vince Brady"
+    role: "Mr. Hunter / George Merry"
+    image: "/assets/images/cast-crew/vince-brady.webp"
+    bio:
+      - >-
+        Vince was born in Liverpool and worked as an actor and director
+        throughout the UK and Europe before settling in the Pacific Northwest.
+        On screen credits include Winslow in Z Nation (Syfy) and Professor
+        Fairbrother in The Librarians (TNT). Vocal credits include the voices
+        of Lexi and Blub for Edurino UK and Colonel Banastre Tarleton for the
+        American Battlefield Trust. Favorite stage roles include the title
+        role in King Lear and Clown 1 in The 39 Steps. Vince is thrilled to be
+        involved in this ground-breaking production of one of his favorite
+        novels.
+  - actor: "Bradford Farwell"
+    role: "Joyce / Mr. Anderson"
+    image: "/assets/images/cast-crew/bradford-farwell.webp"
+    bio:
+      - >-
+        Bradford Farwell trained at the Webber Douglas Academy of Dramatic
+        arts and has been seen on stage all across the United States and
+        Canada. He was a company member at the Stratford Festival in Canada
+        and makes Seattle his home. He has been seen at Seattle Repertory,
+        ACT, 5th Ave, Village, Intiman, NCTC and many others.
+  - actor: "Simone Leorin"
+    role: "Mr. Roberts"
+    image: "/assets/images/cast-crew/simone-leorin.webp"
+    bio:
+      - >-
+        Simone is an Italian-American actor whose work spans TV hits like
+        GRIMM and Z Nation, as well as numerous feature films and indie
+        projects. A classically trained pianist with advanced scientific
+        degrees, he blends intellect, artistry, and his natural accent to
+        bring layered sophistication to every role. Off set, he works in tech
+        and finds balance in cooking, reading, sailing, and exploring cultures
+        around the world with his family.
+  - actor: "Charles Leggett"
+    role: "Redruth"
+    image: "/assets/images/cast-crew/charles-leggett.webp"
+    bio:
+      - >-
+        Charles Leggett is a professional actor based in Seattle, WA and a
+        Lunt-Fontanne Fellow. He has recorded over 25 audiobooks for Seattle's
+        Cedar House Audio, including multiple installments in novel series by
+        Dwight Holing, Colleen McCullough, Robert K. Tanenbaum and Patrick F.
+        Robinson, and books by Kurt Andersen, Harold Robbins, Louis Bayard,
+        Greg Bear, Kelley Armstrong, David M. Carr, Patrick F. McManus and
+        Paul Russell. Video game work includes F.E.A.R. 2: Project Origin,
+        Hoyle's Casino Empire, and Dungeon Siege I & II. Charles is also a
+        prolific stage actor, a blues musician, and a somewhat widely
+        published poet.
+  - actor: "Corey Rieger"
+    role: "Abraham Gray"
+    image: "/assets/images/cast-crew/corey-rieger.webp"
+    bio:
+      - >-
+        Corey Rieger (Abraham Gray) - Film/TV credits include: NCIS: Hawai'i,
+        Magnum P.I., Out of the Furnace with Christian Bale, and The Last
+        Witch Hunter. He has worked in theatre across the country, most
+        recently with Quantum Theatre in Pittsburgh, PA, Musical Theatre West
+        in Long Beach, CA, and Center Repertory Company in Walnut Creek, CA.
+        Also a writer, his plays have been produced by Emerging Artists
+        Theatre in NYC, Collaboraction Theatre's Sketchbook in Chicago, and
+        the ArtsCenter in Carrboro, NC. His self-published collection of short
+        stories, sketches, and humor entitled Good Guy, A**hole is available
+        online.
+  - actor: "Dale Westgaard"
+    role: "Old Taylor"
+    image: "/assets/images/cast-crew/dale-westgaard.webp"
+    bio:
+      - >-
+        Dale Westgaard has been involved with acting, directing and writing
+        since 1962. Some of his favorite projects include: Tiny Alice, King
+        John, Love's Labour's Lost, Big River, Minnie's Boys, The Great
+        Gatsby, Sweet Surrender, and Signing the diaphragm blues, an
+        award-winning one-woman show written by Rebecca McCarthy, which morphs
+        into new material each time our government does something untoward to
+        women's rights. Currently he is studying the history and production of
+        opera with the profound hope of working as a director of opera.
+  - actor: "Kaelon Christopher"
+    role: "Young William"
+    image: "/assets/images/cast-crew/kaelon-christopher.webp"
+    bio:
+      - >-
+        Kaelon Christopher was born and raised in Seattle, and is proud to
+        call the PNW home. He's been acting since age 9 and is currently
+        filming corporate multimedia projects. He moonlights as a personal
+        trainer when not on set.
+  - actor: "Tony Doupe"
+    role: "Mr. Hawkins"
+    image: "/assets/images/cast-crew/tony-doupe.webp"
+    bio:
+      - >-
+        Tony Doupe's feature film credits include director Megan Griffith's
+        Sadie; Wild, starring Reese Witherspoon; Laggies, starring Keira
+        Knightley; and Switchmas, starring Elliott Gould. Tony co-starred in
+        feature film The River Murders with Ray Liotta and Christian Slater.
+        He had a leading role in feature film The Off Hours, directed by Megan
+        Griffiths, and he was the lead in feature film Frayed, released by
+        Lionsgate. Tony's other acclaimed feature films include The Ring,
+        starring Naomi Watts; Safety Not Guaranteed, starring Aubrey Plaza;
+        and Life or Something like It, starring Angelina Jolie. His television
+        career is also significant, with roles in The Librarians, Z Nation,
+        Grimm, Northern Exposure, Leverage and The Fugitive.
+  - actor: "Phillip Keiman"
+    role: "Mr. Johnson"
+    image: "/assets/images/cast-crew/phillip-keiman.webp"
+    bio:
+      - >-
+        Phillip Keiman has lived and worked in the Pacific NW since emigrating
+        from his native England in 2012. He has performed on stage, radio, and
+        in film & TV on both sides of the Atlantic and is honored to be part
+        of this incredible production. Screen credits include: Donald Nidaria,
+        Grimm (NBC), Richard Taylor, The Scottish Play (Prime Video), John
+        Ketch, Bloody Tales of the Tower (National Geographic Channel), Liam
+        McTavish, The Virgins (Roku Channel) and Bill Kirkson in the upcoming
+        feature film The Mythos Murders.
+      - >-
+        Voice work includes The Narrator (The Distance) and the recurring role
+        of Inspector Lestrade in Aural Vision LLCs long running radio drama
+        The Further adventures of Sherlock Holmes.
+  - actor: "Drew Hobson"
+    role: "Mr. Arrow"
+    image: "/assets/images/cast-crew/drew-hobson.webp"
+    bio:
+      - >-
+        Drew Hobson (He/Him) is a local BIPOC Actor, Voice Over Artist,
+        Teacher, Motivational Speaker, Screen & Playwright and DJ. His voice
+        can be heard in commercials for such companies as Samsung, Amazon,
+        Microsoft, Boeing, AARP and many more. In video game voice over, State
+        of Decay 1 & 2, BattleTech, Fire Emblem Heroes, Guild Wars 2 and the
+        PSVR game Golem. He was recently performed in the new MARVEL MOVE
+        exercise app voicing the X-Men character Forge.
+  - actor: "Kevin Williams"
+    role: "Cap'n Flint the parrot / Mr. O'Brien"
+    image: "/assets/images/cast-crew/kevin-williams.webp"
+    bio:
+      - >-
+        Kevin Williams yet again plays the role of Captain Flint the parrot, a
+        part he had previously originated for the pre-broadway production of
+        Jule Styne's Pieces of Eight, which premiered at the Citadel Theatre
+        in Edmonton in 1985. Kevin foolishly continues pursuing his childhood
+        dream of acting, portraying characters in any city that might have a
+        hockey rink or tennis court.
+  - actor: "Charlie E. Parker"
+    role: "Mrs. Silver/ Abraham Grey's daughter"
+    image: "/assets/images/cast-crew/charlie-e-parker.webp"
+    bio:
+      - >-
+        Charleigh's career spans television, film, classical and musical
+        theatre, improv, and stand-up comedy. Stage highlights include Lady
+        Macbeth in Macbeth at RADA, London; working with August Wilson in Ma
+        Rainey's Black Bottom as Dussie Mae at Seattle Repertory Theatre; and
+        touring internationally as the Fairy Godmother in Rodgers &
+        Hammerstein's Cinderella with Lea Salonga through Broadway Asia. On
+        television, Charleigh has also had recurring and featured roles in
+        Jessica Jones, Madam Secretary, Blue Bloods, Boardwalk Empire,
+        Unforgettable, and The Good Wife.
+  - actor: "Abhijeet Rane"
+    role: "Mr. Lee"
+    image: "/assets/images/cast-crew/abhijeet-rane.webp"
+    bio:
+      - >-
+        Abhijeet Rane moved to Seattle in 1999 and has been part of the
+        vibrant drama and film community in Seattle for the past 20 years -
+        performing in Seattle, San Jose, Portland, Chicago and Vancouver. Most
+        recently, he appeared in Pony World Production's Language Rooms,
+        Forward Flux's production of a A Short History of Amal (2018), Arts
+        West's The Who and The What (2017), Pork Filled Production's Hand of
+        Talons (2016) and various Pratidhwani productions including Dance Like
+        a Man in 2015, Everything But The Paper (2014) and The Banyan Tree
+        (2013). Abhijeet has also done a few short films including Before I
+        Go, Mr. Bala and the feature film, Anu.
+  - actor: "Kevin Lynch"
+    role: "Mr. Dance"
+    image: "/assets/images/cast-crew/kevin-lynch.webp"
+    bio:
+      - >-
+        Kevin Lynch had the pleasure of playing Benedict in Much Ado About
+        Nothing, directed by Bill Pullman, touring Montana. Ten years later he
+        produced Long Day's Journey Into Night and played Edmond in Seattle.
+        Thirty years beyond that he had the great pleasure of playing Mr.
+        Potter in David Ossman's adaptation of It's a Wonderful Life at WICA
+        in Langley, Wa. In short, life has been a pleasure.
+  - actor: "Jimmy Scullin"
+    role: "Mr. Blandly"
+    image: "/assets/images/cast-crew/jimmy-scullin.webp"
+    bio:
+      - >-
+        Over the years, Jim was active as an actor, set designer, builder, and
+        stage manager, and has left behind a legacy of compassion, service,
+        and commitment to the arts. Most recently, Scullin graced the stage in
+        the 2025 production of Flemming, bringing his humor, stage presence,
+        and charisma to the theatre series. His larger than life roles also
+        included playing Clarence in the 2019 performance of It's a Wonderful
+        Life. Jim touched our lives and inspired our community on Whidbey
+        Island. We will miss him dearly.
+  - actor: "Martha Murphy"
+    role: "Mrs. Smollet"
+    image: "/assets/images/cast-crew/martha-murphy.webp"
+    bio:
+      - >-
+        Martha Murphy founded Whidbey Children's Theatre in 1981, turning her
+        home, and the barn across the street into a stage, a classroom, and an
+        important gathering place for Whidbey Youth where she taught and
+        presented inter-generational productions, introducing thousands of
+        kids to theatre over the years.
+  - actor: "Katie Hendrix"
+    role: "Abraham Grey's daughter"
+    image: "/assets/images/cast-crew/katie-hendrix.webp"
+    bio:
+      - >-
+        Katie Hendrix is a producer, writer, and actor. She is a graduate of
+        the Upright Citizen's Brigade (Los Angeles), where she studied improv
+        and sketch writing. She occasionally performs stand-up comedy, is a
+        connoisseur of all things pop-culture, and survived working in luxury
+        retail on Rodeo Drive. Her production of A Tribute to Doug at the
+        Hollywood fringe fest was #2 on the LAist list of fringe shows to see
+        in 2019.
 
 production:
-  - label: Sound Design
-    name: Randy Thom
-    description: >-
-      Skywalker Sound — the legendary designer behind Apocalypse Now, Cast
-      Away, and The Right Stuff brings cinematic depth to every scene.
-  - label: Music
-    name: Taj Mahal
-    description: >-
-      Blues legend and Grammy winner Taj Mahal provides an original score rooted
-      in the Creole, Caribbean, and West African traditions of the era.
+  - name: "Orson Ossman"
+    label: "Writer/Director/Co-Producer"
+    image: "/assets/images/cast-crew/orson-ossman.webp"
+    bio:
+      - >-
+        Orson Ossman is a filmmaker raised in radio theatre. After acting his
+        way through school on Whidbey Island, Washington, he attended the
+        London Film Academy where he learned to make movies on super 16mm film
+        and later obtained a BFA in film production from Chapman University's
+        Dodge College, where he emphasized in directing. Orson has produced,
+        written, directed, and acted in many independent productions. This is
+        his directorial debut in the radio medium.
+  - name: "Judith Walcutt"
+    label: "Producer, Executive Producer Otherworld Media"
+    image: "/assets/images/cast-crew/judith-walcutt.webp"
+    bio:
+      - >-
+        She began her career in public radio - local NPR and community,
+        listener-driven radio in the medium's exciting early years - as a
+        writer, producer, director, and freelancer for stations and networks
+        all over the country. In 1981, she founded and continues to executive
+        direct the nonprofit, educational production company, Otherworld
+        Children's Media / Otherworld Media, whose mission is to encourage
+        imagination and deepen comprehension in children, youth, and the
+        adults they become.
+  - name: "David Ossman"
+    label: "Co-producer"
+    image: "/assets/images/cast-crew/david-ossman.webp"
+    bio:
+      - >-
+        David Ossman likes to remember when he ran for US Vice President 50
+        years ago on the Nat'l Surrealist Party Ticket - Not Insane! Sixty
+        years ago he joined Phil, Phil and Pete to create The Firesign
+        Theatre. Years later he voiced Cornelius in A Bug's Life and The Lorax
+        for a new Toniebox. He has partnered Judith Walcutt, in radio and
+        stage writing and production, for almost 40 years. He is finishing an
+        Autobiographical Collage - "What's All This Brouhaha" in time for his
+        90th birthday.
+  - name: "Katie Hendrix"
+    label: "Co-Producer"
+    image: "/assets/images/cast-crew/katie-hendrix.webp"
+    bio:
+      - >-
+        Katie Hendrix is a producer, writer, and actor. She is a graduate of
+        the Upright Citizen's Brigade (Los Angeles), where she studied improv
+        and sketch writing. She occasionally performs stand-up comedy, is a
+        connoisseur of all things pop-culture, and survived working in luxury
+        retail on Rodeo Drive. Her production of A Tribute to Doug at the
+        Hollywood fringe fest was #2 on the LAist list of fringe shows to see
+        in 2019.
+  - name: "Matt Schwartz"
+    label: "Editor, Supervising Sound Editor and Re-Recording Mixer"
+    image: "/assets/images/cast-crew/matt-schwartz.webp"
+    bio:
+      - >-
+        Matt Schwartz is an audio professional with over 15 years of
+        experience crafting immersive narratives for feature films,
+        documentaries, and major broadcast events. His professional portfolio
+        includes work for platforms such as Netflix, Disney, and Hulu
+        (recently with the series Call Her Alex) - and his projects have
+        screened at premier festivals like Sundance, Tribeca, SXSW, and
+        Cannes. In 2023, he received an Emmy Award for his contribution to Fox
+        Sports' coverage of the 2022 FIFA World Cup. For Treasure Island, Matt
+        served as the Editor, constructing the story alongside Orson. He also
+        served as Music Editor, Supervising Sound Editor and Re-Recording
+        Mixer...with Thomas Ouziel.
+  - name: "Thomas Ouziel MPSE"
+    label: "Foley and effects editor/re-recording mixer"
+    image: "/assets/images/cast-crew/thomas-ouziel-mpse.webp"
+    bio:
+      - >-
+        In the midst of the directing program at Chapman University's film
+        school, Thomas realized his passion for the power of sound in the
+        filmmaking process - so he switched to a sound design emphasis degree,
+        taking with him the story-first instincts that he had built in the
+        directing program. Upon graduation he shadowed veterans like Dane
+        Davis (sound designer on the Matrix films), and Paul Hackner (It,
+        Drive, The Revenant) and then in 2014 took those experiences with him
+        to start MelodyGun Sound Studios with his friend and collaborator
+        Hamed Hokamzadeh. Their studio has continued to use sound as a weapon
+        in all forms of visual/audio content, primarily focused on narrative
+        driven storytelling from feature films like Arctic and Test Pattern to
+        designing spatial sound for the VR experience Delusion.
+  - name: "Taj Mahal"
+    label: "Original Score"
+    image: "/assets/images/cast-crew/taj-mahal.webp"
+    bio:
+      - >-
+        In a career spanning seven decades and almost 50 albums, Taj Mahal has
+        not only helped popularize and reshape the scope of the blues, but he
+        has also personified the concept of "World Music" since years before
+        the phrase even existed. From a base of traditional country blues, Taj
+        has explored and incorporated reggae, Latin, R&B, Cajun, Caribbean,
+        gospel, West African, jazz, calypso, Hawaiian slack-key, and countless
+        other musical styles into his astonishing body of work. Along the way,
+        he has become proficient on about 20 different instruments and
+        collaborated with a vast range of musicians including the Rolling
+        Stones, Eric Clapton, Etta James, Angelique Kidjo, Ziggy Marley, and
+        masters from such countries as India and Mali. For his work, Taj has
+        won four Grammy Awards (out of fifteen nominations), been inducted
+        into the Blues Hall of Fame, and was a recipient of the Americana
+        Music Association's Lifetime Achievement Award.
+  - name: "Randy Thom"
+    label: "Sound supervisor"
+    image: "/assets/images/cast-crew/randy-thom.webp"
+    bio:
+      - >-
+        Randy Thom is an Academy Award winning sound designer and Director of
+        Sound Design at Skywalker Sound, a division of Lucasfilm. Thom's
+        career started with recording post production sound effects for
+        Apocalypse Now, and has worked on many notable films including Star
+        Wars Episode VI: Return of the Jedi, Indiana Jones and the Temple of
+        Doom, Forrest Gump, Harry Potter and the Goblet of Fire, and The
+        Revenant. He earned an Academy Award in 1984 for Best Sound, The Right
+        Stuff and again in 2005 for Best Sound Editing, The Incredibles, which
+        is the only animated film ever to win an Oscar for sound. He is also
+        the winner of a British Academy Award, a French Academy Award, and an
+        Emmy.
+  - name: "Rob Scott"
+    label: "On-set recording/Boom"
+    image: "/assets/images/cast-crew/rob-scott.webp"
+    bio:
+      - >-
+        Rob Scott has been doing Sound for 40 years. He's had hundreds of
+        great adventures. These include an Academy Award Nomination for Best
+        Sound on A Few Good Men, an Emmy Award for Best Sound on No Greater
+        Love. Mixing Larry David's HBO Special and the 1st season of Curb Your
+        Enthusiasm, mixing the entire run of MTV's very popular Viva La Bam
+        with Skater and Jack Ass alum Bam Margera to name but a few.
+      - >-
+        It was a privilege and an honor to be the "Soundamatographer" on this
+        incredible project! To work with the extremely talented Orson Ossman,
+        the cast that he and legendary Executive Producer Judith Walcutt put
+        together was an incredibly rewarding experience. I hope you feel the
+        magic we all recorded as you immerse yourself in this wonderful
+        experience that is TREASURE ISLAND: A Telling for the New World.
+  - name: "Chris Duesterdiek"
+    label: "Additional recording supervisor"
+    image: "/assets/images/cast-crew/chris-duesterdiek.webp"
+    bio:
+      - >-
+        One of the top Production Sound Mixers in Canada, Chris Duesterdiek
+        has been recognized with 18 major awards and nominations. He was
+        honoured with both a BAFTA and Cinema Audio Society Award, as well an
+        Academy Award nomination, for his work on the highly acclaimed film
+        The Revenant. In addition to Alejandro G. Iñárritu, he has worked with
+        an array of celebrated directors, including Robert Zemeckis, Tim
+        Burton, Chris Columbus, Robert Redford, Jason Reitman, and Joon-Ho
+        Bong. Chris has had sound running through his veins from an early age,
+        and at 17 started his professional journey by working in radio. In his
+        mid-twenties he moved to Vancouver and transitioned to film. In a
+        career spanning over 37 years, he has never shied away from
+        complicated projects, whether the challenges were environmental or
+        technical. His creative talents, proven team leadership and unique
+        positive communication style have garnered the respect and
+        appreciation of co-workers both above and below the line. In 2016,
+        Chris was invited to be a member of the Academy of Motion Picture Arts
+        and Sciences. Since then, he has continued to add to the impressive
+        roster of filmmakers and talent he has worked with. Based out of
+        Vancouver, Chris is always happy to travel and has shot on locations
+        around the world.
+  - name: "Nike Imoru"
+    label: "Casting Director"
+    image: "/assets/images/cast-crew/nike-imoru.webp"
+    bio:
+      - >-
+        Nike Imoru is a British-Nigerian casting director, producer, actress
+        of stage and screen, and actor's coach. After 25 years as a professor
+        and scholar of theatre, gender and African- American history (in the
+        UK and US), she began casting for film. In her fourteen years as a
+        casting director she is probably best known in the NW for casting
+        Syfy's #1 show, Z Nation, which boasted 90% local actors in series
+        regular, guest and co-starring roles in any given season. She has also
+        cast over 20 feature films all shot in the Pacific Northwest. She is
+        the President, Executive Producer and co-founder of Rebel Kat
+        Productions, a film finance company with a mission to finance quality
+        film and tv that empowers the voices and stories of women, people of
+        color, members of the LGBTQ community and persons with disabilities,
+        both in front of and behind the camera. Ms. Imoru is a member of the
+        Casting Society of America. She gained her PhD from the University of
+        Warwick UK.
+  - name: "Reese Miller"
+    label: "Foley artist"
+    image: "/assets/images/cast-crew/reese-miller.webp"
+    bio:
+      - >-
+        Reese Miller is a Foley artist, musician, and sound editor from Long
+        Beach, CA. His passion for recreating rich, authentic textures and
+        capturing movement of characters through sound made him a perfect
+        choice to perform the sound effects for Treasure Island: a telling for
+        the New World. His Foley credits include The Holdovers (2023),
+        Primitive War (2025), and The Astronaut (2025)
+  - name: "Leff Lefferts"
+    label: "Additional effects editing, Skywalker Sound"
+    image: "/assets/images/cast-crew/leff-lefferts.webp"
+    bio:
+      - >-
+        Leff Lefferts is an Oscar-nominated artist with a passion for
+        storytelling through sound. As a supervising sound editor, sound
+        designer, and re-recording mixer at Skywalker Sound, Leff brings
+        cinematic worlds to life with immersive soundscapes.
+      - >-
+        He got his start in the music world before shifting into film, landing
+        his first feature credit on Star Wars: Episode III - Revenge of the
+        Sith. Since then, he's worked on over 100 projects at Skywalker Sound,
+        including The Revenant, The Wild Robot, How to Train Your Dragon,
+        Ultraman: Rising, Say Hey, Willie Mays, Thriller 40, McCartney 3,2,1,
+        Carne y Arena and Treasure Island: A Telling for the New World.
+  - name: "Jamey Scott"
+    label: "Additional effects editing, Skywalker Sound"
+    image: "/assets/images/cast-crew/jamey-scott.webp"
+    bio:
+      - >-
+        Jamey Scott is a Sound Designer and Re-recording Mixer with a
+        professional film sound production facility in Burbank, CA. He has
+        been a consistently busy industry professional since 1995,
+        contributing significant roles to many high-profile productions in
+        film, animation, and games, as well as in cutting-edge technologies
+        such as Virtual Reality and large-scale theatrical productions. Recent
+        achievements include significant contributions to animated and
+        live-action blockbusters at the top of the box office, such as The
+        Super Mario Bros. Movie, The Wild Robot, Ultraman Rising, Mech Cadets,
+        Lost Ollie, and the How to Train Your Dragon live-action reimagining.
+        His work on The Wild Robot directly contributed to an Academy Award
+        nomination for sound, in addition to his numerous professional
+        accolades, including multiple Emmy and Golden Reel Awards.
+  - name: "Gabriel Shepard"
+    label: "Music producer"
+    image: "/assets/images/cast-crew/gabriel-shepard.webp"
+    bio:
+      - >-
+        Gabriel's love of music began at the early age of seven, when he would
+        play his parents records after school. He quickly started recording
+        his favorite songs off the radio and even performed his first tape
+        splice on a cassette tape with scissors and masking tape. Gabriel's
+        career in professional audio began in 1995 at the illustrious Hyde
+        Street Studio in San Francisco, CA. While there he worked with Cake,
+        Zigaboo Modeliste, Frank Black, and Sun Kil Moon. Now at the
+        incomparable 25th Street Recording in Oakland, CA, he's had the
+        pleasure working with Taj Mahal, Ox Bow, Faye Carol and Magik*Magik
+        Orchestra among others. https://www.gabrielshepard.com/
+  - name: "Mads Tolling"
+    label: "Violin/fiddle"
+    image: "/assets/images/cast-crew/mads-tolling.webp"
+    bio:
+      - >-
+        Mads Tolling is a two-time Grammy Award-winning violinist and composer
+        from Copenhagen, Denmark, now based in the San Francisco Bay Area. A
+        former member of both Stanley Clarke's band and the Turtle Island
+        Quartet, Mads has performed with renowned artists like Chick Corea,
+        Ramsey Lewis, Paquito D'Rivera, and Leo Kottke. He recently was a part
+        of the late great Bob Weir's Wolf Bros. Mads leads his own ensembles,
+        and tours as a soloist.
+      - >-
+        After graduating from Berklee College of Music in 2003, Mads joined
+        Stanley Clarke's band on the recommendation of Jean-Luc Ponty. He has
+        been featured on NPR's Morning Edition and received praise from the
+        Washington Post and The San Francisco Chronicle. In 2016, Mads won
+        DownBeat Critics Poll Rising Star Violin Award. Mads has performed for
+        King Frederik and Queen Mary of Denmark at the Danish Embassy in
+        Washington D.C.
+      - >-
+        Mads has written violin concertos for The Oakland Symphony and Pacific
+        Chamber Orchestra and has performed them around the U.S. and Japan,
+        including with The Hawaii Symphony and Orchestra Kanazawa. In Bob Weir
+        & Wolf Bros, Mads has recorded three albums and toured extensively,
+        playing venues like Red Rocks and Radio City Music Hall. With hundreds
+        of concerts worldwide, he leads Mads Tolling & The Mads Men and
+        recorded the album Playing the 60s, which reimagines songs from 1960's
+        TV, film and radio. The release topped US jazz radio charts and peaked
+        at #5.
+      - >-
+        Mads is a featured Yamaha Artist, offering clinics and masterclasses
+        globally.
+  - name: "Jon Otis"
+    label: "Percussion"
+    image: "/assets/images/cast-crew/jon-otis.webp"
+    bio:
+      - >-
+        Jon Otis has been playing Drums since his father Johnny Otis gave him
+        a snare drum when he was 7. Until that point Jon had been beating on
+        the 7 garbage cans behind the apartment. He finally received a
+        complete set (a 1940's Slingerland Radio King) from his father and was
+        on his way! When he was a teenager he developed an interest in African
+        drumming and Afro-Caribbean rhythms. He got a Conga drum, eventually
+        Timbales & Bongo and hand percussion and never looked back. Over the
+        years Jon developed a style comprising all of the different drumming
+        styles he loves into what he calls his BluBeatz Sound.
+  - name: "Joey T"
+    label: "Percussion"
+    image: "/assets/images/cast-crew/joey-t.webp"
+    bio:
+      - >-
+        Joey T is a Latin Jazz Percussionist celebrated for his vibrant
+        performances across the Bay Area. From intimate winery settings in the
+        Tri-Valley to lively restaurants and exclusive private events, his
+        rhythmic energy captivates audiences wherever he plays. Joey leads a
+        talented ensemble known as Joey T & Friends, a core group of musicians
+        who share his passion for Latin jazz. Over the years, he has
+        collaborated with legendary artists including Pete Escovedo, Taj
+        Mahal, and Carlos Reyes, further cementing his place in the region's
+        rich musical landscape.
+  - name: "Erik Lutz"
+    label: "Additional Audio Engineering"
+    image: "/assets/images/cast-crew/erik-lutz.webp"
+    bio:
+      - >-
+        Erik Lutz is an American composer, engineer, and multi-instrumentalist
+        based in Los Angeles with over 15 years of experience crafting
+        immersive scores for film, television, and video games. Known for a
+        versatile and collaborative approach, he specializes in crafting
+        immersive, genre-spanning sonic environments for major studios and
+        global commercial campaigns. A trusted collaborator for tight,
+        professional timelines, Erik has also shaped campaigns for world-class
+        brands like Mazda, Adidas, Canada Goose, Chevy, AT&T, and Jack Archer.
+        Notable projects include his work on: The Purge Election Year
+        (Universal Pictures), NCIS: Tony & Ziva (Paramount +), and Days Gone
+        (Sony).
 
 footer:
   copyright: "2025 Otherworld Children's Media"
