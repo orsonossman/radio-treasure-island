@@ -84,16 +84,6 @@ description: An historic radio drama in eight chapters from Otherworld Children'
         {% endfor %}
       </div>
 
-      {% assign theme_target = page_data.hero.theme_cta.href | remove_first: '#' %}
-      <a href="{{ page_data.hero.theme_cta.href }}" class="landing-audio-link landing-audio-link-secondary" data-tab-target="{{ theme_target }}">
-        <span>{{ page_data.hero.theme_cta.label }}</span>
-        <svg viewBox="0 0 18 18" aria-hidden="true"><polygon points="4,2 16,9 4,16"></polygon></svg>
-      </a>
-
-      {% assign broadcast_target = page_data.hero.broadcast_cta.href | remove_first: '#' %}
-      <a href="{{ page_data.hero.broadcast_cta.href }}" class="landing-broadcast-link" data-tab-target="{{ broadcast_target }}">
-        {{ page_data.hero.broadcast_cta.label }}
-      </a>
     </div>
   </section>
 
@@ -126,25 +116,46 @@ description: An historic radio drama in eight chapters from Otherworld Children'
         <ol class="series-list">
           {% for chapter in page_data.broadcast_info.chapters %}
             <li>
-              <span>{{ chapter.title }}</span>
-              <span>({{ chapter.duration }})</span>
+              <span class="series-chapter-title">{{ chapter.title }}</span>
+              {% if chapter.description %}
+                <span class="series-chapter-description">{{ chapter.description }}</span>
+              {% endif %}
+              <span class="series-chapter-duration">({{ chapter.duration }})</span>
             </li>
           {% endfor %}
         </ol>
       </section>
 
-      {% assign contact_target = page_data.broadcast_info.contact_cta.href | remove_first: '#' %}
-      <a href="{{ page_data.broadcast_info.contact_cta.href }}" class="broadcast-contact-link" data-tab-target="{{ contact_target }}">
-        {{ page_data.broadcast_info.contact_cta.label }}
-      </a>
     </div>
   </section>
 
   <section class="listen-section tab-panel" id="listen-now" data-tab-panel role="tabpanel" aria-labelledby="tab-listen-now" tabindex="-1">
     <div class="listen-wrap">
       <h1 class="listen-title">{{ page_data.listen_now.headline }}</h1>
-      <p class="listen-download-note">{{ page_data.listen_now.download_note }}</p>
-      <div class="listen-stations-label">{{ page_data.listen_now.stations_label }}</div>
+      {% assign listen_online_label = page_data.listen_now.online_distribution.label | default: "" %}
+      {% unless listen_online_label == "" %}
+        {% assign listen_online_href = page_data.listen_now.online_distribution.href | default: "#" %}
+        <p class="listen-download-note">
+          <a href="{{ listen_online_href }}" class="listen-online-link"{% unless listen_online_href == "#" %} target="_blank" rel="noopener"{% endunless %}>{{ listen_online_label }}</a>
+        </p>
+      {% endunless %}
+      {% assign listen_download_note = page_data.listen_now.download_note | default: "" %}
+      {% unless listen_download_note == "" %}
+        <p class="listen-download-note">{{ listen_download_note }}</p>
+      {% endunless %}
+      <section class="listen-radio" aria-label="Radio stations">
+        <ul class="listen-station-list">
+          {% for station in page_data.listen_now.stations %}
+            <li class="listen-station-item">
+              <a href="{{ station.href }}" class="listen-station-link" target="_blank" rel="noopener">
+                <span class="listen-station-call">{{ station.call_letters }}</span>
+                <span class="listen-station-market">{{ station.market }}</span>
+              </a>
+              <p class="listen-station-schedule">{{ station.schedule }}</p>
+            </li>
+          {% endfor %}
+        </ul>
+      </section>
       <div class="listen-poster">
         <img src="{{ page_data.listen_now.poster_image | relative_url }}" alt="{{ page_data.listen_now.poster_alt }}" width="1400" height="1936" loading="lazy" decoding="async">
       </div>
@@ -179,10 +190,6 @@ description: An historic radio drama in eight chapters from Otherworld Children'
         {% endfor %}
       </div>
 
-      {% assign about_contact_target = page_data.about.contact_cta.href | remove_first: '#' %}
-      <a href="{{ page_data.about.contact_cta.href }}" class="about-contact-link" data-tab-target="{{ about_contact_target }}">
-        {{ page_data.about.contact_cta.label }}
-      </a>
     </div>
   </section>
 
@@ -195,18 +202,6 @@ description: An historic radio drama in eight chapters from Otherworld Children'
         {{ page_data.contact_page.broadcast_email }}
         <span aria-hidden="true">&rdquo;</span>
       </p>
-
-      <div class="contact-message-group">
-        <p class="contact-questions-label">{{ page_data.contact_page.questions_label }}</p>
-        <div class="contact-message-box" aria-hidden="true">
-          <span>{{ page_data.contact_page.message_label }}</span>
-        </div>
-      </div>
-
-      {% assign contact_listen_target = page_data.contact_page.listen_cta.href | remove_first: '#' %}
-      <a href="{{ page_data.contact_page.listen_cta.href }}" class="contact-listen-link" data-tab-target="{{ contact_listen_target }}">
-        {{ page_data.contact_page.listen_cta.label }}
-      </a>
     </div>
   </section>
 
@@ -231,9 +226,12 @@ description: An historic radio drama in eight chapters from Otherworld Children'
             <div class="cast-roster-bio">
               <h2>{{ member.actor }}</h2>
               <p class="cast-roster-role">As {{ member.role }}</p>
-              {% for paragraph in member.bio %}
-                <p class="cast-roster-description">{{ paragraph }}</p>
-              {% endfor %}
+              <div class="cast-roster-description-wrap" id="featured-cast-bio-{{ forloop.index0 }}" data-bio-content>
+                {% for paragraph in member.bio %}
+                  <p class="cast-roster-description">{{ paragraph }}</p>
+                {% endfor %}
+              </div>
+              <button class="cast-bio-toggle" type="button" data-bio-toggle data-person-name="{{ member.actor | escape }}" aria-expanded="false" aria-controls="featured-cast-bio-{{ forloop.index0 }}" hidden>More</button>
             </div>
           </article>
         {% endfor %}
@@ -252,9 +250,12 @@ description: An historic radio drama in eight chapters from Otherworld Children'
             <div class="cast-roster-bio">
               <h2>{{ member.actor }}</h2>
               <p class="cast-roster-role">As {{ member.role }}</p>
-              {% for paragraph in member.bio %}
-                <p class="cast-roster-description">{{ paragraph }}</p>
-              {% endfor %}
+              <div class="cast-roster-description-wrap" id="supporting-cast-bio-{{ forloop.index0 }}" data-bio-content>
+                {% for paragraph in member.bio %}
+                  <p class="cast-roster-description">{{ paragraph }}</p>
+                {% endfor %}
+              </div>
+              <button class="cast-bio-toggle" type="button" data-bio-toggle data-person-name="{{ member.actor | escape }}" aria-expanded="false" aria-controls="supporting-cast-bio-{{ forloop.index0 }}" hidden>More</button>
             </div>
           </article>
         {% endfor %}
@@ -290,13 +291,27 @@ description: An historic radio drama in eight chapters from Otherworld Children'
             <div class="cast-roster-bio crew-roster-bio">
               <h2>{{ credit.name }}</h2>
               <p class="cast-roster-role">{{ credit.label }}</p>
-              {% for paragraph in credit.bio %}
-                <p class="cast-roster-description">{{ paragraph }}</p>
-              {% endfor %}
+              <div class="cast-roster-description-wrap" id="crew-bio-{{ forloop.index0 }}" data-bio-content>
+                {% for paragraph in credit.bio %}
+                  <p class="cast-roster-description">{{ paragraph }}</p>
+                {% endfor %}
+              </div>
+              <button class="cast-bio-toggle" type="button" data-bio-toggle data-person-name="{{ credit.name | escape }}" aria-expanded="false" aria-controls="crew-bio-{{ forloop.index0 }}" hidden>More</button>
             </div>
           </article>
         {% endfor %}
       </div>
+
+      {% if page_data.crew_page.background_walla_performers %}
+        <section class="crew-walla" aria-labelledby="crew-walla-title">
+          <h2 class="crew-walla-title" id="crew-walla-title">Background Walla Performers</h2>
+          <ul class="crew-walla-list">
+            {% for performer in page_data.crew_page.background_walla_performers %}
+              <li class="crew-walla-name">{{ performer }}</li>
+            {% endfor %}
+          </ul>
+        </section>
+      {% endif %}
 
     </div>
   </section>

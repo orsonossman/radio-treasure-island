@@ -34,12 +34,6 @@ hero:
     label: Listen to the trailer
     subtitle: "Treasure Island: A Telling for the New World"
     audio_src: "/assets/audio/20260415 Treasure Island Sizzle Reel Version 6.mp3"
-  theme_cta:
-    label: Listen to the Theme
-    href: "#listen-now"
-  broadcast_cta:
-    label: To broadcast this series click here
-    href: "#broadcast-info"
   cast_spotlight:
     - name: Keith David
       credit: As Long John Silver
@@ -52,6 +46,7 @@ hero:
       image: "/assets/images/glynn-turman.png"
     - name: Taj Mahal
       credit: Original Score
+      image: "/assets/images/cast-crew/taj-mahal.webp"
 
 broadcast_info:
   headline: Radio Stations
@@ -66,43 +61,58 @@ broadcast_info:
     label: License agreement etc click here
     href: "#contact"
   summary_label: Series Summary
-  contact_cta:
-    label: Contact
-    href: "#contact"
   chapters:
-    - title: "Chapter 1: Jim Hawkins befriends an old Pirate and discovers his secret."
+    - title: "Chapter 1: The Pirate"
+      description: "Jim Hawkins befriends an old Pirate and discovers his secret."
       duration: "56:00"
-    - title: "Chapter 2: Jim travels to New Orleans and sets sail for the Caribbean."
+    - title: "Chapter 2: The Sea Cook"
+      description: "Jim travels to New Orleans and sets sail for the Caribbean."
       duration: "55:40"
-    - title: "Chapter 3: Upon arrival to Skeleton Island, Jim uncovers mutiny amongst the crew."
+    - title: "Chapter 3: The Apple Barrel"
+      description: "Upon arrival to Skeleton Island, Jim uncovers mutiny amongst the crew."
       duration: "59:00"
-    - title: "Chapter 4: Dr. Livesey shares his side of the story, while Jim explores the Island."
+    - title: "Chapter 4: The Man of the Island"
+      description: "Dr. Livesey shares his side of the story, while Jim explores the Island."
       duration: "52:19"
-    - title: "Chapter 5: The pirates attack and Jim escapes into the jungle."
+    - title: "Chapter 5: The Stockade"
+      description: "The pirates attack and Jim escapes into the jungle."
       duration: "52:00"
-    - title: "Chapter 6: Jim commandeers the ship and learns to sail."
+    - title: "Chapter 6: The Coracle"
+      description: "Jim commandeers the ship and learns to sail."
       duration: "50:26"
-    - title: "Chapter 7: Long John Silver and his crew capture Jim by surprise."
+    - title: "Chapter 7: Captain Silver"
+      description: "Long John Silver and his crew capture Jim by surprise."
       duration: "58:35"
-    - title: "Chapter 8: The hunt for buried treasure and the voyage home."
+    - title: "Chapter 8: The Treasure Hunt"
+      description: "The hunt for buried treasure and the voyage home."
       duration: "56:17"
 
 listen_now:
   headline: Listen to the Series
-  download_note: "[future download link buttons will go here]"
+  download_note:
+  online_distribution:
+    label: placeholder online distribution link
+    href: "#"
   poster_image: "/assets/images/treasure-island-poster.webp"
   poster_alt: "Treasure Island: A Telling for the New World poster art"
-  stations_label: Listen to it on the radio
+  stations:
+    - call_letters: WLRH
+      market: "Huntsville, AL"
+      href: "https://wlrh.org/"
+      schedule: "Friday July 3 at 6 PM CST, with a repeat the following Saturday at 2 PM CST."
+    - call_letters: WCAI
+      market: "Cape and the Islands, Woods Hole, MA"
+      href: "https://www.capeandislands.org/"
+      schedule: "Beginning July 5th, Sundays at 7 P.M."
+    - call_letters: KPFK
+      market: "Glendale, CA"
+      href: "https://www.kpfk.org/"
+      schedule: "Beginning Tuesday July 7, weekly at 2 p.m."
 
 contact_page:
   headline: Contact
   broadcast_label: "To broadcast Treasure island:"
   broadcast_email: our contact Email address TBD
-  questions_label: "For Other Questions and inquiries:"
-  message_label: Message box
-  listen_cta:
-    label: Listen now
-    href: "#listen-now"
 
 about:
   headline: About
@@ -113,9 +123,6 @@ about:
   website: Otherworldchildrensmedia.org
   website_href: "https://otherworldchildrensmedia.org"
   gallery_count: 3
-  contact_cta:
-    label: Contact
-    href: "#contact"
   paragraphs:
     - >-
       Treasure Island: A Telling for the New World is a series of 8 hour-long
@@ -152,9 +159,6 @@ cast_page:
   left_art_alt: "Chapter 3: Apple Barrel"
   right_art_image: "/assets/images/chapter-4-the-man-of-the-island.png"
   right_art_alt: "Chapter 4: The Man of the Island"
-  contact_cta:
-    label: Contact
-    href: "#contact"
 
 crew_page:
   headline: Crew
@@ -162,9 +166,25 @@ crew_page:
   left_art_alt: "Chapter 8: The Treasure Hunt"
   right_art_image: "/assets/images/chapter-2-the-sea-cook.png"
   right_art_alt: "Chapter 2: The Sea Cook"
-  contact_cta:
-    label: Contact
-    href: "#contact"
+  background_walla_performers:
+    - "Matthew Bell"
+    - "Gabe Harshman"
+    - "Cameron Gray"
+    - "Alex Sykas"
+    - "Virginia Burja-Simpson"
+    - "Phillip Simpson"
+    - "Aaron Simpson"
+    - "Richard Keifer"
+    - "Joni Takanikos"
+    - "Carl Olson"
+    - "Patricia Duff"
+    - "Katie Hendrix"
+    - "Martha Murphy"
+    - "Patrick Moote"
+    - "Chris Douthitt"
+    - "Carol Douthitt"
+    - "Kendra Becenti"
+    - "Jarrette Werk"
 
 episodes:
   - number: 1

@@ -275,6 +275,124 @@ document.addEventListener("DOMContentLoaded", () => {
     trailerAudio.addEventListener("volumechange", renderTrailerVolume);
   }
 
+  const castBioCards = Array.from(document.querySelectorAll(".cast-roster-card"));
+  let castBioClampFrame;
+
+  function setCastBioToggleLabel(toggle, isExpanded) {
+    const personName = toggle.dataset.personName || "this person";
+    const direction = isExpanded ? "less" : "more";
+
+    toggle.textContent = isExpanded ? "Less" : "More";
+    toggle.setAttribute("aria-label", `Show ${direction} bio for ${personName}`);
+    toggle.setAttribute("aria-expanded", String(isExpanded));
+  }
+
+  function getPixelValue(value) {
+    const parsed = parseFloat(value);
+    return Number.isFinite(parsed) ? parsed : 0;
+  }
+
+  function refreshCastBioCard(card) {
+    const photo = card.querySelector(".cast-roster-photo");
+    const content = card.querySelector("[data-bio-content]");
+    const toggle = card.querySelector("[data-bio-toggle]");
+
+    if (!photo || !content || !toggle) {
+      return;
+    }
+
+    const photoRect = photo.getBoundingClientRect();
+
+    if (photoRect.height <= 0) {
+      return;
+    }
+
+    const wasExpanded = toggle.getAttribute("aria-expanded") === "true";
+
+    toggle.hidden = false;
+    toggle.style.visibility = "hidden";
+    content.classList.remove("is-collapsed");
+    content.style.removeProperty("--bio-collapsed-height");
+
+    const contentTop = content.getBoundingClientRect().top;
+    const toggleStyles = window.getComputedStyle(toggle);
+    const toggleHeight =
+      toggle.getBoundingClientRect().height +
+      getPixelValue(toggleStyles.marginTop) +
+      getPixelValue(toggleStyles.marginBottom);
+    const availableHeight = photoRect.bottom - contentTop - toggleHeight;
+    const stackedHeight = photoRect.height - toggleHeight;
+    const collapsedHeight = Math.max(
+      0,
+      Math.floor(availableHeight > 0 ? availableHeight : stackedHeight),
+    );
+    const shouldCollapse = content.scrollHeight > collapsedHeight + 1;
+
+    if (!shouldCollapse) {
+      toggle.hidden = true;
+      toggle.style.visibility = "";
+      setCastBioToggleLabel(toggle, false);
+      return;
+    }
+
+    content.style.setProperty("--bio-collapsed-height", `${collapsedHeight}px`);
+    content.classList.toggle("is-collapsed", !wasExpanded);
+    toggle.style.visibility = "";
+    setCastBioToggleLabel(toggle, wasExpanded);
+  }
+
+  function refreshCastBioClamp() {
+    castBioCards.forEach(refreshCastBioCard);
+  }
+
+  function scheduleCastBioClamp() {
+    if (!castBioCards.length) {
+      return;
+    }
+
+    if (castBioClampFrame) {
+      cancelAnimationFrame(castBioClampFrame);
+    }
+
+    castBioClampFrame = requestAnimationFrame(() => {
+      castBioClampFrame = null;
+      refreshCastBioClamp();
+    });
+  }
+
+  castBioCards.forEach((card) => {
+    const content = card.querySelector("[data-bio-content]");
+    const toggle = card.querySelector("[data-bio-toggle]");
+
+    if (!content || !toggle) {
+      return;
+    }
+
+    setCastBioToggleLabel(toggle, false);
+
+    toggle.addEventListener("click", () => {
+      const nextIsExpanded = toggle.getAttribute("aria-expanded") !== "true";
+
+      content.classList.toggle("is-collapsed", !nextIsExpanded);
+      setCastBioToggleLabel(toggle, nextIsExpanded);
+    });
+  });
+
+  if ("ResizeObserver" in window) {
+    const bioResizeObserver = new ResizeObserver(scheduleCastBioClamp);
+
+    castBioCards.forEach((card) => {
+      const photo = card.querySelector(".cast-roster-photo");
+      if (photo) {
+        bioResizeObserver.observe(photo);
+      }
+    });
+  }
+
+  document.fonts?.ready.then(scheduleCastBioClamp).catch(() => {});
+  window.addEventListener("load", scheduleCastBioClamp);
+  window.addEventListener("resize", scheduleCastBioClamp);
+
   const tabPanels = Array.from(document.querySelectorAll("[data-tab-panel]"));
   const tabTriggers = Array.from(document.querySelectorAll("[data-tab-target]"));
   const navTriggers = Array.from(document.querySelectorAll("nav [data-tab-target]"));
@@ -399,6 +517,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (shouldScroll) {
       requestAnimationFrame(forceScrollTop);
     }
+
+    scheduleCastBioClamp();
 
     if (options.focusPanel) {
       const activePanel = tabPanels.find((panel) => panel.id === tabId);
