@@ -152,6 +152,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const trailerPlayers = Array.from(document.querySelectorAll("[data-trailer-player]"));
+  const landingAudioPlayers = trailerPlayers
+    .map((trailerPlayer) => trailerPlayer.querySelector("[data-trailer-audio]"))
+    .filter(Boolean);
 
   function formatAudioTime(seconds) {
     const safeSeconds = Number.isFinite(seconds) ? Math.max(0, seconds) : 0;
@@ -693,7 +696,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (tabId !== "landing-page") {
-      trailerAudio?.pause();
+      landingAudioPlayers.forEach((audio) => {
+        audio.pause();
+      });
     }
 
     if (shouldUpdateHash) {
