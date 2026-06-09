@@ -151,13 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  const trailerPlayer = document.querySelector("[data-trailer-player]");
-  const trailerAudio = trailerPlayer?.querySelector("[data-trailer-audio]");
-  const trailerPlayButton = trailerPlayer?.querySelector("[data-trailer-play]");
-  const trailerSeek = trailerPlayer?.querySelector("[data-trailer-seek]");
-  const trailerTime = trailerPlayer?.querySelector("[data-trailer-time]");
-  const trailerMuteButton = trailerPlayer?.querySelector("[data-trailer-mute]");
-  const trailerVolume = trailerPlayer?.querySelector("[data-trailer-volume]");
+  const trailerPlayers = Array.from(document.querySelectorAll("[data-trailer-player]"));
 
   function formatAudioTime(seconds) {
     const safeSeconds = Number.isFinite(seconds) ? Math.max(0, seconds) : 0;
@@ -175,50 +169,68 @@ document.addEventListener("DOMContentLoaded", () => {
     range.style.setProperty("--range-progress", `${safePercent}%`);
   }
 
-  function renderTrailerPlayState() {
-    if (!trailerAudio || !trailerPlayer || !trailerPlayButton) {
+  trailerPlayers.forEach((trailerPlayer) => {
+    const trailerAudio = trailerPlayer.querySelector("[data-trailer-audio]");
+    const trailerPlayButton = trailerPlayer.querySelector("[data-trailer-play]");
+    const trailerSeek = trailerPlayer.querySelector("[data-trailer-seek]");
+    const trailerTime = trailerPlayer.querySelector("[data-trailer-time]");
+    const trailerMuteButton = trailerPlayer.querySelector("[data-trailer-mute]");
+    const trailerVolume = trailerPlayer.querySelector("[data-trailer-volume]");
+    const playerLabel = trailerPlayer.dataset.playerLabel || "audio";
+
+    function renderTrailerPlayState() {
+      if (!trailerAudio || !trailerPlayButton) {
+        return;
+      }
+
+      const isTrailerPlaying = !trailerAudio.paused && !trailerAudio.ended;
+      trailerPlayer.classList.toggle("is-playing", isTrailerPlaying);
+      trailerPlayButton.setAttribute(
+        "aria-label",
+        isTrailerPlaying ? `Pause ${playerLabel}` : `Play ${playerLabel}`,
+      );
+    }
+
+    function renderTrailerProgress() {
+      if (!trailerAudio || !trailerSeek) {
+        return;
+      }
+
+      const duration = Number.isFinite(trailerAudio.duration) ? trailerAudio.duration : 0;
+      const percent = duration > 0 ? (trailerAudio.currentTime / duration) * 100 : 0;
+
+      trailerSeek.value = String(Math.round(percent * 10));
+      setTrailerRangeProgress(trailerSeek, percent);
+
+      if (trailerTime && duration > 0) {
+        trailerTime.textContent = `${formatAudioTime(trailerAudio.currentTime)} / ${formatAudioTime(duration)}`;
+      }
+    }
+
+    function renderTrailerVolume() {
+      if (!trailerAudio || !trailerVolume) {
+        return;
+      }
+
+      const volume = trailerAudio.muted ? 0 : trailerAudio.volume;
+      const isMuted = trailerAudio.muted || trailerAudio.volume === 0;
+
+      trailerVolume.value = String(volume);
+      setTrailerRangeProgress(trailerVolume, volume * 100);
+      trailerPlayer.classList.toggle("is-muted", isMuted);
+
+      if (trailerMuteButton) {
+        trailerMuteButton.setAttribute(
+          "aria-label",
+          isMuted ? `Unmute ${playerLabel}` : `Mute ${playerLabel}`,
+        );
+      }
+    }
+
+    if (!trailerAudio || !trailerPlayButton || !trailerSeek) {
       return;
     }
 
-    const isTrailerPlaying = !trailerAudio.paused && !trailerAudio.ended;
-    trailerPlayer.classList.toggle("is-playing", isTrailerPlaying);
-    trailerPlayButton.setAttribute("aria-label", isTrailerPlaying ? "Pause trailer" : "Play trailer");
-  }
-
-  function renderTrailerProgress() {
-    if (!trailerAudio || !trailerSeek) {
-      return;
-    }
-
-    const duration = Number.isFinite(trailerAudio.duration) ? trailerAudio.duration : 0;
-    const percent = duration > 0 ? (trailerAudio.currentTime / duration) * 100 : 0;
-
-    trailerSeek.value = String(Math.round(percent * 10));
-    setTrailerRangeProgress(trailerSeek, percent);
-
-    if (trailerTime && duration > 0) {
-      trailerTime.textContent = `${formatAudioTime(trailerAudio.currentTime)} / ${formatAudioTime(duration)}`;
-    }
-  }
-
-  function renderTrailerVolume() {
-    if (!trailerAudio || !trailerVolume || !trailerPlayer) {
-      return;
-    }
-
-    const volume = trailerAudio.muted ? 0 : trailerAudio.volume;
-    const isMuted = trailerAudio.muted || trailerAudio.volume === 0;
-
-    trailerVolume.value = String(volume);
-    setTrailerRangeProgress(trailerVolume, volume * 100);
-    trailerPlayer.classList.toggle("is-muted", isMuted);
-
-    if (trailerMuteButton) {
-      trailerMuteButton.setAttribute("aria-label", isMuted ? "Unmute trailer" : "Mute trailer");
-    }
-  }
-
-  if (trailerAudio && trailerPlayButton && trailerSeek) {
     renderTrailerProgress();
     renderTrailerVolume();
 
@@ -273,7 +285,181 @@ document.addEventListener("DOMContentLoaded", () => {
     trailerAudio.addEventListener("pause", renderTrailerPlayState);
     trailerAudio.addEventListener("ended", renderTrailerPlayState);
     trailerAudio.addEventListener("volumechange", renderTrailerVolume);
-  }
+  });
+
+  const carousels = Array.from(document.querySelectorAll("[data-carousel]"));
+
+  carousels.forEach((carousel) => {
+    const slides = Array.from(carousel.querySelectorAll("[data-carousel-slide]"));
+    const prevButton = carousel.querySelector("[data-carousel-prev]");
+    const nextButton = carousel.querySelector("[data-carousel-next]");
+    const status = carousel.querySelector("[data-carousel-status]");
+    const zoomDialog = carousel.querySelector("[data-carousel-zoom]");
+    const zoomImage = carousel.querySelector("[data-carousel-zoom-image]");
+    const zoomCloseButton = carousel.querySelector("[data-carousel-zoom-close]");
+    const zoomPrevButton = carousel.querySelector("[data-carousel-zoom-prev]");
+    const zoomNextButton = carousel.querySelector("[data-carousel-zoom-next]");
+    let activeIndex = slides.findIndex((slide) => slide.classList.contains("is-active"));
+
+    if (!slides.length) {
+      return;
+    }
+
+    if (activeIndex < 0) {
+      activeIndex = 0;
+    }
+
+    function showSlide(nextIndex) {
+      activeIndex = (nextIndex + slides.length) % slides.length;
+
+      slides.forEach((slide, index) => {
+        const isActive = index === activeIndex;
+
+        slide.hidden = !isActive;
+        slide.classList.toggle("is-active", isActive);
+        slide.setAttribute("aria-hidden", String(!isActive));
+      });
+
+      if (status) {
+        status.textContent = `${activeIndex + 1} / ${slides.length}`;
+      }
+    }
+
+    function isZoomOpen() {
+      return Boolean(zoomDialog?.open || zoomDialog?.hasAttribute("open"));
+    }
+
+    function getSlideImage(index) {
+      return slides[index]?.querySelector("[data-carousel-zoom-trigger] img");
+    }
+
+    function updateZoomImage() {
+      if (!zoomImage) {
+        return;
+      }
+
+      const image = getSlideImage(activeIndex);
+
+      if (!image) {
+        return;
+      }
+
+      zoomImage.src = image.currentSrc || image.src;
+      zoomImage.alt = image.alt || "";
+    }
+
+    function showZoomSlide(nextIndex) {
+      showSlide(nextIndex);
+      updateZoomImage();
+    }
+
+    function closeZoom() {
+      if (!zoomDialog) {
+        return;
+      }
+
+      if (typeof zoomDialog.close === "function" && zoomDialog.open) {
+        zoomDialog.close();
+        return;
+      }
+
+      zoomDialog.removeAttribute("open");
+    }
+
+    function openZoom(index) {
+      if (!zoomDialog || !zoomImage) {
+        return;
+      }
+
+      showZoomSlide(index);
+
+      if (typeof zoomDialog.showModal === "function") {
+        zoomDialog.showModal();
+      } else {
+        zoomDialog.setAttribute("open", "");
+      }
+
+      zoomCloseButton?.focus();
+    }
+
+    if (slides.length < 2) {
+      prevButton?.setAttribute("disabled", "");
+      nextButton?.setAttribute("disabled", "");
+    }
+
+    slides.forEach((slide, index) => {
+      const zoomTrigger = slide.querySelector("[data-carousel-zoom-trigger]");
+
+      zoomTrigger?.addEventListener("click", () => {
+        openZoom(index);
+      });
+    });
+
+    prevButton?.addEventListener("click", () => {
+      showSlide(activeIndex - 1);
+    });
+
+    nextButton?.addEventListener("click", () => {
+      showSlide(activeIndex + 1);
+    });
+
+    carousel.addEventListener("keydown", (event) => {
+      if (isZoomOpen()) {
+        return;
+      }
+
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        showSlide(activeIndex - 1);
+      }
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        showSlide(activeIndex + 1);
+      }
+    });
+
+    zoomPrevButton?.addEventListener("click", () => {
+      showZoomSlide(activeIndex - 1);
+    });
+
+    zoomNextButton?.addEventListener("click", () => {
+      showZoomSlide(activeIndex + 1);
+    });
+
+    zoomCloseButton?.addEventListener("click", closeZoom);
+
+    zoomDialog?.addEventListener("click", (event) => {
+      if (event.target === zoomDialog) {
+        closeZoom();
+      }
+    });
+
+    zoomDialog?.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        event.stopPropagation();
+        showZoomSlide(activeIndex - 1);
+      }
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        event.stopPropagation();
+        showZoomSlide(activeIndex + 1);
+      }
+
+      if (event.key === "Escape") {
+        event.stopPropagation();
+        closeZoom();
+      }
+    });
+
+    zoomDialog?.addEventListener("close", () => {
+      zoomImage?.removeAttribute("src");
+    });
+
+    showSlide(activeIndex);
+  });
 
   const castBioCards = Array.from(document.querySelectorAll(".cast-roster-card"));
   let castBioClampFrame;

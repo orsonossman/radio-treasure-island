@@ -13,27 +13,22 @@ nav:
     href: "#crew"
 
 hero:
-  eyebrow: "Otherworld Children's Media Presents"
   title_image: "/assets/images/title-art.webp"
   title_alt: "Treasure Island — A Telling for the New World"
-  tagline_image: "/assets/images/tagline.webp"
-  tagline_alt: "Prepare Yourself! For the most thrilling pirate story ever written..."
   ship_image: "/assets/images/hero-ship.webp"
   description: >-
     Treasure Island: A Telling for the New World is a series of 8 hour-long
     audio episodes. This unabridged adaptation of the classic novel by R.L.
     Stevenson resets the story in the Bayous, the Port of New Orleans, and the
     Caribbean at the end of the Golden Age of Piracy in 1828.
-  primary_cta:
-    label: Hear the Excerpts
-    href: "#listen-now"
-  secondary_cta:
-    label: Get Notified
-    href: "#contact"
   trailer_cta:
     label: Listen to the trailer
     subtitle: "Treasure Island: A Telling for the New World"
     audio_src: "/assets/audio/20260415 Treasure Island Sizzle Reel Version 6.mp3"
+  theme_cta:
+    label: Listen to the theme song
+    subtitle: "Full stereo downmix"
+    audio_src: "/assets/audio/Tresure Island_Theme Song_Full_Reexport_STEREO DOWNMIX.wav"
   cast_spotlight:
     - name: Keith David
       credit: As Long John Silver
@@ -112,7 +107,7 @@ listen_now:
 contact_page:
   headline: Contact
   broadcast_label: "To broadcast Treasure island:"
-  broadcast_email: our contact Email address TBD
+  broadcast_email: radiotreasureisland@gmail.com
 
 about:
   headline: About
@@ -122,7 +117,46 @@ about:
   right_art_alt: "Chapter 7: Captain Silver"
   website: Otherworldchildrensmedia.org
   website_href: "https://otherworldchildrensmedia.org"
-  gallery_count: 3
+  instagram: "@radiotreasureisland"
+  instagram_href: "https://www.instagram.com/radiotreasureisland/"
+  inline_photos:
+    - image: "/assets/images/BTS-pics/TI-BTS-A.jpeg"
+      alt: "Behind the scenes: cast members reviewing scripts outdoors."
+    - image: "/assets/images/BTS-pics/TI-BTS-B.jpeg"
+      alt: "Behind the scenes: actors recording in a living room."
+    - image: "/assets/images/BTS-pics/TI-BTS-C.jpeg"
+      alt: "Behind the scenes: cast and crew gathered outside with scripts."
+    - image: "/assets/images/BTS-pics/TI-BTS-D.jpg"
+      alt: "Behind the scenes: an actor recording in a studio."
+    - image: "/assets/images/BTS-pics/TI-BTS-E.jpeg"
+      alt: "Behind the scenes: production team in a recording studio."
+  gallery_photos:
+    - image: "/assets/images/BTS-pics/TI-BTS-3.jpeg"
+      alt: "Behind the scenes photo 1 from the Treasure Island production."
+    - image: "/assets/images/BTS-pics/TI-BTS-4.jpg"
+      alt: "Behind the scenes photo 2 from the Treasure Island production."
+    - image: "/assets/images/BTS-pics/TI-BTS-5.JPG"
+      alt: "Behind the scenes photo 3 from the Treasure Island production."
+    - image: "/assets/images/BTS-pics/TI-BTS-7.jpg"
+      alt: "Behind the scenes photo 4 from the Treasure Island production."
+    - image: "/assets/images/BTS-pics/TI-BTS-8.jpg"
+      alt: "Behind the scenes photo 5 from the Treasure Island production."
+    - image: "/assets/images/BTS-pics/TI-BTS-9.jpg"
+      alt: "Behind the scenes photo 6 from the Treasure Island production."
+    - image: "/assets/images/BTS-pics/TI-BTS-10.jpg"
+      alt: "Behind the scenes photo 7 from the Treasure Island production."
+    - image: "/assets/images/BTS-pics/TI-BTS-11.jpg"
+      alt: "Behind the scenes photo 8 from the Treasure Island production."
+    - image: "/assets/images/BTS-pics/TI-BTS-12.jpg"
+      alt: "Behind the scenes photo 9 from the Treasure Island production."
+    - image: "/assets/images/BTS-pics/TI-BTS-13.jpg"
+      alt: "Behind the scenes photo 10 from the Treasure Island production."
+    - image: "/assets/images/BTS-pics/TI-BTS-14.jpg"
+      alt: "Behind the scenes photo 11 from the Treasure Island production."
+    - image: "/assets/images/BTS-pics/TI-BTS-15.jpg"
+      alt: "Behind the scenes photo 12 from the Treasure Island production."
+    - image: "/assets/images/BTS-pics/TI-BTS-16.jpg"
+      alt: "Behind the scenes photo 13 from the Treasure Island production."
   paragraphs:
     - >-
       Treasure Island: A Telling for the New World is a series of 8 hour-long
@@ -159,13 +193,6 @@ cast_page:
   left_art_alt: "Chapter 3: Apple Barrel"
   right_art_image: "/assets/images/chapter-4-the-man-of-the-island.png"
   right_art_alt: "Chapter 4: The Man of the Island"
-
-crew_page:
-  headline: Crew
-  left_art_image: "/assets/images/chapter-8-the-treasure-hunt.png"
-  left_art_alt: "Chapter 8: The Treasure Hunt"
-  right_art_image: "/assets/images/chapter-2-the-sea-cook.png"
-  right_art_alt: "Chapter 2: The Sea Cook"
   background_walla_performers:
     - "Matthew Bell"
     - "Gabe Harshman"
@@ -186,28 +213,29 @@ crew_page:
     - "Kendra Becenti"
     - "Jarrette Werk"
 
-episodes:
-  - number: 1
-    numeral: I
-    title: "The Old Sea-Dog at the Admiral Benbow"
-    player_title: "Chapter I — The Old Sea-Dog"
-    subtitle: "Opening excerpt · Long John Silver arrives"
-    duration: "3:24"
-    seconds: 204
-  - number: 2
-    numeral: II
-    title: "The Black Spot"
-    player_title: "Chapter II — The Black Spot"
-    subtitle: "A warning is delivered in shadow"
-    duration: "2:58"
-    seconds: 178
-  - number: 3
-    numeral: III
-    title: "The Map"
-    player_title: "Chapter III — The Map"
-    subtitle: "The treasure map is revealed"
-    duration: "3:11"
-    seconds: 191
+crew_page:
+  headline: Crew
+  left_art_image: "/assets/images/chapter-8-the-treasure-hunt.png"
+  left_art_alt: "Chapter 8: The Treasure Hunt"
+  right_art_image: "/assets/images/chapter-2-the-sea-cook.png"
+  right_art_alt: "Chapter 2: The Sea Cook"
+  company:
+    title: "Otherworld Children’s Media / Otherworld Media"
+    description:
+      - >-
+        For over forty years, the company has produced local, national, and
+        international award-winning programs for public radio, TV, and stage.
+        These include the Grammy-nominated 50th Anniversary Production of the
+        War of the Worlds, the international award-winning Empire of the Air:
+        The Making of Radio, the American Bar Association’s Silver Gavel
+        Award-winner We Hold These Truths: A Celebration of the Bill of
+        Rights— a one-off, worldwide, all-network broadcast with the National
+        Association of Broadcasters for the 200th anniversary of the document’s
+        ratification. Other renowned projects include an all-star audio
+        production of a complete adaptation of The Wonderful Wizard of Oz by L.
+        Frank Baum (a Parent’s Choice Gold-Medal winner) and an
+        audio-immersive, surround-sound stage production of an original play
+        based on the unknown radio works of Agatha Christie—The BBC Murders.
 
 featured_cast:
   - actor: "Keith David"
@@ -915,3 +943,5 @@ production:
 
 footer:
   copyright: "2025 Otherworld Children's Media"
+  contact_label: Contact
+  contact_href: "#contact"

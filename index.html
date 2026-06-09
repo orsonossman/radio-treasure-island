@@ -33,7 +33,7 @@ description: An historic radio drama in eight chapters from Otherworld Children'
       <p class="landing-kicker">A Major Motion Picture for the Mind</p>
 
       {% assign trailer_audio = page_data.hero.trailer_cta.audio_src | relative_url %}
-      <div class="landing-trailer-player" data-trailer-player>
+      <div class="landing-trailer-player" data-trailer-player data-player-label="trailer">
         <audio class="landing-trailer-audio" preload="metadata" aria-labelledby="landing-trailer-title" data-trailer-audio>
           <source src="{{ trailer_audio }}" type="audio/mpeg">
           <a href="{{ trailer_audio }}">Download the trailer audio.</a>
@@ -82,6 +82,40 @@ description: An historic radio drama in eight chapters from Otherworld Children'
             <div class="landing-person-credit">{{ person.credit }}</div>
           </article>
         {% endfor %}
+      </div>
+
+      {% assign theme_audio = page_data.hero.theme_cta.audio_src | relative_url %}
+      <div class="landing-trailer-player landing-theme-player" data-trailer-player data-player-label="theme song">
+        <audio class="landing-trailer-audio" preload="metadata" aria-labelledby="landing-theme-title" data-trailer-audio>
+          <source src="{{ theme_audio }}" type="audio/wav">
+          <a href="{{ theme_audio }}">Download the theme song audio.</a>
+        </audio>
+        <div class="landing-trailer-controls" aria-labelledby="landing-theme-title">
+          <button class="trailer-control-button trailer-play-button" type="button" aria-label="Play theme song" data-trailer-play>
+            <svg class="trailer-play-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <polygon points="8,5 19,12 8,19"></polygon>
+            </svg>
+            <svg class="trailer-pause-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="7" y="5" width="4" height="14"></rect>
+              <rect x="14" y="5" width="4" height="14"></rect>
+            </svg>
+          </button>
+          <div class="trailer-copy">
+            <span id="landing-theme-title" class="landing-trailer-title">{{ page_data.hero.theme_cta.label }}</span>
+            <span class="landing-trailer-subtitle">{{ page_data.hero.theme_cta.subtitle }}</span>
+          </div>
+          <span class="trailer-time" aria-live="off" data-trailer-time>0:00 / 0:00</span>
+          <input id="theme-progress" class="trailer-range trailer-seek" type="range" min="0" max="1000" value="0" step="1" aria-label="Theme song progress" data-trailer-seek>
+          <div class="trailer-volume-control">
+            <button class="trailer-volume-button" type="button" aria-label="Mute theme song" data-trailer-mute>
+              <svg class="trailer-volume-glyph" viewBox="0 0 24 24" aria-hidden="true">
+                <polygon points="4,9 8,9 14,4 14,20 8,15 4,15"></polygon>
+                <path d="M17 8.5C18.2 9.4 19 10.7 19 12s-.8 2.6-2 3.5"></path>
+              </svg>
+            </button>
+            <input id="theme-volume" class="trailer-range trailer-volume-slider" type="range" min="0" max="1" value="1" step="0.01" aria-label="Theme song volume" data-trailer-volume>
+          </div>
+        </div>
       </div>
 
     </div>
@@ -177,18 +211,79 @@ description: An historic radio drama in eight chapters from Otherworld Children'
       <div class="about-copy">
         {% for paragraph in page_data.about.paragraphs %}
           <p>{{ paragraph }}</p>
+          {% assign inline_photo = page_data.about.inline_photos[forloop.index0] %}
+          {% if inline_photo %}
+            <figure class="about-inline-photo">
+              <img src="{{ inline_photo.image | relative_url }}" alt="{{ inline_photo.alt }}" loading="lazy" decoding="async">
+            </figure>
+          {% endif %}
         {% endfor %}
       </div>
 
-      <a href="{{ page_data.about.website_href }}" class="about-site-link" target="_blank" rel="noopener">
-        {{ page_data.about.website }}
-      </a>
-
-      <div class="about-gallery" aria-label="Behind the scenes photo gallery placeholders">
-        {% for item in (1..page_data.about.gallery_count) %}
-          <div class="about-gallery-tile" aria-hidden="true"></div>
-        {% endfor %}
+      <div class="about-links">
+        <a href="{{ page_data.about.website_href }}" class="about-link" target="_blank" rel="noopener">
+          <svg class="about-link-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+            <path d="M2 12h20"></path>
+          </svg>
+          <span class="about-link-text">{{ page_data.about.website }}</span>
+        </a>
+        <a href="{{ page_data.about.instagram_href }}" class="about-link" target="_blank" rel="noopener">
+          <svg class="about-link-icon" aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <path d="M17.5 6.5h.01"></path>
+          </svg>
+          <span class="about-link-text">{{ page_data.about.instagram }}</span>
+        </a>
       </div>
+
+      {% if page_data.about.gallery_photos %}
+        <div class="about-gallery" data-carousel aria-roledescription="carousel" aria-label="Behind the scenes photo gallery">
+          <button class="about-gallery-button about-gallery-button-prev" type="button" data-carousel-prev aria-label="Show previous behind the scenes photo">
+            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+              <path d="m15 18-6-6 6-6"></path>
+            </svg>
+          </button>
+          <div class="about-gallery-viewport">
+            <div class="about-gallery-track" data-carousel-track>
+              {% for photo in page_data.about.gallery_photos %}
+                <figure class="about-gallery-slide{% if forloop.first %} is-active{% endif %}" data-carousel-slide role="group" aria-roledescription="slide" aria-label="{{ forloop.index }} of {{ forloop.length }}"{% unless forloop.first %} hidden{% endunless %}>
+                  <button class="about-gallery-zoom-trigger" type="button" data-carousel-zoom-trigger aria-label="Zoom behind the scenes photo {{ forloop.index }} of {{ forloop.length }}">
+                    <img src="{{ photo.image | relative_url }}" alt="{{ photo.alt }}" loading="lazy" decoding="async">
+                  </button>
+                </figure>
+              {% endfor %}
+            </div>
+          </div>
+          <button class="about-gallery-button about-gallery-button-next" type="button" data-carousel-next aria-label="Show next behind the scenes photo">
+            <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+              <path d="m9 18 6-6-6-6"></path>
+            </svg>
+          </button>
+          <div class="about-gallery-status" data-carousel-status aria-live="polite">1 / {{ page_data.about.gallery_photos.size }}</div>
+          <dialog class="about-gallery-zoom" data-carousel-zoom aria-label="Expanded behind the scenes photo">
+            <button class="about-gallery-zoom-close" type="button" data-carousel-zoom-close aria-label="Close expanded photo">
+              <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+                <path d="M18 6 6 18"></path>
+                <path d="m6 6 12 12"></path>
+              </svg>
+            </button>
+            <button class="about-gallery-zoom-button about-gallery-zoom-prev" type="button" data-carousel-zoom-prev aria-label="Show previous behind the scenes photo">
+              <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+                <path d="m15 18-6-6 6-6"></path>
+              </svg>
+            </button>
+            <img alt="" data-carousel-zoom-image>
+            <button class="about-gallery-zoom-button about-gallery-zoom-next" type="button" data-carousel-zoom-next aria-label="Show next behind the scenes photo">
+              <svg aria-hidden="true" viewBox="0 0 24 24" focusable="false">
+                <path d="m9 18 6-6-6-6"></path>
+              </svg>
+            </button>
+          </dialog>
+        </div>
+      {% endif %}
 
     </div>
   </section>
@@ -197,11 +292,13 @@ description: An historic radio drama in eight chapters from Otherworld Children'
     <div class="contact-wrap">
       <h1 class="contact-title">{{ page_data.contact_page.headline }}</h1>
       <p class="contact-broadcast-label">{{ page_data.contact_page.broadcast_label }}</p>
+      {% assign contact_email = page_data.contact_page.broadcast_email %}
       <p class="contact-email-line">
-        <span aria-hidden="true">&ldquo;</span>
-        {{ page_data.contact_page.broadcast_email }}
-        <span aria-hidden="true">&rdquo;</span>
+        <a class="contact-email-link" href="mailto:{{ contact_email | escape }}">{{ contact_email }}</a>
       </p>
+      <div class="contact-poster">
+        <img src="{{ page_data.listen_now.poster_image | relative_url }}" alt="{{ page_data.listen_now.poster_alt }}" width="1400" height="1936" loading="lazy" decoding="async">
+      </div>
     </div>
   </section>
 
@@ -261,6 +358,17 @@ description: An historic radio drama in eight chapters from Otherworld Children'
         {% endfor %}
       </div>
 
+      {% if page_data.cast_page.background_walla_performers %}
+        <section class="crew-walla" aria-labelledby="cast-walla-title">
+          <h2 class="crew-walla-title" id="cast-walla-title">Background Walla Performers</h2>
+          <ul class="crew-walla-list">
+            {% for performer in page_data.cast_page.background_walla_performers %}
+              <li class="crew-walla-name">{{ performer }}</li>
+            {% endfor %}
+          </ul>
+        </section>
+      {% endif %}
+
     </div>
   </section>
 
@@ -302,14 +410,12 @@ description: An historic radio drama in eight chapters from Otherworld Children'
         {% endfor %}
       </div>
 
-      {% if page_data.crew_page.background_walla_performers %}
-        <section class="crew-walla" aria-labelledby="crew-walla-title">
-          <h2 class="crew-walla-title" id="crew-walla-title">Background Walla Performers</h2>
-          <ul class="crew-walla-list">
-            {% for performer in page_data.crew_page.background_walla_performers %}
-              <li class="crew-walla-name">{{ performer }}</li>
-            {% endfor %}
-          </ul>
+      {% if page_data.crew_page.company %}
+        <section class="crew-company" aria-labelledby="crew-company-title">
+          <h2 class="crew-company-title" id="crew-company-title">{{ page_data.crew_page.company.title }}</h2>
+          {% for paragraph in page_data.crew_page.company.description %}
+            <p class="crew-company-description">{{ paragraph }}</p>
+          {% endfor %}
         </section>
       {% endif %}
 
@@ -320,5 +426,8 @@ description: An historic radio drama in eight chapters from Otherworld Children'
 
 <footer>
   <div class="footer-left">© {{ page_data.footer.copyright }}</div>
-  <div class="footer-credits"></div>
+  {% assign footer_contact_target = page_data.footer.contact_href | remove_first: '#' %}
+  <div class="footer-credits">
+    <a href="{{ page_data.footer.contact_href }}" data-tab-target="{{ footer_contact_target }}">{{ page_data.footer.contact_label }}</a>
+  </div>
 </footer>
