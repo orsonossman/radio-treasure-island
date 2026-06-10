@@ -23,18 +23,18 @@ ui:
     fallback_person_name: this person
 
 nav:
-  - label: Station Information
-    href: "#broadcast-info"
   - label: Listen Now
     href: "#listen-now"
   - label: About
     href: "#about"
-  - label: Contact
-    href: "#contact"
   - label: Cast
     href: "#cast"
   - label: Crew
     href: "#crew"
+  - label: Contact
+    href: "#contact"
+  - label: Station Information
+    href: "#broadcast-info"
 
 hero:
   kicker: An Audio Adventure in 8 chapters
