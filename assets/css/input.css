@@ -310,9 +310,7 @@
   html { scroll-behavior: smooth; }
 
   body {
-    background-color: var(--paper-base);
-    background-image: var(--paper-texture-image);
-    background-size: 760px auto;
+    background: var(--bg);
     color: var(--parchment);
     font-family: 'IM Fell English', Georgia, serif;
     overflow-anchor: none;
@@ -966,7 +964,7 @@
     grid-template-columns: minmax(150px, 270px) 1fr minmax(150px, 270px);
     align-items: center;
     gap: 36px;
-    margin-bottom: 54px;
+    margin-bottom: 68px;
   }
 
   .broadcast-art {
@@ -1090,7 +1088,7 @@
     grid-template-columns: minmax(150px, 270px) 1fr minmax(150px, 270px);
     align-items: center;
     gap: 36px;
-    margin-bottom: 24px;
+    margin-bottom: 44px;
   }
 
   .about-art {
@@ -1446,7 +1444,7 @@
     font-weight: 900;
     letter-spacing: 0;
     line-height: 1;
-    margin-bottom: 12px;
+    margin-bottom: 34px;
   }
 
   .listen-download-note {
@@ -1732,7 +1730,7 @@
     grid-template-columns: minmax(150px, 270px) 1fr minmax(150px, 270px);
     align-items: center;
     gap: 36px;
-    margin-bottom: 46px;
+    margin-bottom: 60px;
   }
 
   .cast-page-art {
@@ -2059,7 +2057,7 @@
     font-weight: 900;
     letter-spacing: 0;
     line-height: 1;
-    margin-bottom: 18px;
+    margin-bottom: 34px;
   }
 
   .contact-broadcast-label {
@@ -2114,12 +2112,12 @@
   /* ── FOOTER ── */
   footer {
     border-top: 1px solid var(--rule);
-    padding: 40px 48px;
+    padding: 20px 48px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 8px;
     max-width: 100%;
   }
 
@@ -2372,7 +2370,7 @@
     .broadcast-hero {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
-      margin-bottom: 38px;
+      margin-bottom: 48px;
     }
 
     .broadcast-title {
@@ -2414,7 +2412,7 @@
 
     .listen-title {
       font-size: clamp(54px, 16vw, 76px);
-      margin-bottom: 16px;
+      margin-bottom: 30px;
     }
 
     .listen-download-note {
@@ -2460,7 +2458,7 @@
 
     .contact-title {
       font-size: clamp(58px, 16vw, 84px);
-      margin-bottom: 18px;
+      margin-bottom: 30px;
     }
 
     .contact-broadcast-label {
@@ -2486,7 +2484,7 @@
     .about-hero {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
-      margin-bottom: 30px;
+      margin-bottom: 42px;
     }
 
     .about-title {
@@ -2567,7 +2565,7 @@
     .cast-page-hero {
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
-      margin-bottom: 38px;
+      margin-bottom: 48px;
     }
 
     .cast-page-title {
