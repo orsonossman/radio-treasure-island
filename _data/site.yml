@@ -123,8 +123,8 @@ listen_now:
   download_note:
   radio_label: Radio stations
   online_distribution:
-    label: Find us Online
-    href: "#"
+    - label: Find us Online
+      href: "#"
   poster_image: "/assets/images/treasure-island-poster.webp"
   poster_alt: "Treasure Island: A Telling for the New World poster art"
   stations:

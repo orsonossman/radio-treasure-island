@@ -1449,6 +1449,12 @@
     margin-bottom: 8px;
   }
 
+  .listen-online-list {
+    display: grid;
+    justify-items: center;
+    gap: 6px;
+  }
+
   .listen-online-link {
     color: var(--crimson);
     text-decoration: underline;

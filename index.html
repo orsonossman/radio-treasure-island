@@ -167,13 +167,19 @@ layout: default
   <section class="listen-section tab-panel" id="listen-now" data-tab-panel role="tabpanel" aria-labelledby="tab-listen-now" tabindex="-1">
     <div class="listen-wrap">
       <h1 class="listen-title">{{ page_data.listen_now.headline }}</h1>
-      {% assign listen_online_label = page_data.listen_now.online_distribution.label | default: "" %}
-      {% unless listen_online_label == "" %}
-        {% assign listen_online_href = page_data.listen_now.online_distribution.href | default: "#" %}
-        <p class="listen-download-note">
-          <a href="{{ listen_online_href }}" class="listen-online-link"{% unless listen_online_href == "#" %} target="_blank" rel="noopener"{% endunless %}>{{ listen_online_label }}</a>
-        </p>
-      {% endunless %}
+      {% if page_data.listen_now.online_distribution %}
+        <ul class="listen-online-list listen-download-note">
+          {% for link in page_data.listen_now.online_distribution %}
+            {% assign listen_online_label = link.label | default: "" %}
+            {% unless listen_online_label == "" %}
+              {% assign listen_online_href = link.href | default: "#" %}
+              <li class="listen-online-item">
+                <a href="{{ listen_online_href }}" class="listen-online-link"{% unless listen_online_href == "#" %} target="_blank" rel="noopener"{% endunless %}>{{ listen_online_label }}</a>
+              </li>
+            {% endunless %}
+          {% endfor %}
+        </ul>
+      {% endif %}
       {% assign listen_download_note = page_data.listen_now.download_note | default: "" %}
       {% unless listen_download_note == "" %}
         <p class="listen-download-note">{{ listen_download_note }}</p>
