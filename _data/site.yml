@@ -1,6 +1,6 @@
 nav:
-  - label: Broadcast Info
-    href: "#broadcast-info"
+  - label: Station Information
+    href: "#Station-Information"
   - label: Listen Now
     href: "#listen-now"
   - label: About
@@ -44,49 +44,49 @@ hero:
       image: "/assets/images/cast-crew/taj-mahal.webp"
 
 broadcast_info:
-  headline: Radio Stations
+  headline: Station Information
   left_art_image: "/assets/images/chapter-6-the-coracle.png"
   left_art_alt: "Chapter 6: The Coracle"
   right_art_image: "/assets/images/chapter-1-the-pirate.png"
   right_art_alt: "Chapter 1: The Pirate"
   broadcast_cta:
-    label: To Broadcast this show click here
-    href: "#contact"
+    label: Find us on PRX
+    href: "https://exchange.prx.org/series/62569-treasure-island-a-telling-for-the-new-world"
   license_cta:
-    label: License agreement etc click here
-    href: "#contact"
+    label: Broadcast Agreement and Details
+    href: "https://drive.google.com/file/d/1a50GqqL2NRq1mUps7DF7POKb6LApbLYy/view?usp=sharing"
   summary_label: Series Summary
   chapters:
     - title: "Chapter 1: The Pirate"
       description: "Jim Hawkins befriends an old Pirate and discovers his secret."
-      duration: "56:00"
+      duration: "Runtime 56:00"
     - title: "Chapter 2: The Sea Cook"
       description: "Jim travels to New Orleans and sets sail for the Caribbean."
-      duration: "55:40"
+      duration: "Runtime 55:40"
     - title: "Chapter 3: The Apple Barrel"
       description: "Upon arrival to Skeleton Island, Jim uncovers mutiny amongst the crew."
-      duration: "59:00"
+      duration: "Runtime 59:00"
     - title: "Chapter 4: The Man of the Island"
       description: "Dr. Livesey shares his side of the story, while Jim explores the Island."
-      duration: "52:19"
+      duration: "Runtime 52:19"
     - title: "Chapter 5: The Stockade"
       description: "The pirates attack and Jim escapes into the jungle."
-      duration: "52:00"
+      duration: "Runtime 52:00"
     - title: "Chapter 6: The Coracle"
       description: "Jim commandeers the ship and learns to sail."
-      duration: "50:26"
+      duration: "Runtime 50:26"
     - title: "Chapter 7: Captain Silver"
       description: "Long John Silver and his crew capture Jim by surprise."
-      duration: "58:35"
+      duration: "Runtime 58:35"
     - title: "Chapter 8: The Treasure Hunt"
       description: "The hunt for buried treasure and the voyage home."
-      duration: "56:17"
+      duration: "Runtime 56:17"
 
 listen_now:
   headline: Listen to the Series
   download_note:
   online_distribution:
-    label: placeholder online distribution link
+    label: Find us Online
     href: "#"
   poster_image: "/assets/images/treasure-island-poster.webp"
   poster_alt: "Treasure Island: A Telling for the New World poster art"
@@ -106,7 +106,7 @@ listen_now:
 
 contact_page:
   headline: Contact
-  broadcast_label: "To broadcast Treasure island:"
+  broadcast_label: "For questions about broadcasting the series, or any other inquiries, reach out to"
   broadcast_email: radiotreasureisland@gmail.com
 
 about:
@@ -156,6 +156,8 @@ about:
     - image: "/assets/images/BTS-pics/TI-BTS-15.jpg"
       alt: "Behind the scenes photo 12 from the Treasure Island production."
     - image: "/assets/images/BTS-pics/TI-BTS-16.jpg"
+      alt: "Behind the scenes photo 13 from the Treasure Island production."
+    - image: "https://drive.google.com/file/d/1HtVAn-l4QcICh9fRlu4y-6Njw4vqnnn0/view?usp=share_link"
       alt: "Behind the scenes photo 13 from the Treasure Island production."
   paragraphs:
     - >-
@@ -689,7 +691,7 @@ production:
         served as Music Editor, Supervising Sound Editor and Re-Recording
         Mixer...with Thomas Ouziel.
   - name: "Thomas Ouziel MPSE"
-    label: "Foley and effects editor/re-recording mixer"
+    label: "Supervising Sound Editor, Re-recording Mixer, Foley Supervisor, Effects Editor"
     image: "/assets/images/cast-crew/thomas-ouziel-mpse.webp"
     bio:
       - >-
