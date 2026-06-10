@@ -435,7 +435,9 @@ layout: default
 </main>
 
 <footer>
-  <div class="footer-left">© {{ page_data.footer.copyright }}</div>
+  <div class="footer-left">
+    <a href="{{ page_data.footer.copyright_href }}" target="_blank" rel="noopener">© {{ page_data.footer.copyright }}</a>
+  </div>
   {% assign footer_contact_target = page_data.footer.contact_href | remove_first: '#' %}
   <div class="footer-credits">
     <a href="{{ page_data.footer.contact_href }}" data-tab-target="{{ footer_contact_target }}">{{ page_data.footer.contact_label }}</a>

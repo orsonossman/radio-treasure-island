@@ -2129,6 +2129,19 @@
     text-transform: uppercase;
   }
 
+  .footer-left a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .footer-left a:hover,
+  .footer-left a:focus-visible { color: var(--parchment-dim); }
+
+  .footer-left a:focus-visible {
+    outline: 2px solid var(--crimson);
+    outline-offset: 4px;
+  }
+
   .footer-credits {
     font-family: 'IM Fell English', serif;
     font-style: italic;

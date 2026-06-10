@@ -996,5 +996,6 @@ production:
 
 footer:
   copyright: "2025 Otherworld Children's Media"
+  copyright_href: "https://www.otherworldchildrensmedia.org/"
   contact_label: Contact
   contact_href: "#contact"
