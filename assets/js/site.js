@@ -179,7 +179,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const trailerTime = trailerPlayer.querySelector("[data-trailer-time]");
     const trailerMuteButton = trailerPlayer.querySelector("[data-trailer-mute]");
     const trailerVolume = trailerPlayer.querySelector("[data-trailer-volume]");
-    const playerLabel = trailerPlayer.dataset.playerLabel || "audio";
+    const playerLabel = trailerPlayer.dataset.playerLabel || "";
+    const playLabel = trailerPlayer.dataset.playLabel || trailerPlayButton?.getAttribute("aria-label") || "";
+    const pauseLabel = trailerPlayer.dataset.pauseLabel || playLabel;
+    const muteLabel = trailerPlayer.dataset.muteLabel || trailerMuteButton?.getAttribute("aria-label") || "";
+    const unmuteLabel = trailerPlayer.dataset.unmuteLabel || muteLabel;
+
+    function audioControlLabel(actionLabel) {
+      return [actionLabel, playerLabel].filter(Boolean).join(" ");
+    }
 
     function renderTrailerPlayState() {
       if (!trailerAudio || !trailerPlayButton) {
@@ -190,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
       trailerPlayer.classList.toggle("is-playing", isTrailerPlaying);
       trailerPlayButton.setAttribute(
         "aria-label",
-        isTrailerPlaying ? `Pause ${playerLabel}` : `Play ${playerLabel}`,
+        audioControlLabel(isTrailerPlaying ? pauseLabel : playLabel),
       );
     }
 
@@ -225,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (trailerMuteButton) {
         trailerMuteButton.setAttribute(
           "aria-label",
-          isMuted ? `Unmute ${playerLabel}` : `Mute ${playerLabel}`,
+          audioControlLabel(isMuted ? unmuteLabel : muteLabel),
         );
       }
     }
@@ -297,6 +305,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const prevButton = carousel.querySelector("[data-carousel-prev]");
     const nextButton = carousel.querySelector("[data-carousel-next]");
     const status = carousel.querySelector("[data-carousel-status]");
+    const statusSeparator = carousel.dataset.carouselStatusSeparator || "";
     const zoomDialog = carousel.querySelector("[data-carousel-zoom]");
     const zoomImage = carousel.querySelector("[data-carousel-zoom-image]");
     const zoomCloseButton = carousel.querySelector("[data-carousel-zoom-close]");
@@ -324,7 +333,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       if (status) {
-        status.textContent = `${activeIndex + 1} / ${slides.length}`;
+        status.textContent = `${activeIndex + 1}${statusSeparator}${slides.length}`;
       }
     }
 
@@ -468,11 +477,20 @@ document.addEventListener("DOMContentLoaded", () => {
   let castBioClampFrame;
 
   function setCastBioToggleLabel(toggle, isExpanded) {
-    const personName = toggle.dataset.personName || "this person";
-    const direction = isExpanded ? "less" : "more";
+    const personName = toggle.dataset.personName || toggle.dataset.personFallback || "";
+    const direction = isExpanded ? toggle.dataset.lessDirection : toggle.dataset.moreDirection;
+    const label = isExpanded ? toggle.dataset.lessLabel : toggle.dataset.moreLabel;
+    const ariaLabelTemplate = toggle.dataset.ariaLabelTemplate || "";
 
-    toggle.textContent = isExpanded ? "Less" : "More";
-    toggle.setAttribute("aria-label", `Show ${direction} bio for ${personName}`);
+    if (label) {
+      toggle.textContent = label;
+    }
+    if (ariaLabelTemplate) {
+      toggle.setAttribute(
+        "aria-label",
+        ariaLabelTemplate.replace("{direction}", direction || "").replace("{person}", personName),
+      );
+    }
     toggle.setAttribute("aria-expanded", String(isExpanded));
   }
 
@@ -589,6 +607,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const defaultTabId = tabPanels[0]?.id || "";
   const navMenuButton = document.querySelector("[data-nav-menu-button]");
   const navLinks = document.getElementById("site-nav-links");
+  const navMenuOpenLabel = navMenuButton?.dataset.menuOpenLabel || navMenuButton?.getAttribute("aria-label") || "";
+  const navMenuCloseLabel = navMenuButton?.dataset.menuCloseLabel || navMenuOpenLabel;
 
   function setNavMenuOpen(isOpen) {
     if (!navMenuButton) {
@@ -596,7 +616,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     navMenuButton.setAttribute("aria-expanded", String(isOpen));
-    navMenuButton.setAttribute("aria-label", isOpen ? "Close site menu" : "Open site menu");
+    navMenuButton.setAttribute("aria-label", isOpen ? navMenuCloseLabel : navMenuOpenLabel);
   }
 
   function tabExists(tabId) {

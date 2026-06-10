@@ -1,10 +1,14 @@
 <!doctype html>
 <html lang="{{ page.lang | default: site.lang | default: 'en' }}">
   <head>
+    {% assign page_data = site.data.site %}
+    {% assign site_title = page_data.meta.site_title | default: site.title %}
+    {% assign page_title = page.title | default: page_data.meta.page_title %}
+    {% assign meta_description = page.description | default: page_data.meta.description | default: site.description %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
-    <meta name="description" content="{{ page.description | default: site.description | escape }}">
+    <title>{% if page_title %}{{ page_title }} | {% endif %}{{ site_title }}</title>
+    <meta name="description" content="{{ meta_description | escape }}">
     <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
   </head>
   <body class="min-h-screen antialiased">

@@ -1,6 +1,30 @@
+meta:
+  site_title: Radio Treasure Island
+  page_title: Treasure Island — A Telling for the New World
+  description: An historic radio drama in eight chapters from Otherworld Children's Media.
+
+ui:
+  navigation:
+    landmark_label: Site sections
+    menu_open_label: Open site menu
+    menu_close_label: Close site menu
+    tabs_label: Site tabs
+  audio:
+    play_label: Play
+    pause_label: Pause
+    mute_label: Mute
+    unmute_label: Unmute
+  bio_toggle:
+    more_label: More
+    less_label: Less
+    more_direction: more
+    less_direction: less
+    aria_label_template: "Show {direction} bio for {person}"
+    fallback_person_name: this person
+
 nav:
   - label: Station Information
-    href: "#Station-Information"
+    href: "#broadcast-info"
   - label: Listen Now
     href: "#listen-now"
   - label: About
@@ -13,21 +37,33 @@ nav:
     href: "#crew"
 
 hero:
+  kicker: A Major Motion Picture for the Mind
   title_image: "/assets/images/title-art.webp"
   title_alt: "Treasure Island — A Telling for the New World"
   ship_image: "/assets/images/hero-ship.webp"
+  spotlight_label: Featured cast and music
   description: >-
     Treasure Island: A Telling for the New World is a series of 8 hour-long
     audio episodes. This unabridged adaptation of the classic novel by R.L.
     Stevenson resets the story in the Bayous, the Port of New Orleans, and the
     Caribbean at the end of the Golden Age of Piracy in 1828.
   trailer_cta:
+    player_label: trailer
     label: Listen to the trailer
     subtitle: "Treasure Island: A Telling for the New World"
+    download_label: Download the trailer audio.
+    initial_time_label: "0:00 / 3:32"
+    progress_label: Trailer progress
+    volume_label: Trailer volume
     audio_src: "/assets/audio/20260415 Treasure Island Sizzle Reel Version 6.mp3"
   theme_cta:
+    player_label: theme song
     label: Listen to the theme song
     subtitle: "Full stereo downmix"
+    download_label: Download the theme song audio.
+    initial_time_label: "0:00 / 2:17"
+    progress_label: Theme song progress
+    volume_label: Theme song volume
     audio_src: "/assets/audio/Tresure Island_Theme Song_Full_Reexport_STEREO DOWNMIX.wav"
   cast_spotlight:
     - name: Keith David
@@ -59,32 +95,33 @@ broadcast_info:
   chapters:
     - title: "Chapter 1: The Pirate"
       description: "Jim Hawkins befriends an old Pirate and discovers his secret."
-      duration: "Runtime 56:00"
+      duration: "(Runtime 56:00)"
     - title: "Chapter 2: The Sea Cook"
       description: "Jim travels to New Orleans and sets sail for the Caribbean."
-      duration: "Runtime 55:40"
+      duration: "(Runtime 55:40)"
     - title: "Chapter 3: The Apple Barrel"
       description: "Upon arrival to Skeleton Island, Jim uncovers mutiny amongst the crew."
-      duration: "Runtime 59:00"
+      duration: "(Runtime 59:00)"
     - title: "Chapter 4: The Man of the Island"
       description: "Dr. Livesey shares his side of the story, while Jim explores the Island."
-      duration: "Runtime 52:19"
+      duration: "(Runtime 52:19)"
     - title: "Chapter 5: The Stockade"
       description: "The pirates attack and Jim escapes into the jungle."
-      duration: "Runtime 52:00"
+      duration: "(Runtime 52:00)"
     - title: "Chapter 6: The Coracle"
       description: "Jim commandeers the ship and learns to sail."
-      duration: "Runtime 50:26"
+      duration: "(Runtime 50:26)"
     - title: "Chapter 7: Captain Silver"
       description: "Long John Silver and his crew capture Jim by surprise."
-      duration: "Runtime 58:35"
+      duration: "(Runtime 58:35)"
     - title: "Chapter 8: The Treasure Hunt"
       description: "The hunt for buried treasure and the voyage home."
-      duration: "Runtime 56:17"
+      duration: "(Runtime 56:17)"
 
 listen_now:
   headline: Listen to the Series
   download_note:
+  radio_label: Radio stations
   online_distribution:
     label: Find us Online
     href: "#"
@@ -119,6 +156,17 @@ about:
   website_href: "https://otherworldchildrensmedia.org"
   instagram: "@radiotreasureisland"
   instagram_href: "https://www.instagram.com/radiotreasureisland/"
+  gallery_ui:
+    carousel_role: carousel
+    slide_role: slide
+    label: Behind the scenes photo gallery
+    previous_label: Show previous behind the scenes photo
+    next_label: Show next behind the scenes photo
+    slide_label_template: "{index} of {total}"
+    zoom_label_template: "Zoom behind the scenes photo {index} of {total}"
+    expanded_label: Expanded behind the scenes photo
+    close_label: Close expanded photo
+    status_separator: " / "
   inline_photos:
     - image: "/assets/images/BTS-pics/TI-BTS-A.jpeg"
       alt: "Behind the scenes: cast members reviewing scripts outdoors."
@@ -157,8 +205,6 @@ about:
       alt: "Behind the scenes photo 12 from the Treasure Island production."
     - image: "/assets/images/BTS-pics/TI-BTS-16.jpg"
       alt: "Behind the scenes photo 13 from the Treasure Island production."
-    - image: "https://drive.google.com/file/d/1HtVAn-l4QcICh9fRlu4y-6Njw4vqnnn0/view?usp=share_link"
-      alt: "Behind the scenes photo 13 from the Treasure Island production."
   paragraphs:
     - >-
       Treasure Island: A Telling for the New World is a series of 8 hour-long
@@ -191,10 +237,13 @@ about:
 
 cast_page:
   headline: Cast
+  roster_label: Full cast
+  role_prefix: As
   left_art_image: "/assets/images/chapter-3-apple-barrel.png"
   left_art_alt: "Chapter 3: Apple Barrel"
   right_art_image: "/assets/images/chapter-4-the-man-of-the-island.png"
   right_art_alt: "Chapter 4: The Man of the Island"
+  background_walla_heading: Background Walla Performers
   background_walla_performers:
     - "Matthew Bell"
     - "Gabe Harshman"
@@ -217,6 +266,7 @@ cast_page:
 
 crew_page:
   headline: Crew
+  roster_label: Full crew
   left_art_image: "/assets/images/chapter-8-the-treasure-hunt.png"
   left_art_alt: "Chapter 8: The Treasure Hunt"
   right_art_image: "/assets/images/chapter-2-the-sea-cook.png"
