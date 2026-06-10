@@ -37,7 +37,7 @@ nav:
     href: "#crew"
 
 hero:
-  kicker: A Major Motion Picture for the Mind
+  kicker: An Audio Adventure in 8 chapters
   title_image: "/assets/images/title-art.webp"
   title_alt: "Treasure Island — A Telling for the New World"
   ship_image: "/assets/images/hero-ship.webp"
@@ -95,28 +95,28 @@ broadcast_info:
   chapters:
     - title: "Chapter 1: The Pirate"
       description: "Jim Hawkins befriends an old Pirate and discovers his secret."
-      duration: "(Runtime 56:00)"
+      duration: "(Runtime 56:00) [Soft ID— 35:03-35:10– 7 seconds]"
     - title: "Chapter 2: The Sea Cook"
       description: "Jim travels to New Orleans and sets sail for the Caribbean."
-      duration: "(Runtime 55:40)"
+      duration: "(Runtime 55:40) [Soft ID— 34:24-34:31– 7 seconds]"
     - title: "Chapter 3: The Apple Barrel"
       description: "Upon arrival to Skeleton Island, Jim uncovers mutiny amongst the crew."
-      duration: "(Runtime 59:00)"
+      duration: "(Runtime 59:00) [Soft ID— 28:18-28:22– 4 seconds]"
     - title: "Chapter 4: The Man of the Island"
       description: "Dr. Livesey shares his side of the story, while Jim explores the Island."
-      duration: "(Runtime 52:19)"
+      duration: "(Runtime 52:19) [Soft ID— 22:23-23:00– 37 seconds]"
     - title: "Chapter 5: The Stockade"
       description: "The pirates attack and Jim escapes into the jungle."
-      duration: "(Runtime 52:00)"
+      duration: "(Runtime 52:00) [Soft ID— 28:25-28:40–15 seconds]"
     - title: "Chapter 6: The Coracle"
       description: "Jim commandeers the ship and learns to sail."
-      duration: "(Runtime 50:26)"
+      duration: "(Runtime 50:26) [Soft ID— 23:33-24:08– 35 seconds]"
     - title: "Chapter 7: Captain Silver"
       description: "Long John Silver and his crew capture Jim by surprise."
-      duration: "(Runtime 58:35)"
+      duration: "(Runtime 58:35) [Soft ID— 31:14-31:22– 8 seconds]"
     - title: "Chapter 8: The Treasure Hunt"
       description: "The hunt for buried treasure and the voyage home."
-      duration: "(Runtime 56:17)"
+      duration: "(Runtime 56:17) [Soft ID— 27:42-27:47– 5 seconds]"
 
 listen_now:
   headline: Listen to the Series
@@ -211,7 +211,8 @@ about:
       audio episodes for distribution on Public Radio Stations nationwide. The
       production is based on the original novel by R.L. Stevenson, resetting
       the story in the Bayous, the Port of New Orleans, and the Caribbean at
-      the end of the Golden Age of Piracy.
+      the end of the Golden Age of Piracy. Recorded primarily on location at 
+      Quigley on Whidbey Island, Wa.
     - >-
       This approach to Treasure Island takes a traditional literary classic and
       re-envisions it through context, casting, and music. By broadening
