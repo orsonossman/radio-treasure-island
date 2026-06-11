@@ -2,6 +2,11 @@ meta:
   site_title: Radio Treasure Island
   page_title: Treasure Island — A Telling for the New World
   description: An historic radio drama in eight chapters from Otherworld Children's Media.
+  image: "/assets/images/treasure-island-poster.webp"
+  image_alt: "Treasure Island poster art."
+  image_width: 1400
+  image_height: 1936
+  image_type: image/webp
 
 ui:
   navigation:
