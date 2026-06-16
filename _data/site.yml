@@ -145,6 +145,10 @@ listen_now:
       market: "Glendale, CA"
       href: "https://www.kpfk.org/"
       schedule: "Beginning Tuesday July 7, weekly at 2 p.m."
+    - call_letters: WHAV
+      market: "Ward Hill, Ma"
+      href: "http://www.whav.net"
+      schedule: "Beginning July 4, Sat and Sunday weekly 10 pm"
 
 contact_page:
   headline: Contact
