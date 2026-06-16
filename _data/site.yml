@@ -148,7 +148,33 @@ listen_now:
     - call_letters: WHAV
       market: "Ward Hill, Ma"
       href: "http://www.whav.net"
-      schedule: "Beginning July 4, Sat and Sunday weekly 10 pm"
+      schedule: "Beginning July 4, Sat and Sunday weekly at 10 pm"
+    - call_letters: WFHB
+      market: "Bloomington, IN"
+      href: "http://www.wfhb.org"
+      schedule: "TBD"
+    - call_letters: KICI
+      market: "Iowa City, IA"
+      href: "http://kiciradio.wordpress.com/"
+      schedule: "Thu 7 pm weekly in July"
+    - call_letters: KGLT
+      market: "Bozeman, MT"
+      href: "http://www.kglt.net/"
+      schedule: "TBD"
+    - call_letters: KOPN
+      market: "Columbia, MO"
+      href: "http://www.kopn.org/"
+      schedule: "starting Sept. 1, 2 am"
+    - call_letters: KSER
+      market: "Everett, WA"
+      href: "http://www.kser.org/"
+      schedule: "starting Saturday July 1  Weekly 7-9 am"
+    - call_letters: NWPB
+      market: "Pullman, WA "
+      href: "http://www.nwpb.org/"
+      schedule: "Starting July 31, weekly"
+      
+      
 
 contact_page:
   headline: Contact
