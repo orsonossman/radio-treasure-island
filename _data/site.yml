@@ -144,23 +144,23 @@ listen_now:
     - call_letters: KICI
       market: "Iowa City, IA"
       href: "http://kiciradio.wordpress.com/"
-      schedule: "Beginning July 3rd, Thursdays at 7PM CST"
+      schedule: "Beginning July 2nd, Thursdays at 7PM CST"
     - call_letters: WLRH
       market: "Huntsville, AL"
       href: "https://wlrh.org/"
-      schedule: "Beginning July 3rd, Fridays at 6PM CST, repeats the following Saturday at 2 PM CST."
+      schedule: "Beginning July 3rd, Fridays at 6PM CST, repeats following Saturday at 2 PM CST."
     - call_letters: WHAV
       market: "Ward Hill, Ma"
       href: "http://www.whav.net"
-      schedule: "Beginning July 4, Sat & Sun at 10PM"
+      schedule: "Beginning July 4, Sat & Sun at 10PM EST"
     - call_letters: WCAI
       market: "Cape and the Islands, Woods Hole, MA"
       href: "https://www.capeandislands.org/"
-      schedule: "Beginning July 5th, Sundays at 7PM"
+      schedule: "Beginning July 5th, Sundays at 7PM EST"
     - call_letters: NWPB
       market: "Pullman, WA "
       href: "http://www.nwpb.org/"
-      schedule: "Starting July 31, Fridays at TBD"
+      schedule: "Beginning July 31, Fridays at TBD PST"
     - call_letters: KOPN
       market: "Columbia, MO"
       href: "http://www.kopn.org/"
