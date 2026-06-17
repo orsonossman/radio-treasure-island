@@ -136,43 +136,43 @@ listen_now:
     - call_letters: KPFK
       market: "Glendale, CA"
       href: "https://www.kpfk.org/"
-      schedule: "WORLD PREMIERE, June 30th, Tuesdays at 2 p.m."
+      schedule: "WORLD PREMIERE, June 30th, Tuesdays at 2PM PST"
+    - call_letters: KSER
+      market: "Everett, WA"
+      href: "http://www.kser.org/"
+      schedule: "Beginning July 1,  Saturdays 7AM-9AM PST (Two episodes in a row!)"
+    - call_letters: KICI
+      market: "Iowa City, IA"
+      href: "http://kiciradio.wordpress.com/"
+      schedule: "Beginning July 3rd, Thursdays at 7PM CST"
     - call_letters: WLRH
       market: "Huntsville, AL"
       href: "https://wlrh.org/"
-      schedule: "Friday July 3 at 6 PM CST, with a repeat the following Saturday at 2 PM CST."
-    - call_letters: WCAI
-      market: "Cape and the Islands, Woods Hole, MA"
-      href: "https://www.capeandislands.org/"
-      schedule: "Beginning July 5th, Sundays at 7 P.M."
+      schedule: "Beginning July 3rd, Fridays at 6PM CST, repeats the following Saturday at 2 PM CST."
     - call_letters: WHAV
       market: "Ward Hill, Ma"
       href: "http://www.whav.net"
-      schedule: "Beginning July 4, Sat and Sunday weekly at 10 pm"
+      schedule: "Beginning July 4, Sat & Sun at 10PM"
+    - call_letters: WCAI
+      market: "Cape and the Islands, Woods Hole, MA"
+      href: "https://www.capeandislands.org/"
+      schedule: "Beginning July 5th, Sundays at 7PM"
+    - call_letters: NWPB
+      market: "Pullman, WA "
+      href: "http://www.nwpb.org/"
+      schedule: "Starting July 31, Fridays at TBD"
+    - call_letters: KOPN
+      market: "Columbia, MO"
+      href: "http://www.kopn.org/"
+      schedule: "Beginning Sept. 1, at 2AM CST"
     - call_letters: WFHB
       market: "Bloomington, IN"
       href: "http://www.wfhb.org"
       schedule: "TBD"
-    - call_letters: KICI
-      market: "Iowa City, IA"
-      href: "http://kiciradio.wordpress.com/"
-      schedule: "Thu 7 pm weekly in July"
     - call_letters: KGLT
       market: "Bozeman, MT"
       href: "http://www.kglt.net/"
       schedule: "TBD"
-    - call_letters: KOPN
-      market: "Columbia, MO"
-      href: "http://www.kopn.org/"
-      schedule: "starting Sept. 1, 2 am"
-    - call_letters: KSER
-      market: "Everett, WA"
-      href: "http://www.kser.org/"
-      schedule: "starting Saturday July 1  Weekly 7-9 am"
-    - call_letters: NWPB
-      market: "Pullman, WA "
-      href: "http://www.nwpb.org/"
-      schedule: "Starting July 31, weekly"
       
       
 
