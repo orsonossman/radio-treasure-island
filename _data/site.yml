@@ -161,6 +161,10 @@ listen_now:
       market: "Pullman, WA "
       href: "http://www.nwpb.org/"
       schedule: "Beginning July 31, Fridays at TBD PST"
+    - call_letters: Radio Fairfax
+      market: "Fairfax, VA"
+      href: "https://fcac.org/radio-fairfax"
+      schedule: "Beginning August 2nd, Sundays at 5pm"
     - call_letters: KOPN
       market: "Columbia, MO"
       href: "http://www.kopn.org/"
