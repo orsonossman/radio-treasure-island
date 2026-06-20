@@ -137,10 +137,6 @@ listen_now:
       market: "Glendale, CA"
       href: "https://www.kpfk.org/"
       schedule: "WORLD PREMIERE, June 30th, Tuesdays at 2PM PST"
-    - call_letters: KSER
-      market: "Everett, WA"
-      href: "http://www.kser.org/"
-      schedule: "Beginning July 1,  Saturdays 7AM-9AM PST (Two episodes in a row!)"
     - call_letters: KICI
       market: "Iowa City, IA"
       href: "http://kiciradio.wordpress.com/"
@@ -149,10 +145,14 @@ listen_now:
       market: "Huntsville, AL"
       href: "https://wlrh.org/"
       schedule: "Beginning July 3rd, Fridays at 6PM CST, repeats following Saturday at 2 PM CST."
+    - call_letters: KSER
+      market: "Everett, WA"
+      href: "http://www.kser.org/"
+      schedule: "Beginning July 4th, Saturdays 7AM-9AM PST (Two episodes in a row!)"
     - call_letters: WHAV
       market: "Ward Hill, Ma"
       href: "http://www.whav.net"
-      schedule: "Beginning July 4, Sat & Sun at 10PM EST"
+      schedule: "Beginning July 4th, Sat & Sun at 10PM EST"
     - call_letters: WCAI
       market: "Cape and the Islands, Woods Hole, MA"
       href: "https://www.capeandislands.org/"
@@ -160,15 +160,15 @@ listen_now:
     - call_letters: NWPB
       market: "Pullman, WA "
       href: "http://www.nwpb.org/"
-      schedule: "Beginning July 31, Fridays at TBD PST"
+      schedule: "Beginning July 31st, Fridays at TBD PST"
     - call_letters: Radio Fairfax
       market: "Fairfax, VA"
       href: "https://fcac.org/radio-fairfax"
-      schedule: "Beginning August 2nd, Sundays at 5pm"
+      schedule: "Beginning August 2nd, Sundays at 5pm EST"
     - call_letters: KOPN
       market: "Columbia, MO"
       href: "http://www.kopn.org/"
-      schedule: "Beginning Sept. 1, at 2AM CST"
+      schedule: "Beginning Sept. 1st, at 2AM CST"
     - call_letters: WFHB
       market: "Bloomington, IN"
       href: "http://www.wfhb.org"
