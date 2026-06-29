@@ -136,7 +136,7 @@ listen_now:
     - call_letters: KPFK
       market: "Glendale, CA"
       href: "https://www.kpfk.org/"
-      schedule: "WORLD PREMIERE, June 30th, Tuesdays at 2PM PST"
+      schedule: "WORLD PREMIERE, June 30th, Tuesdays at 2pm PST"
     - call_letters: KICI
       market: "Iowa City, IA"
       href: "http://kiciradio.wordpress.com/"
@@ -146,27 +146,27 @@ listen_now:
       market: "Huntsville, AL"
       href: "https://wlrh.org/"
       schedule: "Beginning July 3rd, Fridays at 6PM CST-- 
-      Repeats weekly starting July 4th, Saturdays at 2 PM CST."
+      Repeats weekly starting July 4th, Saturdays at 2pm CST."
     - call_letters: KSER
       market: "Everett, WA"
       href: "http://www.kser.org/"
-      schedule: "Beginning July 4th, Saturdays 7AM-9AM PST (2 episodes in a row!)"
+      schedule: "Beginning July 4th, Saturdays 7am-9am PST (2 episodes in a row!)"
     - call_letters: WHAV
       market: "Ward Hill, Ma"
       href: "http://www.whav.net"
-      schedule: "Beginning July 4th, Sat & Sun at 10PM EST"
+      schedule: "Beginning July 4th, Sat & Sun at 10pm EST"
     - call_letters: WCAI
       market: "Cape and the Islands, Woods Hole, MA"
       href: "https://www.capeandislands.org/"
-      schedule: "Beginning July 5th, Sundays at 7PM EST"
+      schedule: "Beginning July 5th, Sundays at 7pm EST"
     - call_letters: WBFY
       market: "Belfast, ME"
       href: "http://www.belfastcommunityradio.org/"
-      schedule: "Beginning July 5th, Sundays at 8PM EST (2 episodes in a row!)"
+      schedule: "Beginning July 5th, Sundays at 8pm-10pm EST (2 episodes in a row!)"
     - call_letters: KGLT
       market: "Bozeman, MT"
       href: "http://www.kglt.net/"
-      schedule: "Beginning July 18th, Sundays 7am-9am (2 episodes in a row!)"
+      schedule: "Beginning July 18th, Sundays 7am-9am MST (2 episodes in a row!)"
     - call_letters: NWPB
       market: "Northwest Public Broadcasting"
       href: "http://www.nwpb.org/"
@@ -178,7 +178,7 @@ listen_now:
     - call_letters: KOPN
       market: "Columbia, MO"
       href: "http://www.kopn.org/"
-      schedule: "Beginning Sept. 1st, at 2AM CST"
+      schedule: "Beginning Sept. 1st, at 2am CST"
     - call_letters: WFHB
       market: "Bloomington, IN"
       href: "http://www.wfhb.org"
