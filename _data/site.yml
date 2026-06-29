@@ -141,15 +141,16 @@ listen_now:
       market: "Iowa City, IA"
       href: "http://kiciradio.wordpress.com/"
       schedule: "Beginning July 2nd, Thursdays at 9PM CST--
-      Repeating weekly starting July 5th, Sundays at 8pm CST"
+      Repeats weekly starting July 5th, Sundays at 8pm CST"
     - call_letters: WLRH
       market: "Huntsville, AL"
       href: "https://wlrh.org/"
-      schedule: "Beginning July 3rd, Fridays at 6PM CST, repeats following Saturday at 2 PM CST."
+      schedule: "Beginning July 3rd, Fridays at 6PM CST-- 
+      Repeats weekly starting July 4th, Saturdays at 2 PM CST."
     - call_letters: KSER
       market: "Everett, WA"
       href: "http://www.kser.org/"
-      schedule: "Beginning July 4th, Saturdays 7AM-9AM PST (Two episodes in a row!)"
+      schedule: "Beginning July 4th, Saturdays 7AM-9AM PST (2 episodes in a row!)"
     - call_letters: WHAV
       market: "Ward Hill, Ma"
       href: "http://www.whav.net"
