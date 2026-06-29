@@ -140,8 +140,8 @@ listen_now:
     - call_letters: KICI
       market: "Iowa City, IA"
       href: "http://kiciradio.wordpress.com/"
-      schedule: "Beginning July 2nd, Thursdays at 9PM CST
-      Repeating weekly starting on Sunday July 5th at 8pm"
+      schedule: "Beginning July 2nd, Thursdays at 9PM CST--
+      Repeating weekly starting July 5th, Sundays at 8pm CST"
     - call_letters: WLRH
       market: "Huntsville, AL"
       href: "https://wlrh.org/"
