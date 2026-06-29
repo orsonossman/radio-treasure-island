@@ -163,6 +163,10 @@ listen_now:
       market: "Belfast, ME"
       href: "http://www.belfastcommunityradio.org/"
       schedule: "Beginning July 5th, Sundays at 8PM EST (2 episodes in a row!)"
+    - call_letters: KGLT
+      market: "Bozeman, MT"
+      href: "http://www.kglt.net/"
+      schedule: "Beginning July 18th, Sundays 7am-9am (2 episodes in a row!)"
     - call_letters: NWPB
       market: "Northwest Public Broadcasting"
       href: "http://www.nwpb.org/"
@@ -179,9 +183,9 @@ listen_now:
       market: "Bloomington, IN"
       href: "http://www.wfhb.org"
       schedule: "TBD"
-    - call_letters: KGLT
-      market: "Bozeman, MT"
-      href: "http://www.kglt.net/"
+    - call_letters: WYPR/WTMD
+      market: "Baltimore Public Media"
+      href: "https://www.baltimorepublicmedia.org/"
       schedule: "TBD"
       
       
