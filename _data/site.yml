@@ -158,6 +158,10 @@ listen_now:
       market: "Cape and the Islands, Woods Hole, MA"
       href: "https://www.capeandislands.org/"
       schedule: "Beginning July 5th, Sundays at 7PM EST"
+    - call_letters: WBFY
+      market: "Belfast, ME"
+      href: "http://www.belfastcommunityradio.org/"
+      schedule: "Beginning July 5th, Sundays at 8PM EST (2 episodes in a row!)"
     - call_letters: NWPB
       market: "Pullman, WA "
       href: "http://www.nwpb.org/"
