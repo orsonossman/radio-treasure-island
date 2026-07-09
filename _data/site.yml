@@ -172,7 +172,7 @@ listen_now:
     - call_letters: KAAD
       market: "Sonora, CA"
       href: "https://kaad-lp.org"
-      schedule: "Beginning July 12th, Sundays at 7pm"
+      schedule: "Beginning July 12th, Sundays at 7pm PST"
     - call_letters: WWNO
       market: "New Orleans"
       href: "https://www.wwno.org"
