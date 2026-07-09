@@ -130,6 +130,12 @@ listen_now:
   online_distribution:
     - label: Listen on Audible
       href: "https://www.audible.com/pd/Treasure-Island-Audiobook/B0H5FYMMC9?qid=1782322630&sr=1-1&ref_pageloadid=not_applicable&pf_rd_p=83218cca-c308-412f-bfcf-90198b687a2f&pf_rd_r=FFK24M9ZM7BKJFHN49W1&plink=WFqrcNoQuG1638Tk&pageLoadId=CWc4GnBRNfPUjjxB&creativeId=0d6f6720-f41c-457e-a42b-8c8dceb62f2c&ref=a_search_c3_lProduct_1_1"
+    - label: Listen on Apple Books
+      href: https://books.apple.com/us/audiobook/treasure-island-a-telling-for-the-new-world/id6780618564
+    - label: Listen on Spotify
+      href: https://open.spotify.com/show/6BZlj3N9QOyrxe6s2cMPE5
+    - label: Listen on Google Play
+      href: https://play.google.com/store/audiobooks/details/Orson_Ossman_Treasure_Island?id=AQAAAEC6u2z7xM&utm_source=na_Med
   poster_image: "/assets/images/treasure-island-poster.webp"
   poster_alt: "Treasure Island: A Telling for the New World poster art"
   stations:
