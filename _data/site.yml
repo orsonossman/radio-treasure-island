@@ -201,6 +201,10 @@ listen_now:
       market: "Baltimore Public Media"
       href: "https://www.baltimorepublicmedia.org/"
       schedule: "TBD"
+    - call_letters: KUCR
+      market: "Riverside, CA"
+      href: "https://kucr.org"
+      schedule: "TBD"
       
       
 
