@@ -176,7 +176,7 @@ listen_now:
     - call_letters: WWNO
       market: "New Orleans"
       href: "https://www.wwno.org"
-      schedule: "Beginning July 14th at 9pm, runs 14th-16th, 21st-23rd, 28th-29th at 9pm"
+      schedule: "Beginning July 14th at 9pm EST, runs 14th-16th, 21st-23rd, 28th-29th at 9pm"
     - call_letters: KGLT
       market: "Bozeman, MT"
       href: "http://www.kglt.net/"
