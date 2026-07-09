@@ -169,6 +169,10 @@ listen_now:
       market: "Belfast, ME"
       href: "http://www.belfastcommunityradio.org/"
       schedule: "Beginning July 5th, Sundays at 8pm-10pm EST (2 episodes in a row!)"
+    - call_letters: WYPR/WTMD
+      market: "Baltimore Public Media"
+      href: "https://www.baltimorepublicmedia.org/"
+      schedule: "Beginning July 11th, Saturdays from 6pm-8pm EST (2 episodes in a row!)"
     - call_letters: KAAD
       market: "Sonora, CA"
       href: "https://kaad-lp.org"
@@ -196,10 +200,6 @@ listen_now:
     - call_letters: WFHB
       market: "Bloomington, IN"
       href: "http://www.wfhb.org"
-      schedule: "TBD"
-    - call_letters: WYPR/WTMD
-      market: "Baltimore Public Media"
-      href: "https://www.baltimorepublicmedia.org/"
       schedule: "TBD"
     - call_letters: KUCR
       market: "Riverside, CA"
