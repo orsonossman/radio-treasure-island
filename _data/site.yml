@@ -169,6 +169,10 @@ listen_now:
       market: "Belfast, ME"
       href: "http://www.belfastcommunityradio.org/"
       schedule: "Beginning July 5th, Sundays at 8pm-10pm EST (2 episodes in a row!)"
+    - call_letters: KAAD
+      market: "Sonora, CA"
+      href: "https://kaad-lp.org"
+      schedule: "Beginning July 12th, Sundays at 7pm"
     - call_letters: WWNO
       market: "New Orleans"
       href: "https://www.wwno.org"
