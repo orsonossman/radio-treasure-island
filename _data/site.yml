@@ -173,18 +173,30 @@ listen_now:
       market: "Baltimore Public Media"
       href: "https://www.baltimorepublicmedia.org/"
       schedule: "Beginning July 11th, Saturdays from 6pm-8pm EST (2 episodes in a row!)"
+    - call_letters: NCPR
+      market: "Canton, NY"
+      href: "https://www.northcountrypublicradio.org"
+      schedule: "Beginning July 11th at 3pm"
     - call_letters: KAAD
       market: "Sonora, CA"
       href: "https://kaad-lp.org"
       schedule: "Beginning July 12th, Sundays at 7pm PST"
+    - call_letters: KAZU
+      market: "Santa Cruz, CA"
+      href: "https://www.kazu.org"
+      schedule: "Beginning July 12th at 4pm"
     - call_letters: WWNO
       market: "New Orleans"
       href: "https://www.wwno.org"
       schedule: "Beginning July 14th at 9pm EST, runs 14th-16th, 21st-23rd, 28th-29th at 9pm"
+    - call_letters: WFHB
+      market: "Bloomington, IN"
+      href: "http://www.wfhb.org"
+      schedule: "Beginning July 19th, Sundays at 8pm CST"
     - call_letters: KGLT
       market: "Bozeman, MT"
       href: "http://www.kglt.net/"
-      schedule: "Beginning July 18th, Sundays 7am-9am MST (2 episodes in a row!)"
+      schedule: "Beginning July 19th, Sundays 7am-9am MST (2 episodes in a row!)"
     - call_letters: NWPB
       market: "Northwest Public Broadcasting"
       href: "http://www.nwpb.org/"
@@ -197,10 +209,6 @@ listen_now:
       market: "Columbia, MO"
       href: "http://www.kopn.org/"
       schedule: "Beginning Sept. 1st, at 2am CST"
-    - call_letters: WFHB
-      market: "Bloomington, IN"
-      href: "http://www.wfhb.org"
-      schedule: "TBD"
     - call_letters: KUCR
       market: "Riverside, CA"
       href: "https://kucr.org"
