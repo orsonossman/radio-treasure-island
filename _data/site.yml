@@ -192,7 +192,7 @@ listen_now:
     - call_letters: Radio Fairfax
       market: "Fairfax, VA"
       href: "https://fcac.org/radio-fairfax"
-      schedule: "Beginning August 2nd, Sundays at 5pm EST"
+      schedule: "Beginning August 9th, Sundays at 5pm EST"
     - call_letters: KOPN
       market: "Columbia, MO"
       href: "http://www.kopn.org/"
