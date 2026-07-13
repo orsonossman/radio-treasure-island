@@ -176,7 +176,7 @@ listen_now:
     - call_letters: NCPR
       market: "Canton, NY"
       href: "https://www.northcountrypublicradio.org"
-      schedule: "Beginning July 11th at 3pm"
+      schedule: "Beginning July 11th at 3pm EST"
     - call_letters: KAAD
       market: "Sonora, CA"
       href: "https://kaad-lp.org"
@@ -184,7 +184,7 @@ listen_now:
     - call_letters: KAZU
       market: "Santa Cruz, CA"
       href: "https://www.kazu.org"
-      schedule: "Beginning July 12th at 4pm"
+      schedule: "Beginning July 12th at 4pm PST"
     - call_letters: WWNO
       market: "New Orleans"
       href: "https://www.wwno.org"
@@ -192,7 +192,7 @@ listen_now:
     - call_letters: WFHB
       market: "Bloomington, IN"
       href: "http://www.wfhb.org"
-      schedule: "Beginning July 19th, Sundays at 8pm CST"
+      schedule: "Beginning July 19th, Sundays at 8pm EST"
     - call_letters: KGLT
       market: "Bozeman, MT"
       href: "http://www.kglt.net/"
