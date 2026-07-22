@@ -298,6 +298,26 @@ layout: default
     </div>
   </section>
 
+  <section class="listen-section tab-panel" id="press" data-tab-panel role="tabpanel" aria-labelledby="tab-press" tabindex="-1">
+    <div class="listen-wrap">
+      <h1 class="listen-title">{{ page_data.press.headline }}</h1>
+      <div class="listen-radio">
+        {% for article in page_data.press.articles %}
+          <article class="listen-station-item press-article">
+            <p class="section-label press-source">{{ article.source }}</p>
+            <h2 class="press-article-title">
+              <a href="{{ article.href }}" target="_blank" rel="noopener">{{ article.title }}</a>
+            </h2>
+            <p class="listen-station-schedule press-summary">{{ article.summary }}</p>
+            <a class="listen-online-link press-link" href="{{ article.href }}" target="_blank" rel="noopener">
+              Read on {{ article.source }} <span aria-hidden="true">↗</span>
+            </a>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
   <section class="contact-section tab-panel" id="contact" data-tab-panel role="tabpanel" aria-labelledby="tab-contact" tabindex="-1">
     <div class="contact-wrap">
       <h1 class="contact-title">{{ page_data.contact_page.headline }}</h1>

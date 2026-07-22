@@ -32,6 +32,8 @@ nav:
     href: "#listen-now"
   - label: About
     href: "#about"
+  - label: Press
+    href: "#press"
   - label: Cast
     href: "#cast"
   - label: Crew
@@ -224,6 +226,20 @@ contact_page:
   headline: Contact
   broadcast_label: "For questions about broadcasting the series, or any other inquiries, reach out to"
   broadcast_email: radiotreasureisland@gmail.com
+
+press:
+  headline: Press
+  articles:
+    - source: PEOPLE
+      title: John Goodman, Keith David and Glynn Turman Star in a New Treasure Island Audio Play
+      summary: >-
+        PEOPLE presents an exclusive look at the new audio adaptation and its acclaimed cast.
+      href: "https://people.com/john-goodman-keith-david-glynn-turman-new-treasure-island-audio-play-exclusive-12011375"
+    - source: WHIDBEY NEWS-TIMES
+      title: Whidbey Sets the Stage for Hollywood Voices
+      summary: >-
+        The Whidbey News-Times explores the island community and recording sessions behind the production.
+      href: "https://www.whidbeynewstimes.com/2026/07/07/whidbey-sets-the-stage-for-hollywood-voices/"
 
 about:
   headline: About
