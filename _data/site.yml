@@ -236,6 +236,10 @@ listen_now:
       href: "https://knom.org"
       schedule: "Beginning September 6th, Sundays at 10pm AKDT
       (2nd broadcast begins 1/3/27, Sundays at 10pm AKDT)"
+    - call_letters: WMKY
+      market: "Morehead, KY"
+      href: "https://wmky.org"
+      schedule: "Beginning November 8th, Sundays from 3pm-5pm EST (2 episodes in a row)"
     - call_letters: WSHU
       market: "Fairfield, CT"
       href: "https://www.wshu.org"
